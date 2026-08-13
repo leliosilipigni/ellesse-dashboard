@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ellesse Rappresentanze — Controllo Fatturati 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root{
+    --bg:#0b0f19;
+    --bg2:#111726;
+    --card:#151c2c;
+    --card2:#1a2233;
+    --border:#232c40;
+    --txt:#e8edf7;
+    --txt2:#9aa6bf;
+    --txt3:#6b7690;
+    --accent:#6ea8fe;
+    --accent2:#8b7cff;
+    --green:#3ddc97;
+    --green-bg:rgba(61,220,151,.12);
+    --yellow:#f6c453;
+    --yellow-bg:rgba(246,196,83,.12);
+    --red:#ff6b7a;
+    --red-bg:rgba(255,107,122,.12);
+    --shadow:0 10px 40px -12px rgba(0,0,0,.55);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1200px 600px at 80% -10%,rgba(139,124,255,.18),transparent 60%),
+      radial-gradient(1000px 500px at -10% 10%,rgba(110,168,254,.14),transparent 55%),
+      var(--bg);
+    color:var(--txt);
+    line-height:1.5;
+    padding:clamp(14px,3vw,40px);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1240px;margin:0 auto}
+
+  /* Header */
+  header.top{
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .logo{
+    width:56px;height:56px;border-radius:16px;flex:none;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:22px;color:#0b0f19;
+    box-shadow:0 8px 24px -6px rgba(110,168,254,.6);
+    letter-spacing:-1px;
+  }
+  .top h1{font-size:clamp(20px,4.6vw,30px);font-weight:800;letter-spacing:-.5px}
+  .top .sub{color:var(--txt2);font-size:clamp(13px,3.4vw,15px);margin-top:2px}
+  .top .badge{
+    margin-left:auto;background:var(--card);border:1px solid var(--border);
+    padding:8px 14px;border-radius:999px;font-size:12px;color:var(--txt2);
+    display:flex;align-items:center;gap:8px;white-space:nowrap;
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+
+  /* Section title */
+  .sec-title{
+    font-size:13px;text-transform:uppercase;letter-spacing:1.6px;
+    color:var(--txt3);font-weight:700;margin:34px 4px 14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .sec-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+
+  /* KPI grid */
+  .kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .kpi-card{
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--border);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .kpi-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    opacity:.9;
+  }
+  .kpi-card.pending{opacity:.72;border-style:dashed}
+  .kpi-card.pending::before{background:linear-gradient(90deg,var(--txt3),transparent);opacity:.5}
+  .pill.muted{color:var(--txt2);background:rgba(154,166,191,.12)}
+  .kpi-pending-note{color:var(--txt3);font-size:12px;margin-top:14px;font-style:italic}
+  .kpi-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:16px}
+  .kpi-mandante{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--txt3);font-weight:700}
+  .kpi-name{font-size:19px;font-weight:800;letter-spacing:-.3px}
+  .kpi-main{font-size:clamp(26px,6vw,34px);font-weight:800;letter-spacing:-1px;margin-bottom:2px}
+  .kpi-main small{font-size:14px;font-weight:600;color:var(--txt2);margin-left:6px}
+  .kpi-sub{color:var(--txt2);font-size:13px;margin-bottom:16px}
+
+  .progress{
+    height:11px;border-radius:999px;background:var(--bg2);overflow:hidden;
+    border:1px solid var(--border);margin-bottom:6px;
+  }
+  .progress > span{
+    display:block;height:100%;width:0;border-radius:999px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    transition:width 1.4s cubic-bezier(.22,1,.36,1);
+  }
+  .progress-lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--txt2);margin-bottom:18px}
+  .progress-lbl b{color:var(--txt)}
+
+  .kpi-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .metric{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+  .metric .m-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--txt3);font-weight:600;margin-bottom:5px}
+  .metric .m-val{font-size:16px;font-weight:800;letter-spacing:-.3px}
+  .metric .m-note{font-size:11px;margin-top:2px;color:var(--txt2)}
+
+  .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:700}
+  .pill.green{color:var(--green);background:var(--green-bg)}
+  .pill.yellow{color:var(--yellow);background:var(--yellow-bg)}
+  .pill.red{color:var(--red);background:var(--red-bg)}
+
+  /* Charts */
+  .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .panel{
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 20px 16px;box-shadow:var(--shadow);
+  }
+  .panel h3{font-size:15px;font-weight:800;margin-bottom:3px;letter-spacing:-.2px}
+  .panel .p-sub{font-size:12px;color:var(--txt2);margin-bottom:16px}
+  .chart-box{position:relative;width:100%;height:300px}
+  .chart-box.tall{height:360px}
+
+  /* Table */
+  .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+  thead th{
+    text-align:left;padding:12px 16px;font-size:11px;text-transform:uppercase;
+    letter-spacing:.8px;color:var(--txt3);font-weight:700;background:var(--bg2);
+    border-bottom:1px solid var(--border);
+  }
+  thead th.num,tbody td.num{text-align:right;font-variant-numeric:tabular-nums}
+  tbody td{padding:12px 16px;border-bottom:1px solid var(--border)}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  .cli-name{font-weight:700}
+  .var{display:inline-flex;align-items:center;gap:4px;font-weight:800;font-variant-numeric:tabular-nums}
+  .var.up{color:var(--green)}
+  .var.down{color:var(--red)}
+
+  .lost{
+    margin-top:16px;background:var(--red-bg);border:1px solid rgba(255,107,122,.28);
+    border-radius:14px;padding:16px 18px;
+  }
+  .lost h4{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .lost-list{display:flex;flex-wrap:wrap;gap:10px}
+  .lost-chip{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:8px 12px;font-size:13px;display:flex;align-items:center;gap:8px;
+  }
+  .lost-chip b{color:var(--txt)}
+  .lost-chip .val{color:var(--red);font-weight:800;font-variant-numeric:tabular-nums}
+
+  /* Summary strip */
+  .summary{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:6px;
+  }
+  .s-card{
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);
+  }
+  .s-card .s-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--txt3);font-weight:700;margin-bottom:6px}
+  .s-card .s-val{font-size:22px;font-weight:800;letter-spacing:-.6px}
+  .s-card .s-note{font-size:12px;color:var(--txt2);margin-top:3px}
+
+  footer{
+    margin-top:38px;padding-top:22px;border-top:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    color:var(--txt3);font-size:12.5px;
+  }
+  footer .hermes{display:flex;align-items:center;gap:8px}
+  footer .hermes b{color:var(--txt2)}
+
+  @media(max-width:820px){
+    .chart-grid{grid-template-columns:1fr}
+    .summary{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:560px){
+    .kpi-grid{grid-template-columns:1fr}
+    .kpi-metrics{grid-template-columns:1fr 1fr}
+    .top .badge{margin-left:0;order:3}
+    .chart-box{height:260px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="logo">EL</div>
+    <div>
+      <h1>Ellesse Rappresentanze — Controllo Fatturati 2026</h1>
+      <div class="sub">Agente Lelio Silipigni · Serramenti e porte-finestre · Sicilia</div>
+    </div>
+    <div class="badge"><span class="dot"></span> Dati a luglio 2026 · 7 mesi</div>
+  </header>
+
+  <!-- SOMMARIO GLOBALE -->
+  <div class="summary">
+    <div class="s-card">
+      <div class="s-lbl">Fatturato YTD totale</div>
+      <div class="s-val" id="sum-ytd"></div>
+      <div class="s-note">Cherubini + Mimetal (dati reali)</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Budget annuo totale</div>
+      <div class="s-val" id="sum-budget"></div>
+      <div class="s-note">Solo mandanti con dati · altri 6 in attesa</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">% budget raggiunto</div>
+      <div class="s-val" id="sum-pct"></div>
+      <div class="s-note">Atteso a luglio: 70%</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Proiezione fine anno</div>
+      <div class="s-val" id="sum-proj"></div>
+      <div class="s-note">Run-rate su 7 mesi</div>
+    </div>
+  </div>
+
+  <!-- KPI PER MANDANTE -->
+  <div class="sec-title">KPI per mandante</div>
+  <div class="kpi-grid" id="kpi-grid"></div>
+
+  <!-- NOTA MANDATI IN ATTESA -->
+  <div class="panel" style="margin-top:18px">
+    <div class="p-sub" style="margin-bottom:12px">
+      I mandati in attesa verranno popolati appena disponibili budget e fatturati.
+      Al momento sono valorizzati solo Cherubini e il canale CH-Mimetal.
+    </div>
+    <div class="lost-list" id="mandati-list"></div>
+  </div>
+
+  <!-- GRAFICI FATTURATO MENSILE -->
+  <div class="sec-title">Andamento mensile vs budget</div>
+  <div class="chart-grid">
+    <div class="panel">
+      <h3>Cherubini — Fatturato mensile</h3>
+      <div class="p-sub">Barre = fatturato · Linea = budget mensilizzato (56.000 €)</div>
+      <div class="chart-box"><canvas id="chCher"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3>CH-Mimetal — Fatturato mensile</h3>
+      <div class="p-sub">Barre = fatturato · Linea = budget mensilizzato (10.000 €)</div>
+      <div class="chart-box"><canvas id="chMim"></canvas></div>
+    </div>
+  </div>
+
+  <!-- GRAFICI CLIENTI -->
+  <div class="sec-title">Composizione clienti</div>
+  <div class="chart-grid">
+    <div class="panel">
+      <h3>Top 10 clienti Cherubini 2026</h3>
+      <div class="p-sub">Verde = in crescita vs 2025 · Rosso = in calo</div>
+      <div class="chart-box tall"><canvas id="chTop"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3>Clienti CH-Mimetal (mar–lug)</h3>
+      <div class="p-sub">Ripartizione fatturato per cliente</div>
+      <div class="chart-box tall"><canvas id="chMimCli"></canvas></div>
+    </div>
+  </div>
+
+  <!-- TABELLA CLIENTI CHERUBINI -->
+  <div class="sec-title">Dettaglio clienti Cherubini · 2025 vs 2026</div>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th class="num">2025</th>
+            <th class="num">2026</th>
+            <th class="num">Var %</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-cher"></tbody>
+        <tfoot>
+          <tr>
+            <td style="font-weight:800;padding:14px 16px;border-top:2px solid var(--border)">TOTALE CHERUBINI</td>
+            <td class="num" style="font-weight:800;padding:14px 16px;border-top:2px solid var(--border)">€ 287.300</td>
+            <td class="num" style="font-weight:800;padding:14px 16px;border-top:2px solid var(--border)">€ 280.665</td>
+            <td class="num" style="padding:14px 16px;border-top:2px solid var(--border)"><span class="var down">▼ -2,3%</span></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="lost">
+      <h4>⚠ Clienti persi — attivi nel 2025, zero nel 2026</h4>
+      <div class="lost-list" id="lost-list"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Dati aggiornati a <b style="color:var(--txt2)">luglio 2026</b> · Fatturato consolidato 7 mesi</div>
+    <div class="hermes">Dashboard gestita da <b>Hermes</b> · Nous Research</div>
+  </footer>
+
+</div>
+
+<script>
+/* ---------- FORMATTAZIONE ITALIANA ---------- */
+const nf0 = new Intl.NumberFormat('it-IT',{maximumFractionDigits:0});
+const nf1 = new Intl.NumberFormat('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1});
+const eur = v => '€ ' + nf0.format(Math.round(v));
+const pct = (v,d=0) => (d? nf1.format(v): nf0.format(Math.round(v))) + '%';
+
+/* ---------- DATI ---------- */
+const MESI = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+
+const cher = {
+  nome:'Cherubini', budget:560000, mens:56000, mesiAttivi:7,
+  fatt:[20335,44943,48816,29613,73611,32611,30687,0,0,0,0,0],
+  ytd:280616, atteso:392000, proiezione:481000
+};
+const mim = {
+  nome:'CH-Mimetal (canale)', budget:100000, mens:10000, mesiAttivi:7,
+  fatt:[3601,7354,4276,7688,1302,5526,9048,0,0,0,0,0],
+  ytd:38795, atteso:70000, proiezione:66500
+};
+
+/* Mandati ufficiali senza dati (in attesa di budget e fatturati) */
+const mandatiAttesa = [
+  'Biemme Finestre','Internorm','Ditec','Novoferm',
+  'Ferrero Legno','Gerflor','Roto Finestre Tetti'
+];
+
+const topCher = [
+  {n:'TRISCELE SRL',v:71376,d:30},{n:'DELTA TIM',v:44382,d:-6},
+  {n:'BCP CORSO MASSIMO',v:27389,d:-22},{n:'MGF TENDE',v:22157,d:561},
+  {n:'TENDASUD SRL',v:22064,d:70},{n:'ISOTEKNO',v:19857,d:-6},
+  {n:'GUERCIO',v:12290,d:-18},{n:'AREA SRL',v:6903,d:1164},
+  {n:'COMAS',v:6628,d:-58},{n:'TECNOTENDA',v:6420,d:-20}
+];
+
+const lostCher = [
+  {n:'Home Arredamenti',v:3261},{n:'Novara C.',v:2793},
+  {n:'Thermo Infissi',v:2458},{n:'Cibiesse',v:1826},
+  {n:'Quadra Design',v:1668}
+];
+
+const topMim = [
+  {n:'SILIPIGNI (diretto)',v:27877},{n:'GUAJANA FERRAMENTA',v:6499},
+  {n:'SILPLAST',v:4580},{n:'ISOTEKNO',v:3076},{n:'MG ALLUMINIO',v:2306},
+  {n:'MIRA',v:1798},{n:'SIAL',v:1746},{n:'C.M.P.',v:1726}
+];
+
+/* ---------- KPI CARDS ---------- */
+function semaphore(scostPct){
+  // scostPct negativo = sotto atteso
+  if(scostPct >= -10) return 'green';
+  if(scostPct >= -30) return 'yellow';
+  return 'red';
+}
+function projClass(projPct){
+  if(projPct >= 90) return 'green';
+  if(projPct >= 75) return 'yellow';
+  return 'red';
+}
+
+function buildKpi(m){
+  const pctBudget = m.ytd / m.budget * 100;
+  const scostAbs = m.ytd - m.atteso;
+  const scostPct = (m.ytd - m.atteso) / m.atteso * 100;
+  const projPct = m.proiezione / m.budget * 100;
+  const semScost = semaphore(scostPct);
+  const semProj  = projClass(projPct);
+  const arrow = scostAbs>=0 ? '▲' : '▼';
+
+  return `
+  <div class="kpi-card">
+    <div class="kpi-head">
+      <div>
+        <div class="kpi-mandante">Mandante</div>
+        <div class="kpi-name">${m.nome}</div>
+      </div>
+      <span class="pill ${semScost}">${arrow} ${pct(Math.abs(scostPct),0)} vs atteso</span>
+    </div>
+
+    <div class="kpi-main">${eur(m.ytd)}<small>YTD 7 mesi</small></div>
+    <div class="kpi-sub">Budget annuo ${eur(m.budget)} · mensilizzato ${eur(m.mens)}</div>
+
+    <div class="progress"><span data-w="${pctBudget.toFixed(1)}"></span></div>
+    <div class="progress-lbl"><span>Budget raggiunto</span><b>${pct(pctBudget,1)}</b></div>
+
+    <div class="kpi-metrics">
+      <div class="metric">
+        <div class="m-lbl">Atteso a luglio</div>
+        <div class="m-val">${eur(m.atteso)}</div>
+        <div class="m-note">${m.mesiAttivi} mesi di budget</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Scostamento</div>
+        <div class="m-val" style="color:var(--${semScost})">${scostAbs>=0?'+':'−'} ${eur(Math.abs(scostAbs))}</div>
+        <div class="m-note">${pct(scostPct,0)} vs atteso</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Proiezione fine anno</div>
+        <div class="m-val" style="color:var(--${semProj})">${eur(m.proiezione)}</div>
+        <div class="m-note">run-rate su 7 mesi</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">% budget proiettata</div>
+        <div class="m-val" style="color:var(--${semProj})">${pct(projPct,0)}</div>
+        <div class="m-note">del budget annuo</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildKpiVuota(nome){
+  return `
+  <div class="kpi-card pending">
+    <div class="kpi-head">
+      <div>
+        <div class="kpi-mandante">Mandante</div>
+        <div class="kpi-name">${nome}</div>
+      </div>
+      <span class="pill muted">In attesa dati</span>
+    </div>
+
+    <div class="kpi-main">—<small>YTD 7 mesi</small></div>
+    <div class="kpi-sub">Budget e fatturato da inserire</div>
+
+    <div class="progress"><span data-w="0"></span></div>
+    <div class="progress-lbl"><span>Budget raggiunto</span><b>—</b></div>
+
+    <div class="kpi-metrics">
+      <div class="metric">
+        <div class="m-lbl">Atteso a luglio</div>
+        <div class="m-val">—</div>
+        <div class="m-note">da definire</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Scostamento</div>
+        <div class="m-val">—</div>
+        <div class="m-note">da definire</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Proiezione fine anno</div>
+        <div class="m-val">—</div>
+        <div class="m-note">da definire</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">% budget proiettata</div>
+        <div class="m-val">—</div>
+        <div class="m-note">da definire</div>
+      </div>
+    </div>
+
+    <div class="kpi-pending-note">Budget e fatturato da inserire</div>
+  </div>`;
+}
+
+document.getElementById('kpi-grid').innerHTML =
+  buildKpi(cher) + buildKpi(mim) + mandatiAttesa.map(buildKpiVuota).join('');
+
+/* ---------- ELENCO MANDATI UFFICIALI (chip) ---------- */
+const mandatiUfficiali = [
+  'Biemme Finestre','Internorm','Ditec','Novoferm',
+  'Ferrero Legno','Gerflor','Cherubini','Roto Finestre Tetti'
+];
+const conDati = ['Cherubini'];
+document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
+  const attivo = conDati.includes(n);
+  const stato = attivo ? 'dati reali' : 'in attesa';
+  return `<div class="lost-chip" style="${attivo?'':'opacity:.7'}"><b>${n}</b><span class="val" style="color:var(--${attivo?'green':'txt3'})">${stato}</span></div>`;
+}).join('');
+
+/* ---------- SOMMARIO ---------- */
+const totYtd = cher.ytd + mim.ytd;
+const totBudget = cher.budget + mim.budget;
+const totProj = cher.proiezione + mim.proiezione;
+document.getElementById('sum-ytd').textContent = eur(totYtd);
+document.getElementById('sum-budget').textContent = eur(totBudget);
+document.getElementById('sum-pct').textContent = pct(totYtd/totBudget*100,1);
+document.getElementById('sum-proj').textContent = eur(totProj);
+
+/* ---------- TABELLA CLIENTI CHERUBINI ---------- */
+function stima2025(v,d){ return d===0? v : v / (1 + d/100); }
+const tb = document.getElementById('tbody-cher');
+tb.innerHTML = topCher.map(c=>{
+  const v25 = Math.round(stima2025(c.v,c.d));
+  const up = c.d>=0;
+  return `<tr>
+    <td class="cli-name">${c.n}</td>
+    <td class="num">${eur(v25)}</td>
+    <td class="num">${eur(c.v)}</td>
+    <td class="num"><span class="var ${up?'up':'down'}">${up?'▲':'▼'} ${c.d>=0?'+':''}${nf0.format(c.d)}%</span></td>
+  </tr>`;
+}).join('');
+
+/* ---------- CLIENTI PERSI ---------- */
+document.getElementById('lost-list').innerHTML = lostCher.map(c=>
+  `<div class="lost-chip"><b>${c.n}</b><span class="val">${eur(c.v)}</span></div>`
+).join('') + `<div class="lost-chip" style="opacity:.75">…e altri minori</div>`;
+
+/* ---------- PROGRESS BAR ANIMATE ---------- */
+window.addEventListener('load',()=>{
+  requestAnimationFrame(()=>{
+    document.querySelectorAll('.progress > span').forEach(s=>{
+      s.style.width = Math.min(100, parseFloat(s.dataset.w)) + '%';
+    });
+  });
+});
+
+/* ---------- CHART.JS ---------- */
+Chart.defaults.color = '#9aa6bf';
+Chart.defaults.font.family = "'Inter',system-ui,sans-serif";
+Chart.defaults.font.size = 12;
+
+const GRID = 'rgba(255,255,255,.06)';
+const eurTick = v => '€ ' + nf0.format(v);
+
+function monthlyChart(canvasId, m, color){
+  const attivi = m.fatt.slice(0,7);
+  const labels = MESI.slice(0,7);
+  new Chart(document.getElementById(canvasId),{
+    data:{
+      labels,
+      datasets:[
+        {
+          type:'bar', label:'Fatturato',
+          data:attivi,
+          backgroundColor:attivi.map(v=> v>=m.mens ? 'rgba(61,220,151,.85)' : color),
+          borderRadius:8, borderSkipped:false, maxBarThickness:44,
+          order:2
+        },
+        {
+          type:'line', label:'Budget mensilizzato',
+          data:labels.map(()=>m.mens),
+          borderColor:'#f6c453', borderWidth:2, borderDash:[6,5],
+          pointRadius:0, tension:0, fill:false, order:1
+        }
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{labels:{usePointStyle:true,boxWidth:8,padding:16}},
+        tooltip:{
+          backgroundColor:'#151c2c', borderColor:'#232c40', borderWidth:1,
+          padding:12, cornerRadius:10, titleColor:'#e8edf7',
+          callbacks:{ label:ctx=> ctx.dataset.label + ': ' + eur(ctx.parsed.y) }
+        }
+      },
+      scales:{
+        x:{grid:{display:false},ticks:{color:'#9aa6bf'}},
+        y:{grid:{color:GRID},ticks:{callback:eurTick},beginAtZero:true}
+      }
+    }
+  });
+}
+monthlyChart('chCher', cher, 'rgba(110,168,254,.85)');
+monthlyChart('chMim',  mim,  'rgba(139,124,255,.85)');
+
+/* Top 10 clienti Cherubini - barre orizzontali */
+new Chart(document.getElementById('chTop'),{
+  type:'bar',
+  data:{
+    labels: topCher.map(c=>c.n),
+    datasets:[{
+      label:'Fatturato 2026',
+      data: topCher.map(c=>c.v),
+      backgroundColor: topCher.map(c=> c.d>=0 ? 'rgba(61,220,151,.85)' : 'rgba(255,107,122,.8)'),
+      borderRadius:7, borderSkipped:false, maxBarThickness:26
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        backgroundColor:'#151c2c', borderColor:'#232c40', borderWidth:1,
+        padding:12, cornerRadius:10,
+        callbacks:{
+          label:ctx=>{
+            const c = topCher[ctx.dataIndex];
+            return eur(c.v) + '  (' + (c.d>=0?'+':'') + nf0.format(c.d) + '% vs 2025)';
+          }
+        }
+      }
+    },
+    scales:{
+      x:{grid:{color:GRID},ticks:{callback:eurTick},beginAtZero:true},
+      y:{grid:{display:false},ticks:{color:'#e8edf7',font:{weight:'600'}}}
+    }
+  }
+});
+
+/* Clienti Mimetal - doughnut */
+const mimColors = ['#6ea8fe','#8b7cff','#3ddc97','#f6c453','#ff6b7a','#5ad1e0','#c084fc','#94a3b8'];
+new Chart(document.getElementById('chMimCli'),{
+  type:'doughnut',
+  data:{
+    labels: topMim.map(c=>c.n),
+    datasets:[{
+      data: topMim.map(c=>c.v),
+      backgroundColor: mimColors,
+      borderColor:'#151c2c', borderWidth:3, hoverOffset:8
+    }]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    plugins:{
+      legend:{position:'right',labels:{usePointStyle:true,boxWidth:8,padding:12,font:{size:11}}},
+      tooltip:{
+        backgroundColor:'#151c2c', borderColor:'#232c40', borderWidth:1,
+        padding:12, cornerRadius:10,
+        callbacks:{
+          label:ctx=>{
+            const tot = topMim.reduce((a,c)=>a+c.v,0);
+            const p = ctx.parsed / tot * 100;
+            return ' ' + ctx.label + ': ' + eur(ctx.parsed) + ' (' + nf1.format(p) + '%)';
+          }
+        }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

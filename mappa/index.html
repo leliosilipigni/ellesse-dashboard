@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Ellesse Rappresentanze — Mappa Clienti Sicilia</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f172a;
+    --panel:#ffffff;
+    --ink:#1e293b;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --accent:#2563eb;
+    --shadow:0 10px 30px rgba(2,6,23,.12);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);
+    background:#f1f5f9;
+    display:flex;flex-direction:column;height:100vh;overflow:hidden;
+  }
+  header{
+    background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 45%,#0ea5e9 100%);
+    color:#fff;padding:14px 18px;box-shadow:0 4px 20px rgba(2,6,23,.25);z-index:1200;
+  }
+  header .title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  header h1{font-size:1.15rem;font-weight:800;margin:0;letter-spacing:-.01em;line-height:1.2}
+  header .badge{
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);
+    padding:4px 12px;border-radius:999px;font-size:.82rem;font-weight:600;white-space:nowrap;
+  }
+  header .sub{font-size:.78rem;opacity:.9;margin-top:2px;font-weight:500}
+  .main{flex:1;display:flex;min-height:0;position:relative}
+  #sidebar{
+    width:340px;max-width:88vw;background:var(--panel);border-right:1px solid var(--line);
+    display:flex;flex-direction:column;z-index:1100;box-shadow:var(--shadow);
+    transition:transform .28s ease;
+  }
+  .side-inner{padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+  .field label{display:block;font-size:.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+  .field input, .field select{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;
+    font-size:.95rem;font-family:inherit;background:#f8fafc;color:var(--ink);
+    outline:none;transition:border .15s,box-shadow .15s;
+  }
+  .field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.15);background:#fff}
+  .legend-title{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .prov-list{display:flex;flex-direction:column;gap:6px}
+  .prov-chip{
+    display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;
+    border:1px solid var(--line);cursor:pointer;background:#fff;font-size:.9rem;
+    transition:background .15s,border .15s,transform .05s;user-select:none;
+  }
+  .prov-chip:hover{background:#f8fafc}
+  .prov-chip.active{border-color:var(--accent);background:#eff6ff}
+  .prov-chip .dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(0,0,0,.06)}
+  .prov-chip .nm{flex:1;font-weight:600}
+  .prov-chip .cnt{background:#f1f5f9;color:var(--muted);font-weight:700;font-size:.78rem;
+    padding:2px 9px;border-radius:999px;min-width:26px;text-align:center}
+  .prov-chip.active .cnt{background:var(--accent);color:#fff}
+  .reset-btn{margin-top:2px;padding:9px;border:1px dashed var(--line);border-radius:12px;
+    background:#fff;color:var(--muted);font-weight:600;cursor:pointer;font-family:inherit;font-size:.86rem}
+  .reset-btn:hover{color:var(--accent);border-color:var(--accent)}
+  #map{flex:1;min-height:0;z-index:1}
+  .fab{
+    position:absolute;top:12px;left:12px;z-index:1150;display:none;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:9px 14px;font-weight:700;font-size:.85rem;box-shadow:var(--shadow);
+    cursor:pointer;color:var(--ink);align-items:center;gap:8px;font-family:inherit;
+  }
+  .pop b{font-size:1.02rem;color:#0f172a}
+  .pop .cp{color:var(--accent);font-weight:600;font-size:.82rem;margin:3px 0}
+  .pop .row{font-size:.86rem;margin:3px 0;color:#334155;line-height:1.35}
+  .pop .row a{color:var(--accent);text-decoration:none;font-weight:600}
+  .pop .note{font-size:.8rem;color:var(--muted);margin-top:5px;font-style:italic;line-height:1.35}
+  .pop .canale{display:inline-block;background:#eff6ff;color:#2563eb;font-size:.72rem;
+    font-weight:700;padding:2px 9px;border-radius:999px;text-transform:capitalize;margin-top:4px}
+  .leaflet-popup-content{margin:12px 14px}
+  .empty{color:var(--muted);font-size:.85rem;text-align:center;padding:10px}
+  @media (max-width:760px){
+    #sidebar{position:absolute;inset:0 auto 0 0;transform:translateX(-102%)}
+    #sidebar.open{transform:translateX(0)}
+    .fab{display:flex}
+    header h1{font-size:1rem}
+  }
+  .backdrop{display:none}
+  @media (max-width:760px){
+    .backdrop.show{display:block;position:absolute;inset:0;background:rgba(2,6,23,.4);z-index:1050}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1>Ellesse Rappresentanze — Mappa Clienti Sicilia</h1>
+    <span class="badge" id="totBadge">Totale clienti: 0</span>
+  </div>
+  <div class="sub">Serramenti · porte e finestre — rete clienti in tutta la Sicilia</div>
+</header>
+<div class="main">
+  <button class="fab" id="fab">☰ Filtri</button>
+  <div class="backdrop" id="backdrop"></div>
+  <aside id="sidebar">
+    <div class="side-inner">
+      <div class="field">
+        <label for="search">Cerca cliente</label>
+        <input id="search" type="search" placeholder="Nome cliente o città…" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="provSelect">Filtra per provincia</label>
+        <select id="provSelect"><option value="">Tutte le province</option></select>
+      </div>
+      <div class="legend-title">Province &amp; conteggio</div>
+      <div class="prov-list" id="provList"></div>
+      <button class="reset-btn" id="resetBtn">↺ Azzera filtri</button>
+    </div>
+  </aside>
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+const CLIENTI = [
+{
+"nome": "Cascino - Termini Imerese",
+"citta": "Termini Imerese",
+"provincia": "PA",
+"indirizzo": "Via Crisone 14",
+"canale": "rivendita",
+"telefono": "091 811 5455",
+"email": "showroompa@cascino.it",
+"note": "Showroom 1600 mq. Magazzino edilizia/termoidraulica in Via Crisone 24 (091 811 5155)",
+"lat": 37.983651,
+"lon": 13.695554
+},
+{
+"nome": "Cascino - Showroom Palermo",
+"citta": "Palermo",
+"provincia": "PA",
+"indirizzo": "Via Vittorio Alfieri 27",
+"canale": "rivendita",
+"telefono": "091 306715",
+"email": "showroom@cascino.it",
+"note": "Cascino Angelo & C. srl - 90144 PA - cell 329 0050670",
+"lat": 38.1385126,
+"lon": 13.3446815
+},
+{
+"nome": "Bruno Ceramiche",
+"citta": "Nicosia",
+"provincia": "EN",
+"indirizzo": "Via Pozzi Fiera 10",
+"canale": "rivendita",
+"telefono": "0935 647554",
+"email": "brunoceramichenicosia@gmail.com",
+"note": "Gia rivenditore Internorm. Sede operativa anche C.da Panotto",
+"lat": 37.7461251,
+"lon": 14.3914228
+},
+{
+"nome": "Raimondi Rolando",
+"citta": "Giammoro (Pace del Mela)",
+"provincia": "ME",
+"indirizzo": "Via Nazionale 437",
+"canale": "rivendita",
+"telefono": "090 9385162",
+"email": "",
+"note": "Fabbricazione porte e finestre - 98042",
+"lat": 38.2018012,
+"lon": 15.3181556
+},
+{
+"nome": "HAUS (GD Haus Srl)",
+"citta": "Tremestieri Etneo",
+"provincia": "CT",
+"indirizzo": "Via Monti Sicani 39",
+"canale": "rivendita",
+"telefono": "095 492481",
+"email": "info@gdhaus.it",
+"note": "Showroom HAUS SPACE zona Canalicchio. Vecchia sede Via Trinacria 11",
+"lat": 37.542134,
+"lon": 15.0936343
+},
+{
+"nome": "Green Habitat",
+"citta": "Tremestieri Etneo",
+"provincia": "CT",
+"indirizzo": "Corso Sicilia 9",
+"canale": "rivendita",
+"telefono": "338 5234261",
+"email": "",
+"note": "Porte e infissi - riqualificazione energetica - 95030",
+"lat": 37.5758047,
+"lon": 15.0721202
+},
+{
+"nome": "Nuova Infissi Pirillo",
+"citta": "Mazzarino",
+"provincia": "CL",
+"indirizzo": "Via Angelo Gagliano 56",
+"canale": "rivendita",
+"telefono": "0934 384111",
+"email": "",
+"note": "93013 - cell 320 8890050 (Luigi)",
+"lat": 37.3033231,
+"lon": 14.201514
+},
+{
+"nome": "Taibi Infissi",
+"citta": "Canicatti",
+"provincia": "AG",
+"indirizzo": "Contrada Casino",
+"canale": "rivendita",
+"telefono": "0922 853375",
+"email": "info@taibi-infissi.it",
+"note": "Taibi Gioachino & Figli snc - dal 1970 - 92024",
+"lat": 37.358942,
+"lon": 13.850364
+},
+{
+"nome": "Casa Dolce Casa Srl",
+"citta": "Palermo",
+"provincia": "PA",
+"indirizzo": "Via Salvatore Bono 7",
+"canale": "rivendita",
+"telefono": "091 6262144",
+"email": "casadolcecasasrl@hotmail.com",
+"note": "90143 PA - cell 335 1562648 - porte e finestre",
+"lat": 38.1421994,
+"lon": 13.350317
+},
+{
+"nome": "Edil Legno Srl",
+"citta": "Castelvetrano",
+"provincia": "TP",
+"indirizzo": "Via Campobello 75",
+"canale": "rivendita",
+"telefono": "0924 904999",
+"email": "edil.legnosrl@virgilio.it",
+"note": "91022 - gia rivenditore Internorm e Velux",
+"lat": 37.6664067,
+"lon": 12.7853957
+},
+{
+"nome": "Arredall Infissi",
+"citta": "Trapani",
+"provincia": "TP",
+"indirizzo": "Via Erice Mazara 15",
+"canale": "rivendita",
+"telefono": "0923 531554",
+"email": "arredallinfissi@gmail.com",
+"note": "91100 - showroom dal 2021 - Ivano 334 9519145 / Roberto 328 3285464",
+"lat": 37.6490994,
+"lon": 12.5953549
+},
+{
+"nome": "Gruppo Inventa",
+"citta": "Modica",
+"provincia": "RG",
+"indirizzo": "Via del Commercio 2",
+"canale": "rivendita",
+"telefono": "0932 777169",
+"email": "",
+"note": "Inventa Design srl - Zona ASI Modica-Pozzallo C.da Fargione - 97015 - dal 1986",
+"lat": 36.8589209,
+"lon": 14.7613018
+},
+{
+"nome": "Gold Group Parisi",
+"citta": "Monreale",
+"provincia": "PA",
+"indirizzo": "Via Circonvallazione 64",
+"canale": "rivendita",
+"telefono": "091 6409551",
+"email": "",
+"note": "Sas di Gioacchino Parisi - 90046 - serrature e serramenti",
+"lat": 38.0842371,
+"lon": 13.3008892
+}
+];
+
+const PROV_NOMI = {PA:"Palermo",CT:"Catania",ME:"Messina",EN:"Enna",CL:"Caltanissetta",
+  AG:"Agrigento",TP:"Trapani",RG:"Ragusa",SR:"Siracusa"};
+const PROV_COLORI = {PA:"#e11d48",CT:"#f59e0b",ME:"#8b5cf6",EN:"#10b981",CL:"#0ea5e9",
+  AG:"#ec4899",TP:"#f97316",RG:"#14b8a6",SR:"#6366f1"};
+const COLORE_DEFAULT = "#64748b";
+function colore(p){return PROV_COLORI[p]||COLORE_DEFAULT;}
+
+const map = L.map('map',{zoomControl:true}).setView([37.6,14.0],8);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+function icona(p){
+  const c = colore(p);
+  return L.divIcon({
+    className:'',
+    html:`<div style="width:26px;height:26px;border-radius:50% 50% 50% 0;background:${c};
+      transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 3px 8px rgba(2,6,23,.35)">
+      <div style="width:8px;height:8px;background:#fff;border-radius:50%;
+      position:absolute;top:7px;left:7px"></div></div>`,
+    iconSize:[26,26], iconAnchor:[13,26], popupAnchor:[0,-24]
+  });
+}
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function popupHtml(c){
+  let h = `<div class="pop"><b>${esc(c.nome)}</b>`;
+  h += `<div class="cp">${esc(c.citta)}${c.provincia?' ('+esc(c.provincia)+')':''}</div>`;
+  if(c.canale) h += `<span class="canale">${esc(c.canale)}</span>`;
+  if(c.indirizzo) h += `<div class="row">📍 ${esc(c.indirizzo)}</div>`;
+  if(c.telefono) h += `<div class="row">📞 <a href="tel:${esc(c.telefono.replace(/\s+/g,''))}">${esc(c.telefono)}</a></div>`;
+  if(c.email) h += `<div class="row">✉️ <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div>`;
+  if(c.note) h += `<div class="note">${esc(c.note)}</div>`;
+  h += `</div>`;
+  return h;
+}
+
+const cluster = L.markerClusterGroup({
+  maxClusterRadius:45, spiderfyOnMaxZoom:true, showCoverageOnHover:false
+});
+const markers = [];
+CLIENTI.forEach(c=>{
+  const m = L.marker([c.lat,c.lon],{icon:icona(c.provincia)});
+  m.bindPopup(popupHtml(c),{maxWidth:280});
+  m._cli = c;
+  markers.push(m);
+});
+map.addLayer(cluster);
+
+// conteggi per provincia
+const conteggi = {};
+CLIENTI.forEach(c=>{conteggi[c.provincia]=(conteggi[c.provincia]||0)+1;});
+document.getElementById('totBadge').textContent = 'Totale clienti: '+CLIENTI.length;
+
+// popola select + lista provincia
+const provSelect = document.getElementById('provSelect');
+const provList = document.getElementById('provList');
+const provOrd = Object.keys(conteggi).sort((a,b)=>conteggi[b]-conteggi[a]);
+provOrd.forEach(p=>{
+  const nome = PROV_NOMI[p]||p;
+  const opt = document.createElement('option');
+  opt.value=p; opt.textContent=`${nome} (${p}) — ${conteggi[p]}`;
+  provSelect.appendChild(opt);
+  const chip = document.createElement('div');
+  chip.className='prov-chip'; chip.dataset.prov=p;
+  chip.innerHTML=`<span class="dot" style="background:${colore(p)}"></span>
+    <span class="nm">${nome} <small style="color:#94a3b8">(${p})</small></span>
+    <span class="cnt">${conteggi[p]}</span>`;
+  chip.addEventListener('click',()=>{
+    filtroProv = (filtroProv===p)?"":p;
+    provSelect.value = filtroProv;
+    aggiorna();
+  });
+  provList.appendChild(chip);
+});
+
+let filtroProv = "";
+let testo = "";
+
+function aggiorna(){
+  cluster.clearLayers();
+  const t = testo.trim().toLowerCase();
+  let visibili = 0;
+  markers.forEach(m=>{
+    const c = m._cli;
+    const okProv = !filtroProv || c.provincia===filtroProv;
+    const okTxt = !t || (c.nome.toLowerCase().includes(t) || (c.citta||"").toLowerCase().includes(t));
+    if(okProv && okTxt){ cluster.addLayer(m); visibili++; }
+  });
+  document.querySelectorAll('.prov-chip').forEach(ch=>{
+    ch.classList.toggle('active', ch.dataset.prov===filtroProv);
+  });
+  document.getElementById('totBadge').textContent =
+    (filtroProv||t) ? `Visibili: ${visibili} / ${CLIENTI.length}` : `Totale clienti: ${CLIENTI.length}`;
+  if(visibili>0){
+    try{ map.fitBounds(cluster.getBounds().pad(0.2),{maxZoom:12}); }catch(e){}
+  }
+}
+
+document.getElementById('search').addEventListener('input',e=>{testo=e.target.value;aggiorna();});
+provSelect.addEventListener('change',e=>{filtroProv=e.target.value;aggiorna();});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  filtroProv="";testo="";provSelect.value="";document.getElementById('search').value="";
+  aggiorna(); map.setView([37.6,14.0],8);
+});
+
+// mobile toggle
+const sidebar=document.getElementById('sidebar');
+const backdrop=document.getElementById('backdrop');
+document.getElementById('fab').addEventListener('click',()=>{sidebar.classList.add('open');backdrop.classList.add('show');});
+backdrop.addEventListener('click',()=>{sidebar.classList.remove('open');backdrop.classList.remove('show');});
+
+aggiorna();
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ellesse Rappresentanze — Cruscotti Agente</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1200px 600px at 80% -10%,rgba(139,124,255,.18),transparent 60%),
+               radial-gradient(1000px 500px at -10% 10%,rgba(110,168,254,.14),transparent 55%),#0b0f19;
+    color:#e8edf7;padding:24px;
+  }
+  .box{max-width:560px;width:100%;text-align:center}
+  .logo{width:72px;height:72px;border-radius:20px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#6ea8fe,#8b7cff);font-weight:800;font-size:28px;color:#0b0f19;letter-spacing:-1px;
+    box-shadow:0 12px 32px -8px rgba(110,168,254,.6)}
+  h1{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:6px}
+  .sub{color:#9aa6bf;font-size:14px;margin-bottom:34px}
+  .card{display:block;text-decoration:none;color:inherit;background:linear-gradient(180deg,#151c2c,#1a2233);
+    border:1px solid #232c40;border-radius:18px;padding:22px 24px;margin-bottom:16px;text-align:left;
+    display:flex;align-items:center;gap:16px;transition:transform .18s,border-color .18s;box-shadow:0 10px 40px -12px rgba(0,0,0,.55)}
+  .card:hover{transform:translateY(-3px);border-color:#6ea8fe}
+  .ico{font-size:30px;flex:none}
+  .t{font-weight:800;font-size:17px}
+  .d{color:#9aa6bf;font-size:13px;margin-top:2px}
+  .arr{margin-left:auto;color:#6ea8fe;font-weight:800;font-size:20px}
+  footer{margin-top:30px;color:#6b7690;font-size:12px}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo">EL</div>
+  <h1>Ellesse Rappresentanze</h1>
+  <div class="sub">Agente Lelio Silipigni · Cruscotti di lavoro</div>
+
+  <a class="card" href="./fatturati/">
+    <div class="ico">📊</div>
+    <div><div class="t">Controllo Fatturati 2026</div><div class="d">KPI, budget vs fatturato, scostamenti per mandante</div></div>
+    <div class="arr">→</div>
+  </a>
+
+  <a class="card" href="./mappa/">
+    <div class="ico">🗺️</div>
+    <div><div class="t">Mappa Clienti Sicilia</div><div class="d">Clienti geolocalizzati per provincia, contatti rapidi</div></div>
+    <div class="arr">→</div>
+  </a>
+
+  <footer>Dashboard gestite da Hermes · Nous Research</footer>
+</div>
+</body>
+</html>
