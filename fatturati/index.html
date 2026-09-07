@@ -209,7 +209,7 @@
     <div class="s-card">
       <div class="s-lbl">Fatturato YTD totale</div>
       <div class="s-val" id="sum-ytd"></div>
-      <div class="s-note">Cherubini + Mimetal (dati reali)</div>
+      <div class="s-note">Cherubini + Mimetal + Biemme (dati reali)</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Budget annuo totale</div>
@@ -219,7 +219,7 @@
     <div class="s-card">
       <div class="s-lbl">% budget raggiunto</div>
       <div class="s-val" id="sum-pct"></div>
-      <div class="s-note">Atteso a luglio: 70%</div>
+      <div class="s-note">% solo sui mandanti con budget (Cher. + Mim.)</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Proiezione fine anno</div>
@@ -575,9 +575,11 @@ document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
 const totYtd = cher.ytd + mim.ytd + bien.ytd;
 const totBudget = cher.budget + mim.budget;
 const totProj = cher.proiezione + mim.proiezione + bien.proiezione;
+/* % budget calcolata SOLO sui mandanti con budget (Cherubini+Mimetal) */
+const ytdConBudget = cher.ytd + mim.ytd;
 document.getElementById('sum-ytd').textContent = eur(totYtd);
 document.getElementById('sum-budget').textContent = eur(totBudget);
-document.getElementById('sum-pct').textContent = pct(totYtd/totBudget*100,1);
+document.getElementById('sum-pct').textContent = pct(ytdConBudget/totBudget*100,1);
 document.getElementById('sum-proj').textContent = eur(totProj);
 
 /* ---------- TABELLA CLIENTI CHERUBINI ---------- */
