@@ -209,7 +209,7 @@
     <div class="s-card">
       <div class="s-lbl">Fatturato YTD totale</div>
       <div class="s-val" id="sum-ytd"></div>
-      <div class="s-note">Cherubini + Mimetal + Biemme (dati reali)</div>
+      <div class="s-note">Cherubini + Mimetal + Biemme + Ferrero (dati reali)</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Budget annuo totale</div>
@@ -219,7 +219,7 @@
     <div class="s-card">
       <div class="s-lbl">% budget raggiunto</div>
       <div class="s-val" id="sum-pct"></div>
-      <div class="s-note">% solo sui mandanti con budget (Cher. + Mim.)</div>
+      <div class="s-note">% solo sui mandanti con budget (Cher. + Mim. + Ferrero)</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Proiezione fine anno</div>
@@ -278,6 +278,15 @@
       Fatturato totale <b style="color:var(--txt)">€ 1.676.262</b> · Concentrazione: C.& G. + Di Via = 45,7% del totale
     </div>
     <div class="chart-box" style="height:420px"><canvas id="chBiemme"></canvas></div>
+  </div>
+
+  <!-- TOP 10 CLIENTI FERRERO LEGNO -->
+  <div class="sec-title">Ferrero Legno — Top 10 clienti (agosto 2026)</div>
+  <div class="panel">
+    <div class="p-sub" style="margin-bottom:12px">
+      Fatturato mese <b style="color:var(--txt)">€ 329.271</b> · +37,8% vs ago 2025 · Stylcasa da sola = 17,8%
+    </div>
+    <div class="chart-box" style="height:380px"><canvas id="chFerrero"></canvas></div>
   </div>
 
   <!-- TABELLA CLIENTI BIMME -->
@@ -367,11 +376,17 @@ const bien = {
   nome:'Biemme Finestre', budget:null, mens:null, mesiAttivi:7,
   ytd:1676262, atteso:null, proiezione:2873592
 };
+/* Ferrero Legno — dati reali report agosto 2026 (fatturato mensile) */
+const fer = {
+  nome:'Ferrero Legno', budget:402497.18, mens:402497.18, mesiAttivi:1,
+  fatt:[329271.41,0,0,0,0,0,0,0,0,0,0,0],
+  ytd:329271.41, atteso:402497.18, proiezione:null
+};
 
 /* Mandati ufficiali senza dati (in attesa di budget e fatturati) */
 const mandatiAttesa = [
   'Internorm','Ditec','Novoferm',
-  'Ferrero Legno','Gerflor','Roto Finestre Tetti'
+  'Gerflor','Roto Finestre Tetti'
 ];
 
 const topCher = [
@@ -392,6 +407,15 @@ const topBiemme = [
   {n:'LIVIA INFISSI LG SRL',v:33725},{n:'PRONTA PORTA SNC',v:28652},
   {n:'APERTURE CONTEMPORANEE S.R.L.',v:27307},{n:'SOLUTION S.R.L.',v:27048},
   {n:'ISOTEKNO S.R.L.',v:24544}
+];
+
+/* Ferrero Legno — top 10 clienti fatturato agosto 2026 */
+const topFerrero = [
+  {n:'STYLCASA CENTER SRL',v:58667},{n:'LO RE SRL',v:26709},
+  {n:'CIA PIRRELLO',v:24534},{n:'TECO SISTEMI CASA SRL',v:21692},
+  {n:'EUREKA SRL',v:21649},{n:'CAPPELLOLINEAINTERNI SAS',v:20342},
+  {n:'CASA DOLCE CASA SRL',v:19648},{n:'CASA ARREDO LO PRESTI SRL',v:19334},
+  {n:'DOMUS AREA SRLS',v:17658},{n:'V.F. VALENTI FEDERICA SRLS',v:15638}
 ];
 
 const lostCher = [
@@ -556,15 +580,62 @@ function buildKpiBiemme(){
   </div>`;
 }
 
+function buildKpiFerrero(){
+  const pctBudget = fer.ytd / fer.budget * 100;
+  const scostAbs = fer.ytd - fer.atteso;
+  const scostPct = (fer.ytd - fer.atteso) / fer.atteso * 100;
+  const semScost = semaphore(scostPct);
+  const arrow = scostAbs>=0 ? '▲' : '▼';
+  return `
+  <div class="kpi-card">
+    <div class="kpi-head">
+      <div>
+        <div class="kpi-mandante">Mandante</div>
+        <div class="kpi-name">Ferrero Legno</div>
+      </div>
+      <span class="pill ${semScost}">${arrow} ${pct(Math.abs(scostPct),0)} vs budget ago</span>
+    </div>
+
+    <div class="kpi-main">${eur(fer.ytd)}<small>Agosto 2026 · 1 mese</small></div>
+    <div class="kpi-sub">Budget agosto ${eur(fer.budget)} · report AG_00029</div>
+
+    <div class="progress"><span data-w="${pctBudget.toFixed(1)}"></span></div>
+    <div class="progress-lbl"><span>Budget raggiunto</span><b>${pct(pctBudget,1)}</b></div>
+
+    <div class="kpi-metrics">
+      <div class="metric">
+        <div class="m-lbl">Scostamento</div>
+        <div class="m-val" style="color:var(--${semScost})">${scostAbs>=0?'+':'−'} ${eur(Math.abs(scostAbs))}</div>
+        <div class="m-note">${pct(scostPct,0)} vs budget</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Vs agosto 2025</div>
+        <div class="m-val" style="color:var(--green)">+37,8%</div>
+        <div class="m-note">€238.964 → €329.271</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Top cliente</div>
+        <div class="m-val">17,8%</div>
+        <div class="m-note">Stylcasa Center del totale</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Clienti attività</div>
+        <div class="m-val">28</div>
+        <div class="m-note">Enna a zero ❌</div>
+      </div>
+    </div>
+  </div>`;
+}
+
 document.getElementById('kpi-grid').innerHTML =
-  buildKpi(cher) + buildKpi(mim) + buildKpiBiemme() + mandatiAttesa.map(buildKpiVuota).join('');
+  buildKpi(cher) + buildKpi(mim) + buildKpiBiemme() + buildKpiFerrero() + mandatiAttesa.map(buildKpiVuota).join('');
 
 /* ---------- ELENCO MANDATI UFFICIALI (chip) ---------- */
 const mandatiUfficiali = [
   'Biemme Finestre','Internorm','Ditec','Novoferm',
   'Ferrero Legno','Gerflor','Cherubini','Roto Finestre Tetti'
 ];
-const conDati = ['Cherubini','Biemme Finestre'];
+const conDati = ['Cherubini','Biemme Finestre','Ferrero Legno'];
 document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
   const attivo = conDati.includes(n);
   const stato = attivo ? 'dati reali' : 'in attesa';
@@ -572,11 +643,11 @@ document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
 }).join('');
 
 /* ---------- SOMMARIO ---------- */
-const totYtd = cher.ytd + mim.ytd + bien.ytd;
-const totBudget = cher.budget + mim.budget;
+const totYtd = cher.ytd + mim.ytd + bien.ytd + fer.ytd;
+const totBudget = cher.budget + mim.budget + fer.budget;
 const totProj = cher.proiezione + mim.proiezione + bien.proiezione;
-/* % budget calcolata SOLO sui mandanti con budget (Cherubini+Mimetal) */
-const ytdConBudget = cher.ytd + mim.ytd;
+/* % budget calcolata SOLO sui mandanti con budget (Cherubini+Mimetal+Ferrero) */
+const ytdConBudget = cher.ytd + mim.ytd + fer.ytd;
 document.getElementById('sum-ytd').textContent = eur(totYtd);
 document.getElementById('sum-budget').textContent = eur(totBudget);
 document.getElementById('sum-pct').textContent = pct(ytdConBudget/totBudget*100,1);
@@ -766,6 +837,40 @@ new Chart(document.getElementById('chBiemme'),{
     scales:{
       x:{grid:{color:GRID},ticks:{callback:eurTick},beginAtZero:true},
       y:{grid:{display:false},ticks:{color:'#e8edf7',font:{weight:'600',size:10}}}
+    }
+  }
+});
+
+/* Top 10 clienti Ferrero Legno - barre orizzontali */
+new Chart(document.getElementById('chFerrero'),{
+  type:'bar',
+  data:{
+    labels: topFerrero.map(c=>c.n),
+    datasets:[{
+      label:'Fatturato agosto 2026',
+      data: topFerrero.map(c=>c.v),
+      backgroundColor: 'rgba(61,220,151,.85)',
+      borderRadius:7, borderSkipped:false, maxBarThickness:26
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        backgroundColor:'#151c2c', borderColor:'#232c40', borderWidth:1,
+        padding:12, cornerRadius:10,
+        callbacks:{
+          label:ctx=>{
+            const c = topFerrero[ctx.dataIndex];
+            return eur(c.v) + '  (' + nf1.format(c.v / 329271.41 * 100) + '% del mese)';
+          }
+        }
+      }
+    },
+    scales:{
+      x:{grid:{color:GRID},ticks:{callback:eurTick},beginAtZero:true},
+      y:{grid:{display:false},ticks:{color:'#e8edf7',font:{weight:'600',size:11}}}
     }
   }
 });
