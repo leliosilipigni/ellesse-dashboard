@@ -236,7 +236,7 @@
   <div class="panel" style="margin-top:18px">
     <div class="p-sub" style="margin-bottom:12px">
       I mandati in attesa verranno popolati appena disponibili budget e fatturati.
-      Al momento sono valorizzati solo Cherubini e il canale CH-Mimetal.
+      Al momento sono valorizzati Cherubini, CH-Mimetal e Biemme Finestre.
     </div>
     <div class="lost-list" id="mandati-list"></div>
   </div>
@@ -268,6 +268,39 @@
       <h3>Clienti CH-Mimetal (mar–lug)</h3>
       <div class="p-sub">Ripartizione fatturato per cliente</div>
       <div class="chart-box tall"><canvas id="chMimCli"></canvas></div>
+    </div>
+  </div>
+
+  <!-- TOP 15 CLIENTI BIMME -->
+  <div class="sec-title">Biemme Finestre — Top 15 clienti (gen–lug 2026)</div>
+  <div class="panel">
+    <div class="p-sub" style="margin-bottom:12px">
+      Fatturato totale <b style="color:var(--txt)">€ 1.676.262</b> · Concentrazione: C.& G. + Di Via = 45,7% del totale
+    </div>
+    <div class="chart-box" style="height:420px"><canvas id="chBiemme"></canvas></div>
+  </div>
+
+  <!-- TABELLA CLIENTI BIMME -->
+  <div class="sec-title">Dettaglio clienti Biemme · Gen–Lug 2026</div>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th class="num">Venduto</th>
+            <th class="num">% su totale</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-biemme"></tbody>
+        <tfoot>
+          <tr>
+            <td style="font-weight:800;padding:14px 16px;border-top:2px solid var(--border)">TOTALE BIMME (59 clienti)</td>
+            <td class="num" style="font-weight:800;padding:14px 16px;border-top:2px solid var(--border)">€ 1.676.262</td>
+            <td class="num" style="padding:14px 16px;border-top:2px solid var(--border)">100%</td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   </div>
 
@@ -329,10 +362,15 @@ const mim = {
   fatt:[3601,7354,4276,7688,1302,5526,9048,0,0,0,0,0],
   ytd:38795, atteso:70000, proiezione:66500
 };
+/* Biemme Finestre — dati reali dall'export gen-lug 2026 (solo YTD, budget non disponibile) */
+const bien = {
+  nome:'Biemme Finestre', budget:null, mens:null, mesiAttivi:7,
+  ytd:1676262, atteso:null, proiezione:2873592
+};
 
 /* Mandati ufficiali senza dati (in attesa di budget e fatturati) */
 const mandatiAttesa = [
-  'Biemme Finestre','Internorm','Ditec','Novoferm',
+  'Internorm','Ditec','Novoferm',
   'Ferrero Legno','Gerflor','Roto Finestre Tetti'
 ];
 
@@ -342,6 +380,18 @@ const topCher = [
   {n:'TENDASUD SRL',v:22064,d:70},{n:'ISOTEKNO',v:19857,d:-6},
   {n:'GUERCIO',v:12290,d:-18},{n:'AREA SRL',v:6903,d:1164},
   {n:'COMAS',v:6628,d:-58},{n:'TECNOTENDA',v:6420,d:-20}
+];
+
+/* Biemme — top 15 clienti dall'export gen-lug 2026 (senza confronto 2025) */
+const topBiemme = [
+  {n:'C.& G. SERRAMENTI SRL',v:469091},{n:'DI VIA SRL',v:296261},
+  {n:'CECAL SRL',v:89944},{n:'3Z SERRAMENTI SRLS',v:83757},
+  {n:'CASA CLIMA S.R.L.',v:58192},{n:'GRUPPO AERRE SOC.COOP.',v:56659},
+  {n:'FRATELLI ALESSI SRL',v:44198},{n:'LUICAN GROUP SRL',v:44000},
+  {n:'TECNO INFISSI SRL',v:38088},{n:'SILIPIGNI LETTERIO',v:37298},
+  {n:'LIVIA INFISSI LG SRL',v:33725},{n:'PRONTA PORTA SNC',v:28652},
+  {n:'APERTURE CONTEMPORANEE S.R.L.',v:27307},{n:'SOLUTION S.R.L.',v:27048},
+  {n:'ISOTEKNO S.R.L.',v:24544}
 ];
 
 const lostCher = [
@@ -463,15 +513,58 @@ function buildKpiVuota(nome){
   </div>`;
 }
 
+function buildKpiBiemme(){
+  const projPct = (bien.proiezione - bien.ytd) / bien.ytd * 100;
+  return `
+  <div class="kpi-card">
+    <div class="kpi-head">
+      <div>
+        <div class="kpi-mandante">Mandante</div>
+        <div class="kpi-name">Biemme Finestre</div>
+      </div>
+      <span class="pill green">▲ dati reali</span>
+    </div>
+
+    <div class="kpi-main">${eur(bien.ytd)}<small>YTD 7 mesi</small></div>
+    <div class="kpi-sub">Export venduto gen–lug 2026 · budget non disponibile</div>
+
+    <div class="progress"><span data-w="100"></span></div>
+    <div class="progress-lbl"><span>Dato consolidato</span><b>100%</b></div>
+
+    <div class="kpi-metrics">
+      <div class="metric">
+        <div class="m-lbl">Proiezione fine anno</div>
+        <div class="m-val" style="color:var(--green)">${eur(bien.proiezione)}</div>
+        <div class="m-note">run-rate su 7 mesi</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Scostamento proiezione</div>
+        <div class="m-val" style="color:var(--green)">+ ${eur(bien.proiezione - bien.ytd)}</div>
+        <div class="m-note">${pct(projPct,0)} da qui a fine anno</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Provvigioni stimate</div>
+        <div class="m-val" style="color:var(--yellow)">${eur(1676262 * 0.06)}</div>
+        <div class="m-note">al 6% · da verificare col cedolino</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Top 2 clienti</div>
+        <div class="m-val">45,7%</div>
+        <div class="m-note">C.&G. + Di Via del totale</div>
+      </div>
+    </div>
+  </div>`;
+}
+
 document.getElementById('kpi-grid').innerHTML =
-  buildKpi(cher) + buildKpi(mim) + mandatiAttesa.map(buildKpiVuota).join('');
+  buildKpi(cher) + buildKpi(mim) + buildKpiBiemme() + mandatiAttesa.map(buildKpiVuota).join('');
 
 /* ---------- ELENCO MANDATI UFFICIALI (chip) ---------- */
 const mandatiUfficiali = [
   'Biemme Finestre','Internorm','Ditec','Novoferm',
   'Ferrero Legno','Gerflor','Cherubini','Roto Finestre Tetti'
 ];
-const conDati = ['Cherubini'];
+const conDati = ['Cherubini','Biemme Finestre'];
 document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
   const attivo = conDati.includes(n);
   const stato = attivo ? 'dati reali' : 'in attesa';
@@ -479,9 +572,9 @@ document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
 }).join('');
 
 /* ---------- SOMMARIO ---------- */
-const totYtd = cher.ytd + mim.ytd;
+const totYtd = cher.ytd + mim.ytd + bien.ytd;
 const totBudget = cher.budget + mim.budget;
-const totProj = cher.proiezione + mim.proiezione;
+const totProj = cher.proiezione + mim.proiezione + bien.proiezione;
 document.getElementById('sum-ytd').textContent = eur(totYtd);
 document.getElementById('sum-budget').textContent = eur(totBudget);
 document.getElementById('sum-pct').textContent = pct(totYtd/totBudget*100,1);
@@ -498,6 +591,17 @@ tb.innerHTML = topCher.map(c=>{
     <td class="num">${eur(v25)}</td>
     <td class="num">${eur(c.v)}</td>
     <td class="num"><span class="var ${up?'up':'down'}">${up?'▲':'▼'} ${c.d>=0?'+':''}${nf0.format(c.d)}%</span></td>
+  </tr>`;
+}).join('');
+
+/* ---------- TABELLA CLIENTI BIMME ---------- */
+const tbB = document.getElementById('tbody-biemme');
+tbB.innerHTML = topBiemme.map(c=>{
+  const pc = c.v / 1676262 * 100;
+  return `<tr>
+    <td class="cli-name">${c.n}</td>
+    <td class="num">${eur(c.v)}</td>
+    <td class="num">${nf1.format(pc)}%</td>
   </tr>`;
 }).join('');
 
@@ -626,6 +730,40 @@ new Chart(document.getElementById('chMimCli'),{
           }
         }
       }
+    }
+  }
+});
+
+/* Top 15 clienti Biemme - barre orizzontali */
+new Chart(document.getElementById('chBiemme'),{
+  type:'bar',
+  data:{
+    labels: topBiemme.map(c=>c.n),
+    datasets:[{
+      label:'Venduto gen–lug 2026',
+      data: topBiemme.map(c=>c.v),
+      backgroundColor: 'rgba(110,168,254,.85)',
+      borderRadius:7, borderSkipped:false, maxBarThickness:24
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        backgroundColor:'#151c2c', borderColor:'#232c40', borderWidth:1,
+        padding:12, cornerRadius:10,
+        callbacks:{
+          label:ctx=>{
+            const c = topBiemme[ctx.dataIndex];
+            return eur(c.v) + '  (' + nf1.format(c.v / 1676262 * 100) + '% del totale)';
+          }
+        }
+      }
+    },
+    scales:{
+      x:{grid:{color:GRID},ticks:{callback:eurTick},beginAtZero:true},
+      y:{grid:{display:false},ticks:{color:'#e8edf7',font:{weight:'600',size:10}}}
     }
   }
 });
