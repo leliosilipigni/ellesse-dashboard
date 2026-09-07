@@ -209,7 +209,7 @@
     <div class="s-card">
       <div class="s-lbl">Fatturato YTD totale</div>
       <div class="s-val" id="sum-ytd"></div>
-      <div class="s-note">Cherubini + Mimetal + Biemme + Ferrero + Gerflor (dati reali)</div>
+      <div class="s-note">Cherubini + Mimetal + Biemme + Ferrero + Gerflor + Internorm</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Budget annuo totale</div>
@@ -236,7 +236,7 @@
   <div class="panel" style="margin-top:18px">
     <div class="p-sub" style="margin-bottom:12px">
       I mandati in attesa verranno popolati appena disponibili budget e fatturati.
-      Valorizzati: Cherubini, CH-Mimetal, Biemme, Ferrero Legno e Gerflor.
+      Valorizzati: Cherubini, CH-Mimetal, Biemme, Ferrero, Gerflor e Internorm.
     </div>
     <div class="lost-list" id="mandati-list"></div>
   </div>
@@ -296,6 +296,15 @@
       Venduto YTD <b style="color:var(--txt)">€ 781.284</b> · +2,6% vs 2025 · Sirimed da sola = 16,9%
     </div>
     <div class="chart-box" style="height:380px"><canvas id="chGerflor"></canvas></div>
+  </div>
+
+  <!-- TOP 10 CLIENTI INTERNORM -->
+  <div class="sec-title">Internorm — Top 10 clienti (YTD settimana 31)</div>
+  <div class="panel">
+    <div class="p-sub" style="margin-bottom:12px">
+      Venduto YTD <b style="color:var(--txt)">€ 299.414</b> · -18,6% vs 2025 · Provvigioni €11.977 (4%)
+    </div>
+    <div class="chart-box" style="height:380px"><canvas id="chInternorm"></canvas></div>
   </div>
 
   <!-- TABELLA CLIENTI BIMME -->
@@ -396,10 +405,15 @@ const ger = {
   nome:'Gerflor', budget:null, mens:null, mesiAttivi:8,
   ytd:781284.04, atteso:null, proiezione:1171926.06
 };
+/* Internorm — dati cumulativi settimana 31 (YTD sett) */
+const int = {
+  nome:'Internorm', budget:615087.80, mens:null, mesiAttivi:7,
+  ytd:299413.68, atteso:null, proiezione:502242.30
+};
 
 /* Mandati ufficiali senza dati (in attesa di budget e fatturati) */
 const mandatiAttesa = [
-  'Internorm','Ditec','Novoferm',
+  'Ditec','Novoferm',
   'Roto Finestre Tetti'
 ];
 
@@ -439,6 +453,15 @@ const topGerflor = [
   {n:'GIELLE SERVICE',v:40230},{n:'ICA MARKET SRL',v:34862},
   {n:'MACOS SOCIETA',v:34296},{n:'LUICAN GROUP SRL',v:30893},
   {n:'SALA GIUSEPPE',v:27598},{n:'TETRA SRL',v:21004}
+];
+
+/* Internorm — clienti YTD sett 31 (da report cumulativi) */
+const topInternorm = [
+  {n:'NUOVA INFISSI DI PIRILLO',v:54430},{n:'EDIL LEGNO SRL UNIPER.',v:45612},
+  {n:'GREEN HABITAT',v:36190},{n:'CASCINO ANGELO & C.',v:33361},
+  {n:'GOLD GROUP PARISI',v:35404},{n:'BRUNO CERAMICHE',v:35010},
+  {n:'TAIBI GIOACHINO & FIGLI',v:20777},{n:'ARREDALL INFISSI SRL',v:12550},
+  {n:'HDEMIA DESIGN',v:11600},{n:'HAUS SRL',v:8570}
 ];
 
 const lostCher = [
@@ -693,15 +716,62 @@ function buildKpiGerflor(){
   </div>`;
 }
 
+function buildKpiInternorm(){
+  const pctBudget = int.ytd / int.budget * 100;
+  const scostAbs = int.ytd - (int.budget * 7/12);
+  const scostPct = (int.ytd - (int.budget * 7/12)) / (int.budget * 7/12) * 100;
+  const semScost = semaphore(scostPct);
+  const arrow = scostAbs>=0 ? '▲' : '▼';
+  return `
+  <div class="kpi-card">
+    <div class="kpi-head">
+      <div>
+        <div class="kpi-mandante">Mandante</div>
+        <div class="kpi-name">Internorm</div>
+      </div>
+      <span class="pill ${semScost}">${arrow} ${pct(Math.abs(scostPct),0)} vs atteso</span>
+    </div>
+
+    <div class="kpi-main">${eur(int.ytd)}<small>YTD sett 31 · 7 mesi</small></div>
+    <div class="kpi-sub">Budget annuo ${eur(int.budget)} · dati cumulativi sett 31</div>
+
+    <div class="progress"><span data-w="${pctBudget.toFixed(1)}"></span></div>
+    <div class="progress-lbl"><span>Budget raggiunto</span><b>${pct(pctBudget,1)}</b></div>
+
+    <div class="kpi-metrics">
+      <div class="metric">
+        <div class="m-lbl">Vs anno scorso</div>
+        <div class="m-val" style="color:var(--red)">-18,6%</div>
+        <div class="m-note">€367.958 → €299.414</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Provvigioni 4%</div>
+        <div class="m-val" style="color:var(--yellow)">€11.977</div>
+        <div class="m-note">VJ: €14.718 (${pct((11976.55/14718.30-1)*100,0)})</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Proiezione fine anno</div>
+        <div class="m-val" style="color:var(--yellow)">${eur(int.proiezione)}</div>
+        <div class="m-note">run-rate su 31 settimane</div>
+      </div>
+      <div class="metric">
+        <div class="m-lbl">Trend zone</div>
+        <div class="m-val" style="color:var(--red)">EST -41%</div>
+        <div class="m-note">Ovest +36% · Est: Hdemia -55k</div>
+      </div>
+    </div>
+  </div>`;
+}
+
 document.getElementById('kpi-grid').innerHTML =
-  buildKpi(cher) + buildKpi(mim) + buildKpiBiemme() + buildKpiFerrero() + buildKpiGerflor() + mandatiAttesa.map(buildKpiVuota).join('');
+  buildKpi(cher) + buildKpi(mim) + buildKpiBiemme() + buildKpiFerrero() + buildKpiGerflor() + buildKpiInternorm() + mandatiAttesa.map(buildKpiVuota).join('');
 
 /* ---------- ELENCO MANDATI UFFICIALI (chip) ---------- */
 const mandatiUfficiali = [
   'Biemme Finestre','Internorm','Ditec','Novoferm',
   'Ferrero Legno','Gerflor','Cherubini','Roto Finestre Tetti'
 ];
-const conDati = ['Cherubini','Biemme Finestre','Ferrero Legno','Gerflor'];
+const conDati = ['Cherubini','Biemme Finestre','Ferrero Legno','Gerflor','Internorm'];
 document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
   const attivo = conDati.includes(n);
   const stato = attivo ? 'dati reali' : 'in attesa';
@@ -709,11 +779,11 @@ document.getElementById('mandati-list').innerHTML = mandatiUfficiali.map(n=>{
 }).join('');
 
 /* ---------- SOMMARIO ---------- */
-const totYtd = cher.ytd + mim.ytd + bien.ytd + fer.ytd + ger.ytd;
-const totBudget = cher.budget + mim.budget + fer.budget;
-const totProj = (cher.proiezione||0) + (mim.proiezione||0) + (bien.proiezione||0) + (ger.proiezione||0);
-/* % budget calcolata SOLO sui mandanti con budget (Cherubini+Mimetal+Ferrero) */
-const ytdConBudget = cher.ytd + mim.ytd + fer.ytd;
+const totYtd = cher.ytd + mim.ytd + bien.ytd + fer.ytd + ger.ytd + int.ytd;
+const totBudget = cher.budget + mim.budget + fer.budget + int.budget;
+const totProj = (cher.proiezione||0) + (mim.proiezione||0) + (bien.proiezione||0) + (ger.proiezione||0) + (int.proiezione||0);
+/* % budget calcolata SOLO sui mandanti con budget (Cherubini+Mimetal+Ferrero+Internorm) */
+const ytdConBudget = cher.ytd + mim.ytd + fer.ytd + int.ytd;
 document.getElementById('sum-ytd').textContent = eur(totYtd);
 document.getElementById('sum-budget').textContent = eur(totBudget);
 document.getElementById('sum-pct').textContent = pct(ytdConBudget/totBudget*100,1);
@@ -964,6 +1034,40 @@ new Chart(document.getElementById('chGerflor'),{
           label:ctx=>{
             const c = topGerflor[ctx.dataIndex];
             return eur(c.v) + '  (' + nf1.format(c.v / 781284.04 * 100) + '% del totale)';
+          }
+        }
+      }
+    },
+    scales:{
+      x:{grid:{color:GRID},ticks:{callback:eurTick},beginAtZero:true},
+      y:{grid:{display:false},ticks:{color:'#e8edf7',font:{weight:'600',size:11}}}
+    }
+  }
+});
+
+/* Top 10 clienti Internorm - barre orizzontali */
+new Chart(document.getElementById('chInternorm'),{
+  type:'bar',
+  data:{
+    labels: topInternorm.map(c=>c.n),
+    datasets:[{
+      label:'Venduto YTD sett 31',
+      data: topInternorm.map(c=>c.v),
+      backgroundColor: 'rgba(139,124,255,.85)',
+      borderRadius:7, borderSkipped:false, maxBarThickness:26
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        backgroundColor:'#151c2c', borderColor:'#232c40', borderWidth:1,
+        padding:12, cornerRadius:10,
+        callbacks:{
+          label:ctx=>{
+            const c = topInternorm[ctx.dataIndex];
+            return eur(c.v) + '  (' + nf1.format(c.v / 299413.68 * 100) + '% del totale)';
           }
         }
       }
