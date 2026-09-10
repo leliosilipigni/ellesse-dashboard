@@ -1,0 +1,4741 @@
+{
+  "clienti": [
+    {
+      "nome": "Gold Group Parisi Sas",
+      "categoria": "rivendita",
+      "zona": "Sicilia Ovest (Palermo)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €35,403.59 vs 2025: €46,260.51 (▼ €-10,856.92). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Arredall Infissi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia Ovest (Palermo)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €12,549.58 vs 2025: €8,663.40 (▲ €3,886.18). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cascino Angelo & C. Srl",
+      "categoria": "impresa",
+      "zona": "Sicilia Ovest (Palermo)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €33,360.65 vs 2025: €7,773.80 (▲ €25,586.85). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        },
+        {
+          "data": "2026-08-26",
+          "argomenti": "Contestazione commessa Rif. Lo Vetro. Incontro con Sig. Cascino: convenuto rifacimento completo commessa in toto. Mail inviata a Mattia Chizzola per attivazione.",
+          "decisioni": "Commessa Rif. Lo Vetro da rifare in toto. Attivazione rifacimento richiesta a Internorm (Mattia Chizzola).",
+          "prossimi_passi": "Seguire attivazione rifacimento e tempi di esecuzione con Mattia Chizzola.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Casa Dolce Casa Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia Ovest (Palermo)",
+      "mandanti": [
+        "Internorm",
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €0.07 vs 2025: €11,088.68 (▼ €-11,088.61). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Taibi Gioachino & Figli Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia Ovest (Palermo)",
+      "mandanti": [
+        "Internorm",
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €20,777.26 vs 2025: €1.71 (▲ €20,775.55). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Edil Legno Srl Unipersonale",
+      "categoria": "rivendita",
+      "zona": "Sicilia Ovest (Palermo)",
+      "mandanti": [
+        "Internorm",
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €45,611.83 vs 2025: €33,082.92 (▲ €12,528.91). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Nuova Infissi di Pirillo Luigi",
+      "categoria": "rivendita",
+      "zona": "Sicilia Est (Catania)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €54,432.53 vs 2025: €72,971.31 (▼ €-18,538.78). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Hdemia Design Srls",
+      "categoria": "studio",
+      "zona": "Sicilia Est (Catania)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €11,604.07 vs 2025: €67,284.71 (▼ €-55,680.64). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Bruno Ceramiche Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia Est (Catania)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €35,011.02 vs 2025: €68,932.41 (▼ €-33,921.39). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Green Habitat di Ing. Marco Caponnetto",
+      "categoria": "studio",
+      "zona": "Sicilia Est (Catania)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €36,194.11 vs 2025: €33,915.45 (▲ €2,278.66). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Raimondi Rolando",
+      "categoria": "rivendita",
+      "zona": "Sicilia Est (Catania)",
+      "mandanti": [
+        "Internorm",
+        "Biemme Finestre",
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €5,834.50 vs 2025: €16,271.09 (▼ €-10,436.59). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Haus Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia Est (Catania)",
+      "mandanti": [
+        "Internorm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: partner Internorm. Fatturato 2026: €8,566.97 vs 2025: €0.00 (▲ €8,566.97). Dati da report settimana 31.",
+          "decisioni": "Registrato come partner Internorm attivo.",
+          "prossimi_passi": "Contattare per aggiornamento e follow-up.",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "C.& G. Serramenti Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €469,091.07.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Di Via Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €296,260.78.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cecal Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €89,944.24.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "3Z Serramenti Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €83,757.09.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Casa Clima S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €58,191.54.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Gruppo Aerre Soc.Coop.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €56,659.39.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Fratelli Alessi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €44,197.60.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Luican Group Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €43,999.93.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tecno Infissi Srl a socio unico",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €38,087.63.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Silipigni Letterio",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €37,297.54.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Livia Infissi LG Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €33,724.56.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Pronta Porta Snc di Puglisi Giuseppe & C.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €28,651.89.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Aperture Contemporanee S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €27,307.09.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Solution S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €27,047.99.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Isotekno S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €24,543.90.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Oliveri Domenico Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €23,905.85.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Spazio Casa Sas di Milone Rosario & C.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €23,423.97.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Co.Mi.R. Costruzioni Generali Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €21,456.64.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Infissi Cutrone Salvatore",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €19,245.03.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Ciocio Infissi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €17,986.26.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "G.G. Serramenti di Francesca Gurrera",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €15,591.94.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Garofalo Infissi Group Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €15,209.32.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cascino Angelo & C. S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €13,018.90.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Garofalo Infissi di Garofalo Vincenzo",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €11,041.47.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lupo'Costruzioni Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €10,023.22.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Fantastico Serramenti di Fantastico Simone",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €9,820.26.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "La Finestra-Serramenti Resistenti nel Tempo Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €8,653.75.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "BNS Service di Bari Natale",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €8,340.80.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Metal System di Francesco Mazzola",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €7,788.84.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Domus Area Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €7,165.04.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Morgante Home Solution",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €6,570.98.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "P&P Design S.r.l.s.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €6,430.96.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Bio Edilservice Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €5,694.93.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cemet di Antonio Di Mauro",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €5,233.73.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Terrani Guido",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €5,140.66.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Emme Home Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €4,868.40.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sirtal Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €4,842.33.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "GR Montaggi di Riganello Giuseppe",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €4,532.91.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Casa Strasburgo S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €4,157.84.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Limap S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €4,147.54.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Rodolico Andrea S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €4,134.70.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Modafferi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €3,750.08.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Teorema Porte di Filocamo Alessandro",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €3,583.95.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Soluzioni d'Interni di Balastro Antonio",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €3,557.42.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "CM Montaggi S.a.s.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €3,549.38.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "D'Amico Interni Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €3,160.93.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lignoform PVC Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €3,038.92.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Oopen Srl unipersonale",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €2,684.85.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Dal.Ma.Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €2,667.79.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tinnirello Design",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre",
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €2,240.52.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Domus Portae Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €2,070.92.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Serramenti Tinnirello Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €1,363.07.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Bruno Ceramiche S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €1,147.52.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lanteri Giuseppe",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €902.39.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Green Habitat dell'Ing. Marco Caponnetto",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €807.31.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Spazio & Design Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €497.87.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "S.P.S. S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Biemme Finestre"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Biemme Finestre. Venduto gen-lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Biemme Finestre.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sirimed Srl / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Tremestieri Etneo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €129,942.88.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Arcieri Costruzioni S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia (San Giovanni Gemini)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €50,088.05.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Emmecci",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Gangi)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €46,229.20.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Nico Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Maletto)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €40,236.52.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Ica Market Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Caltanissetta)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €34,861.89.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Macos Società Cooperativa",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Agrigento)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €34,295.60.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sala Giuseppe Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Casteldaccia)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €27,598.40.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "C.S. Impianti Snc di Sturniolo Carlo & C.",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Messina)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €23,350.08.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tetra Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Catania)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €21,003.72.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Rera Costruzioni Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €19,482.60.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Aedes Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Catania)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €18,692.00.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sicil Tecno Impianti S.r.l / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €17,200.50.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Leonino Giuseppe / Res",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Capo d'Orlando)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €15,188.74.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cusimano Prestianni Srl / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €14,144.84.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Oliveri e Disalvo Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Lercara Friddi)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €13,340.82.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Emmolo Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Partinico)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €12,652.19.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "I.G.C. Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Maletto)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €11,868.70.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Il Posatore Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Ragusa)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €11,003.78.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lutiviem S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia (San Filippo del Mela)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €10,052.65.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Arcobaleno Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Aci Sant'Antonio)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €7,841.62.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "JPC di Cusimano Prestianni Jessica",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Villabate)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €7,641.50.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Caravello Group Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €7,449.60.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sagedil Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Favara)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €7,226.30.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Roma Srl / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Catania)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €6,418.50.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Aeroviaggi SpA",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Milano)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €5,100.00.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sikrea Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia (San Giovanni La Punta)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €4,163.17.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Leone Orazio Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Modica)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €3,643.20.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Quartuccio Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Bagheria)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €3,566.40.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Edil Special Srl / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €3,439.20.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "I.Co.R.Ed Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Bagheria)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €2,877.60.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sicula Ricambi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Catania)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €2,722.21.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "New ZP Palermo Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Canicattì)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €2,362.95.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Russo Edil Crise Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €2,354.69.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Althea Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Favara)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €2,275.20.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Ellesse Rappresentanze / Res",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Trabia)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €1,917.52.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lanzaplast Evolution / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €1,680.00.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Alga",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Patti)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €723.00.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "M.G. Servizi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Monreale)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €678.16.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Mida Forniture Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Misterbianco)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €664.00.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Magicmotorsport Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Partinico)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €546.15.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "S & P di Spitale Vincenzo / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €448.00.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Giorgianni Colori Francesca / BAT",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Messina)",
+      "mandanti": [
+        "Gerflor"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Gerflor. Venduto gen-lug 2026: €112.64.",
+          "decisioni": "Registrato come cliente Gerflor.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Bilello Michele",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Agrigento)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €12,162.76.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Casa Arredo Lo Presti Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Agrigento)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €19,334.10.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Teco Sistemi Casa Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Caltanissetta)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €21,691.85.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Eredi Barbagallo Carmelo Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Enna)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Dial Design di Pardo Adriana",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €3,598.50.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Docculla Francesco",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Ellesse Rappresentanze di Silipigni Letterio",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno",
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €2,414.69.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Eureka Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €19,689.40.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Euroinfissi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "La Finestra-Serramenti Resistenti nel Tempo",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Nicoletti Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €3,215.18.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Nuova Ceramica Rosso Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Oliveri Domenico Srl Soc Unipersonale",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Scale e Dintorni di Ferdinando Lo Cricchio",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €842.13.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sepacasa Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tecno Infissi Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Ferrero Legno",
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €3,036.76.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cia Pirrello Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Trapani)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €23,163.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Far Area Design di Pirrone Fabio Sas",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Trapani)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €2,295.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "V. F. Valenti Federica Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Trapani)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €15,395.40.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lazzaro Infissi di Lazzaro Giovanni",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Catania)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €25.38.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Stylcasa Center Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Catania)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €58,411.43.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Giuttari Renato",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Messina)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €10,443.06.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Greco Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Messina)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €4,849.50.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lo Re Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Messina)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €26,642.52.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Abate Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Ragusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €7,949.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Arkema Iblea Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Ragusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €4,662.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Avola Salvador",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Ragusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Arte e Legno dei F.lli Napolitano Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Siracusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cappellolineainterni Sas",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Siracusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €18,030.04.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Caruso Antonino & C. Sas",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Siracusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €2,885.22.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Porte d'Autore di L. & G. S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Siracusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €14,892.09.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Solutions Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Siracusa)",
+      "mandanti": [
+        "Ferrero Legno"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Ferrero Legno. Imponibile YTD lug 2026: €3,597.75.",
+          "decisioni": "Registrato come cliente Ferrero Legno.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Lo Monaco Costruzioni Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €162,000.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sea Beach Immobiliare Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €71,888.20.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sicil Tecno Impianti Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Palermo)",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €34,468.90.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Le.il Costruzioni Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €25,047.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "N.E.S. Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €16,464.29.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Sirimed Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Tremestieri Etneo)",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €15,811.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Luxury Private Properties Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €8,267.70.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Luican Group S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia (Caltanissetta)",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €5,096.13.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "La Finestra Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €1,417.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "C.E.P.I.E. Energy Project",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €1,362.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Automazioni Lo Verso Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €1,029.50.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "A.R. Impianti Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €890.50.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "BF System di Brunetto Gaetano",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €108.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Nofire S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €70.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Trinacria di Belmonte Soc.Coop",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Novoferm"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Novoferm. Totale ordini 2026: €0.00.",
+          "decisioni": "Registrato come cliente Novoferm.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Triscele Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €71,376.81.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Delta Tim S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €44,382.97.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "BCP di Corso Massimo",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €27,389.10.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "MGF Tende by Morrone",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €22,157.85.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tendasud Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €22,064.95.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Isotekno Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €19,857.02.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Guercio Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €12,290.01.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Area S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €6,903.37.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Comas S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €6,628.15.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tecnotenda Group Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €6,420.12.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Caldist di Calderone Antonino",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €5,941.31.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tendasud di Grasso Letterio",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €5,035.27.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Divita Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €4,649.40.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "SB Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €4,027.33.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "L.G. Tende & Tendaggi di Lupo G.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €3,960.00.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cappello Group S.p.a.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €3,496.18.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Cardillo Alluminio S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €3,050.35.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Mira Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €2,519.00.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "MG Alluminio Service Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €2,406.95.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "C. & G. Serramenti S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €1,443.25.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Pergolandia S.r.l.s.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €1,355.97.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "PMM S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €833.40.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "C.M.P. di Pappalardo S.n.c.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €420.92.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Home Textile by Nunzio Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €400.30.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "BF 2000 Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €300.88.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Demattende S.n.c.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €248.86.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tendatec Soc. Coop",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €211.36.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Haus S.r.l.",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €93.26.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Bedaplast Srl Socio Unico",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "Cherubini"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente Cherubini. Fatturato gen-lug 2026: €52.22.",
+          "decisioni": "Registrato come cliente Cherubini.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Guajana Ferramenta SpA",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €6,499.31.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "SILPLAST SRL",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €4,580.20.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Isotekno Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €3,076.51.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "MG Alluminio Service Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €2,306.18.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Mira Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €1,798.74.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "C.M.P. Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €1,726.27.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "SIAL SRL",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €1,746.58.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Medisystem Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €1,157.61.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Innova Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €963.77.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Novara C. Snc",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €936.31.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Tecno House Srls",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €821.50.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Art Decor",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €664.88.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Politi Fabio",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €687.49.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Silipigni",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €27,877.64.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Delta Tim Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €322.13.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Amhezion Sabrina",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €251.16.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Leonardi Salvatore Massimo",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €339.00.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    },
+    {
+      "nome": "Comas Srl",
+      "categoria": "rivendita",
+      "zona": "Sicilia",
+      "mandanti": [
+        "CH-Mimetal"
+      ],
+      "contatti": {
+        "telefono": "",
+        "email": "",
+        "referente": ""
+      },
+      "incontri": [
+        {
+          "data": "2026-08-21",
+          "argomenti": "Prima registrazione: cliente CH-Mimetal. Fatturato mar-lug 2026: €0.00.",
+          "decisioni": "Registrato come cliente CH-Mimetal.",
+          "prossimi_passi": "",
+          "promemoria": "",
+          "stato": "aperto"
+        }
+      ]
+    }
+  ]
+}
