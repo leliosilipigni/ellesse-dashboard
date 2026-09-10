@@ -13,14 +13,16 @@ header{text-align:center;padding:24px 16px 12px;background:radial-gradient(ellip
 header h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 header .sub{font-size:13px;color:var(--txt2);margin-top:3px}
 header .badge{display:inline-block;margin-top:8px;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(110,168,254,.12);color:var(--accent);border:1px solid rgba(110,168,254,.2)}
-/* KPI strip */
-.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px 14px;max-width:800px;margin:0 auto}
-.kpi-box{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--radius);padding:14px 10px;text-align:center;box-shadow:var(--shadow)}
-.kpi-box .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--txt3);font-weight:600;margin-bottom:4px}
-.kpi-box .val{font-size:clamp(16px,4vw,24px);font-weight:800;letter-spacing:-.5px}
-.kpi-box .note{font-size:9px;color:var(--txt3);margin-top:2px}
+/* KPI strip — 5 cards */
+.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:12px 14px;max-width:800px;margin:0 auto}
+.kpi-box{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--radius);padding:12px 6px;text-align:center;box-shadow:var(--shadow)}
+.kpi-box .lbl{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--txt3);font-weight:600;margin-bottom:3px}
+.kpi-box .val{font-size:clamp(15px,3.5vw,22px);font-weight:800;letter-spacing:-.5px}
+.kpi-box .note{font-size:8px;color:var(--txt3);margin-top:2px;line-height:1.2}
 .kpi-box.highlight{background:linear-gradient(135deg,#0d2818,#1a3a2a);border-color:var(--green)}
 .kpi-box.highlight .val{color:var(--green)}
+.kpi-box.danger{background:linear-gradient(135deg,#2a0d0d,#3a1a1a);border-color:var(--red)}
+.kpi-box.danger .val{color:var(--red)}
 /* Sezioni */
 section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .sec-title{font-size:15px;font-weight:700;letter-spacing:-.3px;padding:12px 0 8px;display:flex;align-items:center;gap:8px}
@@ -32,12 +34,14 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .cliente-card .nome{font-size:16px;font-weight:700}
 .cliente-card .zona{font-size:12px;color:var(--txt2);margin-top:2px}
 .cliente-card .mandanti{font-size:11px;color:var(--txt3);margin-top:3px}
+.cliente-card .badge-visite{font-size:11px;color:var(--accent);margin-top:4px}
 .cliente-card .status{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .cliente-card .pill{padding:3px 10px;border-radius:12px;font-size:10px;font-weight:600}
 .pill.green{background:rgba(61,220,151,.12);color:var(--green);border:1px solid rgba(61,220,151,.2)}
 .pill.yellow{background:rgba(246,196,83,.12);color:var(--yellow);border:1px solid rgba(246,196,83,.2)}
 .pill.red{background:rgba(255,107,122,.12);color:var(--red);border:1px solid rgba(255,107,122,.2)}
 .pill.gray{background:rgba(107,122,140,.12);color:var(--txt3);border:1px solid rgba(107,122,140,.2)}
+.pill.blue{background:rgba(110,168,254,.12);color:var(--accent);border:1px solid rgba(110,168,254,.2)}
 .cliente-card .azioni{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .cliente-card .btn{flex:1;padding:8px 12px;border-radius:10px;font-size:12px;font-weight:600;border:none;cursor:pointer;text-align:center;transition:all .12s}
 .btn-primary{background:var(--accent);color:#fff}
@@ -52,8 +56,15 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .detail-header h2{font-size:20px;margin-top:4px}
 .detail-header .info{font-size:13px;color:var(--txt2);margin-top:3px}
 .detail-body{padding:14px}
+/* Metriche cliente */
+.cliente-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center}
+.metric-card .m-val{font-size:18px;font-weight:800}
+.metric-card .m-lbl{font-size:9px;text-transform:uppercase;color:var(--txt3);font-weight:600;margin-top:2px}
+.metric-card .m-note{font-size:9px;color:var(--txt3);margin-top:1px}
 .incontro-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px}
-.incontro-card .data{font-size:11px;color:var(--txt3);font-weight:600}
+.incontro-card .data{font-size:11px;color:var(--txt3);font-weight:600;display:flex;justify-content:space-between}
+.incontro-card .gap{font-size:10px;color:var(--accent)}
 .incontro-card .arg{font-size:13px;margin-top:6px;color:var(--txt)}
 .incontro-card .dec{font-size:12px;margin-top:4px;color:var(--accent)}
 .incontro-card .prossimi{font-size:12px;margin-top:4px;color:var(--green)}
@@ -75,9 +86,16 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .search-box::placeholder{color:var(--txt3)}
 .empty-state{text-align:center;padding:40px 20px;color:var(--txt3)}
 .empty-state .emoji{font-size:48px;margin-bottom:12px}
+/* Tabs dettaglio */
+.tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:4px}
+.tab{padding:6px 14px;border-radius:8px 8px 0 0;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--txt3);cursor:pointer}
+.tab.active{background:var(--card);color:var(--accent);border-bottom:2px solid var(--accent)}
+.tab-content{display:none}
+.tab-content.active{display:block}
 /* Responsive */
-@media(max-width:560px){.kpi-strip{grid-template-columns:repeat(2,1fr);gap:8px;padding:8px 10px}
-  .kpi-box{padding:10px 8px}
+@media(max-width:560px){.kpi-strip{grid-template-columns:repeat(2,1fr);gap:6px;padding:8px 10px}
+  .kpi-box{padding:10px 6px}
+  .cliente-metrics{grid-template-columns:1fr 1fr}
   .cliente-card .azioni{flex-direction:column}
 }
 </style>
@@ -96,7 +114,7 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 <!-- FILTRI -->
 <section>
   <div class="filtri" id="filtri"></div>
-  <input class="search-box" id="search" placeholder="🔍 Cerca cliente, zona, mandante..." oninput="renderClienti()">
+  <input class="search-box" id="search" placeholder="🔍 Cerca cliente, zona, mandante, referente..." oninput="renderClienti()">
 </section>
 
 <!-- LISTA CLIENTI -->
@@ -109,7 +127,20 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
     <h2 id="d-nome"></h2>
     <div class="info" id="d-info"></div>
   </div>
-  <div class="detail-body" id="d-body"></div>
+  <div class="detail-body">
+    <!-- Metriche cliente -->
+    <div class="cliente-metrics" id="d-metrics"></div>
+    <!-- Tabs -->
+    <div class="tabs" id="d-tabs">
+      <button class="tab active" onclick="switchTab('incontri')">📜 Incontri</button>
+      <button class="tab" onclick="switchTab('info')">ℹ Info</button>
+    </div>
+    <div class="tab-content active" id="tab-incontri"></div>
+    <div class="tab-content" id="tab-info"></div>
+    <div style="margin-top:16px">
+      <button class="btn btn-primary" onclick="apriNuovoIncontro(currentCliente)" style="width:100%">+ Registra nuovo incontro</button>
+    </div>
+  </div>
 </div>
 
 <!-- MODALE NUOVO INCONTRO -->
@@ -142,7 +173,7 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 <script>
 // ===== DATI =====
 const FALLBACK = [
-  {nome:"Cascino Angelo & C. Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Rilascio modulo richiesta anticipo Hdemia Design",decisioni:"Modulo compilato e inviato",prossimi_passi:"Seguire risposta Internorm",stato:"aperto"},{data:"2026-09-07",argomenti:"Sollecito conferma ordine (2° e ultimo) — commessa Campioni Termini Imerese",decisioni:"Inviata conferma ordine urgente",prossimi_passi:"Verificare ricezione e inoltro",stato:"aperto"}],periodicita:30,prossimaVisita:null},
+  {nome:"Cascino Angelo & C. Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Rilascio modulo richiesta anticipo Hdemia Design",decisioni:"Modulo compilato e inviato",prossimi_passi:"Seguire risposta Internorm",stato:"aperto"},{data:"2026-09-07",argomenti:"Sollecito conferma ordine (2° e ultimo) — commessa Campioni Termini Imerese",decisioni:"Inviata conferma ordine urgente",prossimi_passi:"Verificare ricezione e inoltro",stato:"aperto"},{data:"2026-08-21",argomenti:"Prima registrazione: partner Internorm. Fatturato 2026: €35,403.59 vs 2025: €46,260.51 (▼ €-10,856.92). Dati da report settimana 31.",decisioni:"Registrato come partner Internorm attivo.",prossimi_passi:"Contattare per aggiornamento e follow-up.",stato:"chiuso"}],periodicita:30,prossimaVisita:null},
   {nome:"Tecno Infissi Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"091 1234567",email:"info@tecnoinfissisrl.com",referente:"Giuseppe Puglisi"},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo alzante LEVANTE 3000x2000 x10 pz, RAL 9010. Preventivo #178",decisioni:"Inviata offerta PABL004I6. Attesa riscontro.",prossimi_passi:"Follow-up a 7 giorni",stato:"aperto"}],periodicita:45,prossimaVisita:"2026-10-23"},
   {nome:"3Z Serramenti Srls",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"3zserramenti@gmail.com",referente:""},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo INVERSA: 4 finestre (F1,F2,PF1,PF2) RAL 9010. Preventivo #177",decisioni:"Offerta PABL003I6 inviata. Sconto 45+30.",prossimi_passi:"Follow-up a 7 giorni",stato:"aperto"}],periodicita:45,prossimaVisita:"2026-10-23"},
   {nome:"Hdemia Design Srls",categoria:"rivendita",zona:"Sicilia Est (Ragusa)",mandanti:["Internorm"],contatti:{telefono:"0338 9132222",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Richiesta anticipo consegna sett.41. Conferma ordine 6744075 (KF310, 7 posizioni, €6.103,03).",decisioni:"Modulo richiesta anticipo compilato e inviato a Internorm.",prossimi_passi:"Attendere risposta Internorm sull'anticipo",stato:"aperto"}],periodicita:60,prossimaVisita:"2026-11-08"},
@@ -160,8 +191,10 @@ const FALLBACK = [
 ];
 
 // ===== STATO =====
-let clienti = [...FALLBACK];
+let clienti = [];
 let filtroAttivo = 'tutti';
+let currentCliente = '';
+let chartGraficoGap = null;
 
 function formattaData(d) {
   if (!d) return '—';
@@ -169,21 +202,34 @@ function formattaData(d) {
   return dd+'/'+m+'/'+y;
 }
 
-function giorniTrascorsi(d) {
+function dataOggetto(d) {
+  if (!d) return null;
+  const [y,m,dd] = d.split('-');
+  return new Date(+y, +m-1, +dd);
+}
+
+function diffGiorni(d1, d2) {
+  if (!d1 || !d2) return null;
+  const a = dataOggetto(d1);
+  const b = dataOggetto(d2);
+  return Math.round((a - b) / (1000*60*60*24));
+}
+
+function giorniDaOggi(d) {
   if (!d) return Infinity;
   const oggi = new Date();
-  const [y,m,dd] = d.split('-');
-  const data = new Date(+y, +m-1, +dd);
-  return Math.ceil((data - oggi) / (1000*60*60*24));
+  oggi.setHours(0,0,0,0);
+  const data = dataOggetto(d);
+  return Math.round((data - oggi) / (1000*60*60*24));
 }
 
 function giorniAllaProssima(c) {
-  if (c.prossimaVisita) return giorniTrascorsi(c.prossimaVisita);
-  if (c.ultimaVisita && c.periodicita) {
-    const [y,m,dd] = c.ultimaVisita.split('-');
-    const ultima = new Date(+y, +m-1, +dd);
+  if (c.prossimaVisita) return giorniDaOggi(c.prossimaVisita);
+  if (c.incontri?.length > 0 && c.periodicita) {
+    const ultimo = c.incontri[c.incontri.length-1].data;
+    const ultima = dataOggetto(ultimo);
     ultima.setDate(ultima.getDate() + c.periodicita);
-    return Math.ceil((ultima - new Date()) / (1000*60*60*24));
+    return Math.round((ultima - new Date()) / (1000*60*60*24));
   }
   return null;
 }
@@ -205,6 +251,19 @@ function labelStato(gg) {
   return `Tra ${gg}gg`;
 }
 
+// Calcola gap medi per cliente
+function calcolaGapMedio(c) {
+  if (!c.incontri || c.incontri.length < 2) return null;
+  const sorted = [...c.incontri].sort((a,b) => a.data.localeCompare(b.data));
+  let tot = 0;
+  let n = 0;
+  for (let i = 1; i < sorted.length; i++) {
+    const g = diffGiorni(sorted[i].data, sorted[i-1].data);
+    if (g !== null && g >= 0) { tot += g; n++; }
+  }
+  return n > 0 ? Math.round(tot / n) : null;
+}
+
 // ===== KPI =====
 function calcolaKPI() {
   const oggi = new Date();
@@ -217,6 +276,22 @@ function calcolaKPI() {
       return +y === annoCorrente && +m-1 === meseCorrente;
     })
   ).length;
+  
+  // Gap medio globale
+  let totGap = 0, nGap = 0;
+  clienti.forEach(c => {
+    const g = calcolaGapMedio(c);
+    if (g !== null) { totGap += g; nGap++; }
+  });
+  const gapMedio = nGap > 0 ? Math.round(totGap / nGap) : null;
+  
+  // Clienti senza visita da >60gg
+  const abbandonati = clienti.filter(c => {
+    if (!c.incontri?.length) return false;
+    const ultimo = c.incontri[c.incontri.length-1].data;
+    const gg = giorniDaOggi(ultimo);
+    return gg > 60;
+  }).length;
   
   const scadenzeCritiche = clienti.filter(c => {
     const gg = giorniAllaProssima(c);
@@ -232,8 +307,11 @@ function calcolaKPI() {
     totali: clienti.length,
     visitatiMese: visitatiQuestoMese,
     copertura: Math.round(visitatiQuestoMese / clienti.length * 100),
+    gapMedio,
+    abbandonati,
     scadenze: scadenzeCritiche,
     scadute,
+    totIncontri: clienti.reduce((s,c) => s + (c.incontri?.length || 0), 0),
   };
 }
 
@@ -242,8 +320,9 @@ function renderKPI() {
   document.getElementById('kpi-strip').innerHTML = `
     <div class="kpi-box"><div class="lbl">Clienti</div><div class="val">${k.totali}</div><div class="note">Registrati</div></div>
     <div class="kpi-box"><div class="lbl">Visite mese</div><div class="val">${k.visitatiMese}</div><div class="note">${k.copertura}% copertura</div></div>
-    <div class="kpi-box ${k.scadenze > 0 ? 'highlight' : ''}"><div class="lbl">Prossime visite</div><div class="val">${k.scadenze}</div><div class="note">Nei prossimi 7gg</div></div>
-    <div class="kpi-box ${k.scadute > 0 ? 'highlight' : ''}"><div class="lbl">Visite scadute</div><div class="val" style="color:${k.scadute > 0 ? 'var(--red)' : 'var(--txt)'}">${k.scadute}</div><div class="note">Da riprogrammare</div></div>
+    <div class="kpi-box ${k.scadenze > 0 ? 'highlight' : ''}"><div class="lbl">Da visitare</div><div class="val">${k.scadenze}</div><div class="note">Nei prossimi 7gg</div></div>
+    <div class="kpi-box ${k.scadute > 0 ? 'danger' : ''}"><div class="lbl">Scadute</div><div class="val" style="color:${k.scadute > 0 ? 'var(--red)' : 'var(--txt)'}">${k.scadute}</div><div class="note">Da riprogrammare</div></div>
+    <div class="kpi-box"><div class="lbl">Gap medio</div><div class="val">${k.gapMedio !== null ? k.gapMedio + 'gg' : '—'}</div><div class="note">Tra visite · ${k.totIncontri} tot</div></div>
   `;
 }
 
@@ -251,7 +330,8 @@ function renderKPI() {
 function renderFiltri() {
   const categorie = [...new Set(clienti.map(c => c.categoria))];
   const html = [`<button class="f-btn ${filtroAttivo === 'tutti' ? 'active' : ''}" onclick="filtroAttivo='tutti';renderClienti();renderFiltri()">Tutti</button>`];
-  html.push(`<button class="f-btn ${filtroAttivo === 'oggi' ? 'active' : ''}" onclick="filtroAttivo='oggi';renderClienti();renderFiltri()">⬆ Urgenti</button>`);
+  html.push(`<button class="f-btn ${filtroAttivo === 'urgenti' ? 'active' : ''}" onclick="filtroAttivo='urgenti';renderClienti();renderFiltri()">🔴 Urgenti</button>`);
+  html.push(`<button class="f-btn ${filtroAttivo === 'oggi' ? 'active' : ''}" onclick="filtroAttivo='oggi';renderClienti();renderFiltri()">Oggi</button>`);
   categorie.forEach(cat => {
     html.push(`<button class="f-btn ${filtroAttivo === cat ? 'active' : ''}" onclick="filtroAttivo='${cat}';renderClienti();renderFiltri()">${cat}</button>`);
   });
@@ -263,10 +343,15 @@ function renderClienti() {
   const q = document.getElementById('search').value.toLowerCase();
   let filtrati = clienti;
   
-  if (filtroAttivo === 'oggi') {
+  if (filtroAttivo === 'urgenti') {
     filtrati = filtrati.filter(c => {
       const gg = giorniAllaProssima(c);
       return gg !== null && gg <= 7;
+    });
+  } else if (filtroAttivo === 'oggi') {
+    filtrati = filtrati.filter(c => {
+      const gg = giorniAllaProssima(c);
+      return gg !== null && gg <= 1;
     });
   } else if (filtroAttivo !== 'tutti') {
     filtrati = filtrati.filter(c => c.categoria === filtroAttivo);
@@ -277,9 +362,19 @@ function renderClienti() {
       c.nome.toLowerCase().includes(q) ||
       c.zona.toLowerCase().includes(q) ||
       c.mandanti.some(m => m.toLowerCase().includes(q)) ||
-      c.contatti.referente?.toLowerCase().includes(q)
+      (c.contatti.referente || '').toLowerCase().includes(q)
     );
   }
+  
+  // Ordina per urgenza (più vicini prima)
+  filtrati.sort((a,b) => {
+    const ga = giorniAllaProssima(a);
+    const gb = giorniAllaProssima(b);
+    if (ga === null && gb === null) return 0;
+    if (ga === null) return 1;
+    if (gb === null) return -1;
+    return ga - gb;
+  });
   
   const el = document.getElementById('lista-clienti');
   if (filtrati.length === 0) {
@@ -292,16 +387,27 @@ function renderClienti() {
     const stato = statoVisita(c);
     const label = labelStato(gg);
     const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
+    const gapMedio = calcolaGapMedio(c);
+    const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
     return `<div class="cliente-card" onclick="apriDettaglio('${c.nome}')">
       <div class="top">
         <div>
           <div class="nome">${c.nome}</div>
           <div class="zona">${c.zona}</div>
           <div class="mandanti">${c.mandanti.join(' · ')}</div>
+          ${c.contatti.referente ? `<div class="badge-visite">👤 ${c.contatti.referente}</div>` : ''}
         </div>
         <span class="pill ${stato}">${label}</span>
       </div>
-      ${ultimo ? `<div style="font-size:12px;color:var(--txt3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">📝 ${formattaData(ultimo.data)} — ${ultimo.argomenti.slice(0,80)}${ultimo.argomenti.length > 80 ? '...' : ''}</div>` : ''}
+      ${ultimo ? `<div style="font-size:12px;color:var(--txt3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
+        <span>📝 ${formattaData(ultimo.data)} — ${ultimo.argomenti.slice(0,60)}${ultimo.argomenti.length > 60 ? '...' : ''}</span>
+        ${giorniDaUltima !== null ? `<span style="color:${giorniDaUltima > 60 ? 'var(--red)' : giorniDaUltima > 30 ? 'var(--yellow)' : 'var(--green)'}">${giorniDaUltima}gg fa</span>` : ''}
+      </div>` : ''}
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px">
+        <span>📊 ${c.incontri?.length || 0} incontri</span>
+        ${gapMedio !== null ? `<span>⏱ gap medio ${gapMedio}gg</span>` : ''}
+        ${c.periodicita ? `<span>🔄 ogni ${c.periodicita}gg</span>` : ''}
+      </div>
       <div class="azioni">
         <button class="btn btn-primary" onclick="event.stopPropagation();apriNuovoIncontro('${c.nome}')">+ Incontro</button>
         <button class="btn btn-secondary" onclick="event.stopPropagation();apriDettaglio('${c.nome}')">Dettaglio</button>
@@ -316,36 +422,66 @@ function renderClienti() {
 function apriDettaglio(nome) {
   const c = clienti.find(x => x.nome === nome);
   if (!c) return;
+  currentCliente = nome;
   
   document.getElementById('d-nome').textContent = c.nome;
-  document.getElementById('d-info').textContent = `${c.zona} · ${c.mandanti.join(', ')} ${c.contatti.referente ? '· Rif. ' + c.contatti.referente : ''}`;
+  document.getElementById('d-info').textContent = `${c.zona} · ${c.mandanti.join(', ')}${c.contatti.referente ? ' · Rif. ' + c.contatti.referente : ''}`;
   
   const gg = giorniAllaProssima(c);
   const stato = statoVisita(c);
   const label = labelStato(gg);
+  const gapMedio = calcolaGapMedio(c);
+  const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
+  const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
   
-  let body = `<div class="status" style="margin-bottom:14px"><span class="pill ${stato}" style="font-size:13px">${label}</span>`;
-  if (c.periodicita) body += ` <span class="pill gray">Ogni ${c.periodicita}gg</span>`;
-  body += `</div>`;
+  // Metriche
+  document.getElementById('d-metrics').innerHTML = `
+    <div class="metric-card"><div class="m-val">${c.incontri?.length || 0}</div><div class="m-lbl">Incontri</div><div class="m-note">totali</div></div>
+    <div class="metric-card"><div class="m-val">${gapMedio !== null ? gapMedio + 'gg' : '—'}</div><div class="m-lbl">Gap medio</div><div class="m-note">tra visite</div></div>
+    <div class="metric-card"><div class="m-val">${giorniDaUltima !== null ? giorniDaUltima + 'gg' : '—'}</div><div class="m-lbl">Dall'ultima</div><div class="m-note">visita</div></div>
+  `;
   
+  // Tab incontri
   if (c.incontri?.length > 0) {
-    body += `<div class="sec-title">📜 Storico incontri <span class="cnt">${c.incontri.length}</span></div>`;
-    [...c.incontri].reverse().forEach(i => {
-      body += `<div class="incontro-card">
-        <div class="data">${formattaData(i.data)}</div>
-        <div class="arg">${i.argomenti}</div>
-        ${i.decisioni ? `<div class="dec">✅ ${i.decisioni}</div>` : ''}
-        ${i.prossimi_passi ? `<div class="prossimi">➡ ${i.prossimi_passi}</div>` : ''}
-        ${i.promemoria ? `<div style="font-size:11px;color:var(--yellow);margin-top:4px">📌 ${i.promemoria}</div>` : ''}
+    const sorted = [...c.incontri].sort((a,b) => b.data.localeCompare(a.data));
+    let html = '';
+    for (let i = 0; i < sorted.length; i++) {
+      const inc = sorted[i];
+      const prossimo = i > 0 ? sorted[i-1] : null;
+      const gap = prossimo ? diffGiorni(prossimo.data, inc.data) : null;
+      html += `<div class="incontro-card">
+        <div class="data">
+          <span>${formattaData(inc.data)}</span>
+          ${gap !== null ? `<span class="gap">${gap}gg dopo</span>` : ''}
+        </div>
+        <div class="arg">${inc.argomenti}</div>
+        ${inc.decisioni && inc.decisioni !== '—' ? `<div class="dec">✅ ${inc.decisioni}</div>` : ''}
+        ${inc.prossimi_passi ? `<div class="prossimi">➡ ${inc.prossimi_passi}</div>` : ''}
+        ${inc.promemoria ? `<div style="font-size:11px;color:var(--yellow);margin-top:4px">📌 ${inc.promemoria}</div>` : ''}
       </div>`;
-    });
+    }
+    document.getElementById('tab-incontri').innerHTML = html;
   } else {
-    body += `<div class="empty-state" style="padding:20px"><div class="emoji">📝</div>Nessun incontro registrato</div>`;
+    document.getElementById('tab-incontri').innerHTML = '<div class="empty-state" style="padding:20px"><div class="emoji">📝</div>Nessun incontro registrato</div>';
   }
   
-  body += `<div style="margin-top:16px"><button class="btn btn-primary" onclick="apriNuovoIncontro('${c.nome}')" style="width:100%">+ Registra nuovo incontro</button></div>`;
+  // Tab info
+  document.getElementById('tab-info').innerHTML = `
+    <div class="cliente-card" style="cursor:default">
+      <div class="nome" style="font-size:14px">📋 Scheda cliente</div>
+      <div style="margin-top:12px;display:grid;gap:10px">
+        <div><span style="color:var(--txt3);font-size:12px">Categoria</span><br><span>${c.categoria}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Zona</span><br><span>${c.zona}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Mandanti</span><br><span>${c.mandanti.join(', ')}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Referente</span><br><span>${c.contatti.referente || '—'}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Telefono</span><br><span>${c.contatti.telefono || '—'}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Email</span><br><span>${c.contatti.email || '—'}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Periodicità visite</span><br><span>${c.periodicita ? 'Ogni ' + c.periodicita + 'gg' : 'Da definire'}</span></div>
+        ${c.prossimaVisita ? `<div><span style="color:var(--txt3);font-size:12px">Prossima visita</span><br><span style="color:var(--green)">${formattaData(c.prossimaVisita)} (${labelStato(giorniDaOggi(c.prossimaVisita))})</span></div>` : ''}
+      </div>
+    </div>
+  `;
   
-  document.getElementById('d-body').innerHTML = body;
   document.getElementById('detail-view').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -355,11 +491,16 @@ function chiudiDettaglio() {
   document.body.style.overflow = '';
 }
 
-// ===== MODALE INCONTRO =====
-let clienteCorrente = '';
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.tab[onclick*="'${tab}'"]`).classList.add('active');
+  document.getElementById(`tab-${tab}`).classList.add('active');
+}
 
+// ===== MODALE INCONTRO =====
 function apriNuovoIncontro(nome) {
-  clienteCorrente = nome;
+  currentCliente = nome;
   document.getElementById('modal-title').textContent = `📝 Nuovo incontro — ${nome}`;
   document.getElementById('f-data').value = new Date().toISOString().split('T')[0];
   document.getElementById('f-ora').value = '';
@@ -377,7 +518,7 @@ function chiudiModale() {
 }
 
 function salvaIncontro() {
-  const c = clienti.find(x => x.nome === clienteCorrente);
+  const c = clienti.find(x => x.nome === currentCliente);
   if (!c) return;
   
   const incontro = {
@@ -393,7 +534,6 @@ function salvaIncontro() {
   
   if (!c.incontri) c.incontri = [];
   c.incontri.push(incontro);
-  c.ultimaVisita = incontro.data;
   
   if (document.getElementById('f-prossima-data').value) {
     c.prossimaVisita = document.getElementById('f-prossima-data').value;
@@ -403,20 +543,21 @@ function salvaIncontro() {
   renderKPI();
   renderClienti();
   
-  // Se siamo nel dettaglio, aggiorna
   if (document.getElementById('detail-view').classList.contains('show')) {
-    apriDettaglio(clienteCorrente);
+    apriDettaglio(currentCliente);
   }
   
-  alert('✅ Incontro registrato!');
-  
-  // Opzionale: salva su server (API call)
-  // salvaSuServer();
+  // Feedback
+  const el = document.getElementById('lista-clienti');
+  const msg = document.createElement('div');
+  msg.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;z-index:999;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s';
+  msg.textContent = '✅ Incontro registrato!';
+  document.body.appendChild(msg);
+  setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 2000);
 }
 
 // ===== INIZIALIZZAZIONE =====
 document.addEventListener('DOMContentLoaded', () => {
-  // Prova a caricare da clienti.json
   fetch('clienti.json')
     .then(r => r.json())
     .then(data => {
@@ -430,8 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
     .catch(() => {
-      // Usa fallback se fetch fallisce
-      console.log('Usando dati fallback locali');
+      clienti = FALLBACK;
     })
     .finally(() => {
       renderKPI();
