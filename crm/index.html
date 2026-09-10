@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Ellesse CRM — Giro Visite</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0b0f19;--card:#151c2c;--card2:#1a2233;--border:#232c40;--txt:#e8edf5;--txt2:#9ba6b9;--txt3:#6b7a8c;--accent:#6ea8fe;--accent2:#8b7cff;--green:#3ddc97;--yellow:#f6c453;--red:#ff6b7a;--radius:18px;--shadow:0 4px 24px rgba(0,0,0,.3)}
@@ -116,6 +121,13 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 
 <!-- KPI STRIP -->
 <div class="kpi-strip" id="kpi-strip"></div>
+
+<!-- SEZIONE MAPPA -->
+<section id="sezione-mappa" style="padding:0 14px;max-width:800px;margin:0 auto">
+  <div class="sec-title">🗺 Mappa giro visite <span class="cnt" id="mappa-count"></span></div>
+  <div id="mappa" style="height:380px;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);z-index:1;background:#1a2233"></div>
+  <div style="display:flex;gap:8px;margin-top:8px;overflow-x:auto;white-space:nowrap;padding:2px" id="mappa-filtri"></div>
+</section>
 
 <!-- FILTRI -->
 <section>
@@ -273,6 +285,10 @@ const FALLBACK = [
 let clienti = [];
 let filtroAttivo = 'tutti';
 let currentCliente = '';
+let mapa = null;
+let mapaMarkers = null;
+let mapaFiltro = 'tutti';
+let clientiConGeo = [];
 
 function formattaData(d) {
   if (!d) return '—';
@@ -379,6 +395,92 @@ function renderFiltri() {
     html += `<button class="f-btn ${filtroAttivo === az ? 'active' : ''}" onclick="filtroAttivo='${az}';renderClienti();renderFiltri()">${az}</button>`;
   });
   document.getElementById('filtri').innerHTML = html;
+}
+
+// ===== MAPPA GIRO VISITE =====
+const coloriMandante = {
+  "Biemme": "#4362b9", "Internorm": "#cc1e2c", "Gerflor": "#00a651", "Novoferm": "#f39200",
+  "Ditec": "#005a9e", "Ferrero Legno": "#8b4513", "Cherubini": "#6a1b9a", "Roto": "#e91e63",
+  "Navello": "#0097a7", "Altro": "#6b7a8c"
+};
+
+function avviaMappa() {
+  if (mapa) return;
+  mapa = L.map('mappa', { zoomControl: true, scrollWheelZoom: false }).setView([37.6, 14.0], 8);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors', maxZoom: 18
+  }).addTo(mapa);
+  mapaMarkers = L.markerClusterGroup({ maxClusterRadius: 30 });
+  document.getElementById('sezione-mappa').style.display = '';
+}
+
+function coloreStatoMappa(c) {
+  const gg = giorniAllaProssima(c);
+  if (gg === null) return '#6b7a8c';
+  if (gg < 0) return '#ff6b7a';
+  if (gg <= 7) return '#3ddc97';
+  if (gg <= 30) return '#f6c453';
+  return '#6b7a8c';
+}
+
+function popupMappa(c) {
+  const gg = giorniAllaProssima(c);
+  const stato = statoVisita(c);
+  const label = labelStato(gg);
+  const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
+  return `<div style="font-family:system-ui;min-width:200px">
+    <div style="font-weight:700;font-size:14px;margin-bottom:4px">${c.nome}</div>
+    <div style="font-size:11px;color:#555">📍 ${c.zona}</div>
+    <div style="font-size:11px;color:#555;margin-bottom:4px">🏢 ${c.mandanti.join(', ')}</div>
+    <div style="margin:6px 0">
+      <span style="padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;color:#fff;background:${coloreStatoMappa(c)}">${label}</span>
+      ${c.periodicita ? `<span style="padding:2px 8px;border-radius:10px;font-size:10px;background:#eee;color:#333;margin-left:4px">🔄 ${c.periodicita}gg</span>` : ''}
+    </div>
+    ${ultimo ? `<div style="font-size:11px;color:#666;border-top:1px solid #eee;padding-top:4px">📝 ${formattaData(ultimo.data)}: ${ultimo.argomenti.slice(0,50)}${ultimo.argomenti.length > 50 ? '...' : ''}</div>` : ''}
+    <div style="margin-top:8px;text-align:center">
+      <button onclick="apriDettaglio('${c.nome}')" style="background:#6ea8fe;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%">Apri scheda cliente</button>
+    </div>
+  </div>`;
+}
+
+function renderMappa() {
+  avviaMappa();
+  mapaMarkers.clearLayers();
+
+  // Filtra clienti per mandante
+  let visibili = clienti.filter(c => c.lat && c.lon);
+  if (mapaFiltro !== 'tutti') {
+    visibili = visibili.filter(c => c.mandanti.includes(mapaFiltro));
+  }
+
+  visibili.forEach(c => {
+    const colore = mapaFiltro === 'tutti' ? coloreStatoMappa(c) : (coloriMandante[c.mandanti.find(m => m === mapaFiltro)] || '#6ea8fe');
+    const icona = L.divIcon({
+      className: '',
+      html: `<div style="width:24px;height:24px;border-radius:50%;background:${colore};border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:800">${c.nome[0]}</div>`,
+      iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -12]
+    });
+    const marker = L.marker([c.lat, c.lon], { icon: icona });
+    marker.bindPopup(popupMappa(c));
+    mapaMarkers.addLayer(marker);
+  });
+
+  mapa.addLayer(mapaMarkers);
+  document.getElementById('mappa-count').textContent = `${visibili.length} clienti`;
+
+  // Fit bounds se ci sono marker
+  if (visibili.length > 0) {
+    const bounds = L.latLngBounds(visibili.map(c => [c.lat, c.lon]));
+    mapa.fitBounds(bounds, { padding: [30, 30], maxZoom: 10 });
+  }
+
+  // Filtri mandante nella mappa
+  const aziende = [...new Set(clienti.flatMap(c => c.mandanti))].sort();
+  let html = `<button class="f-btn ${mapaFiltro === 'tutti' ? 'active' : ''}" onclick="mapaFiltro='tutti';renderMappa()">Tutti</button>`;
+  aziende.forEach(az => {
+    html += `<button class="f-btn ${mapaFiltro === az ? 'active' : ''}" onclick="mapaFiltro='${az}';renderMappa()">${az}</button>`;
+  });
+  document.getElementById('mappa-filtri').innerHTML = html;
 }
 
 // ===== LISTA CLIENTI =====
@@ -672,15 +774,26 @@ function salvaNuovoCliente() {
 
 // ===== INIZIALIZZAZIONE =====
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('clienti.json')
-    .then(r => r.json())
-    .then(data => {
-      if (data.clienti?.length) {
-        clienti = data.clienti.map(c => ({ ...c, periodicita: c.periodicita || 90, prossimaVisita: c.prossimaVisita || null, ultimaVisita: c.incontri?.length > 0 ? c.incontri[c.incontri.length-1].data : null }));
-      }
-    })
-    .catch(() => { clienti = FALLBACK; })
-    .finally(() => { renderKPI(); renderFiltri(); renderClienti(); });
+  // Carica dati geolocalizzati (clienti_geo.json) + merge con clienti.json
+  Promise.all([
+    fetch('clienti_geo.json').then(r => r.json()).catch(() => null),
+    fetch('clienti.json').then(r => r.json()).catch(() => null),
+  ]).then(([geo, json]) => {
+    if (geo && geo.length) {
+      clientiConGeo = geo;
+      clienti = geo;
+    } else if (json?.clienti?.length) {
+      clienti = json.clienti.map(c => ({ ...c, periodicita: c.periodicita || 90 }));
+    } else {
+      clienti = FALLBACK;
+    }
+    renderKPI(); renderFiltri(); renderClienti();
+    setTimeout(() => renderMappa(), 300);
+  }).catch(() => {
+    clienti = FALLBACK;
+    renderKPI(); renderFiltri(); renderClienti();
+    setTimeout(() => renderMappa(), 300);
+  });
 });
 </script>
 </body>
