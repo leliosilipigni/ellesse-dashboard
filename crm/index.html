@@ -12,787 +12,487 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0b0f19;--card:#151c2c;--card2:#1a2233;--border:#232c40;--txt:#e8edf5;--txt2:#9ba6b9;--txt3:#6b7a8c;--accent:#6ea8fe;--accent2:#8b7cff;--green:#3ddc97;--yellow:#f6c453;--red:#ff6b7a;--radius:18px;--shadow:0 4px 24px rgba(0,0,0,.3)}
-body{font-family:system-ui,-apple-system,Inter,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding:0 0 80px 0}
-header{text-align:center;padding:24px 16px 12px;background:radial-gradient(ellipse at 50% 0%,rgba(110,168,254,.08),transparent 70%)}
-header h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
-header .sub{font-size:13px;color:var(--txt2);margin-top:3px}
-header .badge{display:inline-block;margin-top:8px;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(110,168,254,.12);color:var(--accent);border:1px solid rgba(110,168,254,.2)}
-/* KPI strip */
-.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:12px 14px;max-width:800px;margin:0 auto}
-.kpi-box{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--radius);padding:12px 6px;text-align:center;box-shadow:var(--shadow)}
-.kpi-box .lbl{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--txt3);font-weight:600;margin-bottom:3px}
-.kpi-box .val{font-size:clamp(15px,3.5vw,22px);font-weight:800;letter-spacing:-.5px}
-.kpi-box .note{font-size:8px;color:var(--txt3);margin-top:2px;line-height:1.2}
-.kpi-box.highlight{background:linear-gradient(135deg,#0d2818,#1a3a2a);border-color:var(--green)}
-.kpi-box.highlight .val{color:var(--green)}
-.kpi-box.danger{background:linear-gradient(135deg,#2a0d0d,#3a1a1a);border-color:var(--red)}
-.kpi-box.danger .val{color:var(--red)}
-/* Sezioni */
-section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
-.sec-title{font-size:15px;font-weight:700;letter-spacing:-.3px;padding:12px 0 8px;display:flex;align-items:center;gap:8px}
-.sec-title .cnt{font-size:12px;font-weight:600;color:var(--txt3);background:var(--card);padding:2px 10px;border-radius:12px}
-/* Card cliente */
-.cliente-card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px;box-shadow:var(--shadow);cursor:pointer;transition:all .15s}
-.cliente-card:active{transform:scale(.98)}
-.cliente-card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.cliente-card .nome{font-size:16px;font-weight:700}
-.cliente-card .zona{font-size:12px;color:var(--txt2);margin-top:2px}
-.cliente-card .mandanti{font-size:11px;color:var(--txt3);margin-top:3px}
-.cliente-card .badge-visite{font-size:11px;color:var(--accent);margin-top:4px}
-.cliente-card .status{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.cliente-card .pill{padding:3px 10px;border-radius:12px;font-size:10px;font-weight:600}
-.pill.green{background:rgba(61,220,151,.12);color:var(--green);border:1px solid rgba(61,220,151,.2)}
-.pill.yellow{background:rgba(246,196,83,.12);color:var(--yellow);border:1px solid rgba(246,196,83,.2)}
-.pill.red{background:rgba(255,107,122,.12);color:var(--red);border:1px solid rgba(255,107,122,.2)}
-.pill.gray{background:rgba(107,122,140,.12);color:var(--txt3);border:1px solid rgba(107,122,140,.2)}
-.pill.blue{background:rgba(110,168,254,.12);color:var(--accent);border:1px solid rgba(110,168,254,.2)}
-.cliente-card .azioni{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.cliente-card .btn{flex:1;padding:8px 12px;border-radius:10px;font-size:12px;font-weight:600;border:none;cursor:pointer;text-align:center;transition:all .12s}
+:root{--bg:#0a0e17;--card:#111827;--card2:#1a2235;--border:#1e2a45;--txt:#e2e8f0;--txt2:#8892a8;--txt3:#56607a;--accent:#3b82f6;--accent2:#6366f1;--green:#22c55e;--emerald:#10b981;--yellow:#eab308;--orange:#f97316;--red:#ef4444;--radius:16px;--shadow:0 4px 24px rgba(0,0,0,.4)}
+body{font-family:system-ui,-apple-system,Inter,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding:0 0 80px}
+header{padding:20px 16px 0;max-width:900px;margin:0 auto}
+.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.header-brand{display:flex;align-items:center;gap:10px}
+.header-logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.header-titles h1{font-size:20px;font-weight:700;letter-spacing:-.4px}
+.header-titles .sub{font-size:12px;color:var(--txt2);margin-top:1px}
+.header-stats{display:flex;gap:6px;font-size:11px}
+.header-stats span{background:var(--card);padding:4px 10px;border-radius:8px;border:1px solid var(--border);color:var(--txt2)}
+/* TOP KPI ROW */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 16px;max-width:900px;margin:0 auto}
+.kpi-tile{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--radius);padding:14px;position:relative;overflow:hidden}
+.kpi-tile::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.7}
+.kpi-tile.green::before{background:var(--green)}
+.kpi-tile.amber::before{background:var(--yellow)}
+.kpi-tile.red::before{background:var(--red)}
+.kpi-tile.emerald::before{background:var(--emerald)}
+.kpi-tile .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--txt3);font-weight:600;margin-bottom:2px}
+.kpi-tile .val{font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+.kpi-tile .val small{font-size:13px;font-weight:600;color:var(--txt2);margin-left:4px}
+.kpi-tile .trend{font-size:11px;margin-top:3px;display:flex;align-items:center;gap:4px}
+.kpi-tile .trend.up{color:var(--green)}
+.kpi-tile .trend.down{color:var(--red)}
+.kpi-tile .trend.neutral{color:var(--txt3)}
+/* SECTION */
+.section{padding:16px 16px 0;max-width:900px;margin:0 auto}
+.sec-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.sec-title{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.sec-title .count{font-size:11px;font-weight:600;color:var(--txt3);background:var(--card);padding:2px 10px;border-radius:10px}
+.sec-actions{display:flex;gap:6px}
+.sec-actions button{padding:6px 14px;border-radius:8px;font-size:11px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--txt2);cursor:pointer;transition:all .12s}
+.sec-actions button:hover{background:var(--card2);color:var(--txt)}
+.sec-actions button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* MAPPA */
+.map-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+#mappa{height:340px;background:var(--card2)}
+.map-filtri{display:flex;gap:6px;padding:8px 12px;overflow-x:auto;white-space:nowrap;border-top:1px solid var(--border)}
+.map-filtri button{padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;border:none;background:var(--card2);color:var(--txt2);cursor:pointer;flex-shrink:0}
+.map-filtri button.active{background:var(--accent);color:#fff}
+/* FILTRI E RICERCA */
+.filtri-row{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.filtri-row .f-btn{padding:5px 14px;border-radius:8px;font-size:11px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--txt2);cursor:pointer;flex-shrink:0;transition:all .1s}
+.filtri-row .f-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.search-add{display:flex;gap:8px;margin-bottom:10px}
+.search-add input{flex:1;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--txt);font-size:13px}
+.search-add input::placeholder{color:var(--txt3)}
+.search-add button{padding:9px 16px;border-radius:8px;font-size:12px;font-weight:700;border:none;cursor:pointer;background:var(--emerald);color:#fff;white-space:nowrap}
+/* CLIENTE CARD */
+.cliente-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:8px;box-shadow:var(--shadow);cursor:pointer;transition:all .15s}
+.cliente-card:hover{border-color:var(--accent)}
+.cliente-card:active{transform:scale(.99)}
+.cliente-card .row1{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.cliente-card .info .nome{font-size:15px;font-weight:700}
+.cliente-card .info .meta{font-size:11px;color:var(--txt2);margin-top:1px;display:flex;flex-wrap:wrap;gap:3px}
+.cliente-card .info .meta span{padding:1px 6px;border-radius:4px;background:var(--card2);font-size:10px;color:var(--txt3)}
+.cliente-card .badge{padding:3px 10px;border-radius:8px;font-size:10px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.badge-verde{background:rgba(34,197,94,.15);color:var(--green)}
+.badge-giallo{background:rgba(234,179,8,.15);color:var(--yellow)}
+.badge-rosso{background:rgba(239,68,68,.15);color:var(--red)}
+.badge-grigio{background:rgba(86,96,122,.15);color:var(--txt3)}
+.badge-blu{background:rgba(59,130,246,.15);color:var(--accent)}
+.cliente-card .row2{display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--txt3)}
+.cliente-card .row2 .stat{display:flex;align-items:center;gap:4px}
+.cliente-card .row2 .stat .val{font-weight:600;color:var(--txt2)}
+.cliente-card .row3{margin-top:8px;display:flex;gap:6px}
+.cliente-card .row3 button{flex:1;padding:7px;border-radius:8px;font-size:11px;font-weight:600;border:none;cursor:pointer;transition:all .1s}
 .btn-primary{background:var(--accent);color:#fff}
-.btn-secondary{background:var(--card);color:var(--txt2);border:1px solid var(--border)}
-.btn-success{background:var(--green);color:#000}
-.btn-danger{background:var(--red);color:#fff}
-.btn-add{background:var(--green);color:#000;font-weight:700}
-/* Intestazione azienda */
-.azienda-group{margin-bottom:18px}
-.azienda-header{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:2px solid var(--border);margin-bottom:12px}
-.azienda-header .azienda-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
-.azienda-header .azienda-nome{font-size:16px;font-weight:700}
-.azienda-header .azienda-count{font-size:12px;color:var(--txt3);background:var(--card);padding:2px 10px;border-radius:12px}
-/* Dettaglio cliente */
+.btn-outline{background:transparent;color:var(--txt2);border:1px solid var(--border)!important}
+.btn-outline:hover{background:var(--card2);color:var(--txt)}
+/* DETTAGLIO */
 #detail-view{display:none;position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto;padding:0 0 100px}
 #detail-view.show{display:block}
-.detail-header{position:sticky;top:0;background:var(--bg);padding:16px 14px 10px;z-index:10;border-bottom:1px solid var(--border)}
-.detail-header .back{background:none;border:none;color:var(--accent);font-size:14px;font-weight:600;cursor:pointer;padding:4px 0;display:flex;align-items:center;gap:6px}
-.detail-header h2{font-size:20px;margin-top:4px}
-.detail-header .info{font-size:13px;color:var(--txt2);margin-top:3px}
-.detail-body{padding:14px}
-.cliente-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
-.metric-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center}
-.metric-card .m-val{font-size:18px;font-weight:800}
-.metric-card .m-lbl{font-size:9px;text-transform:uppercase;color:var(--txt3);font-weight:600;margin-top:2px}
-.metric-card .m-note{font-size:9px;color:var(--txt3);margin-top:1px}
-.incontro-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px}
-.incontro-card .data{font-size:11px;color:var(--txt3);font-weight:600;display:flex;justify-content:space-between}
-.incontro-card .gap{font-size:10px;color:var(--accent)}
-.incontro-card .arg{font-size:13px;margin-top:6px;color:var(--txt)}
-.incontro-card .dec{font-size:12px;margin-top:4px;color:var(--accent)}
-.incontro-card .prossimi{font-size:12px;margin-top:4px;color:var(--green)}
-/* Form */
+.det-header{position:sticky;top:0;background:var(--bg);padding:14px 16px 10px;z-index:10;border-bottom:1px solid var(--border)}
+.det-header .back{background:none;border:none;color:var(--accent);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;padding:2px 0}
+.det-header h2{font-size:19px;margin-top:2px}
+.det-header .info{font-size:12px;color:var(--txt2);margin-top:1px}
+.det-body{padding:14px 16px}
+.det-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.det-metric{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center}
+.det-metric .mv{font-size:18px;font-weight:800}
+.det-metric .ml{font-size:8px;text-transform:uppercase;color:var(--txt3);font-weight:600;margin-top:1px}
+.det-tabs{display:flex;gap:2px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:2px;overflow-x:auto}
+.det-tab{padding:6px 14px;border-radius:6px 6px 0 0;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--txt3);cursor:pointer;flex-shrink:0}
+.det-tab.active{background:var(--card);color:var(--accent)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.incontro-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px}
+.incontro-item .top{display:flex;justify-content:space-between;font-size:11px;color:var(--txt3)}
+.incontro-item .gap{color:var(--accent)}
+.incontro-item .arg{font-size:13px;margin-top:4px}
+.incontro-item .dec{font-size:12px;color:var(--accent);margin-top:2px}
+.incontro-item .next{font-size:12px;color:var(--emerald);margin-top:2px}
+/* MODALE */
 .modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);align-items:flex-end;justify-content:center}
 .modal.show{display:flex}
 .modal-content{background:var(--card);border-radius:var(--radius) var(--radius) 0 0;padding:20px 16px 30px;width:100%;max-width:500px;max-height:85vh;overflow-y:auto}
-.modal-content h3{font-size:18px;margin-bottom:14px}
-.modal-content label{display:block;font-size:12px;font-weight:600;color:var(--txt2);margin-bottom:4px;margin-top:12px}
-.modal-content input,.modal-content textarea,.modal-content select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--card2);color:var(--txt);font-size:14px;font-family:inherit}
-.modal-content textarea{resize:vertical;min-height:70px}
-.modal-content .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.modal-content .btn{width:100%;margin-top:16px;padding:12px;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer}
-/* Filtri */
-.filtri{display:flex;gap:8px;padding:4px 0 10px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-.filtri .f-btn{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--txt2);cursor:pointer;transition:all .12s;flex-shrink:0}
-.filtri .f-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.search-box{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--txt);font-size:14px;margin-bottom:8px}
-.search-box::placeholder{color:var(--txt3)}
+.modal-content h3{font-size:17px;margin-bottom:14px}
+.modal-content label{display:block;font-size:11px;font-weight:600;color:var(--txt2);margin-bottom:3px;margin-top:10px}
+.modal-content input,.modal-content textarea,.modal-content select{width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card2);color:var(--txt);font-size:13px;font-family:inherit}
+.modal-content textarea{resize:vertical;min-height:60px}
+.modal-content .form-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.modal-btns{display:flex;gap:8px;margin-top:16px}
+.modal-btns button{padding:11px;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer}
+.ml-annulla{flex:1;background:var(--card2);color:var(--txt2)}
+.ml-conferma{flex:2;background:var(--accent);color:#fff}
+.ml-success{flex:2;background:var(--emerald);color:#fff}
 .empty-state{text-align:center;padding:40px 20px;color:var(--txt3)}
-.empty-state .emoji{font-size:48px;margin-bottom:12px}
-/* Tabs dettaglio */
-.tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:4px;overflow-x:auto}
-.tab{padding:6px 14px;border-radius:8px 8px 0 0;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--txt3);cursor:pointer;flex-shrink:0}
-.tab.active{background:var(--card);color:var(--accent);border-bottom:2px solid var(--accent)}
-.tab-content{display:none}
-.tab-content.active{display:block}
-/* Responsive */
-@media(max-width:560px){.kpi-strip{grid-template-columns:repeat(2,1fr);gap:6px;padding:8px 10px}
-  .kpi-box{padding:10px 6px}
-  .cliente-metrics{grid-template-columns:1fr 1fr}
-  .cliente-card .azioni{flex-direction:column}
+.empty-state .emoji{font-size:42px;margin-bottom:8px}
+.empty-state p{font-size:13px}
+@media(max-width:560px){
+  .kpi-row{grid-template-columns:repeat(2,1fr);gap:8px}
+  .det-metrics{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>📋 Ellesse CRM</h1>
-  <div class="sub">Agente Lelio Silipigni · Giro visite clienti</div>
-  <div class="badge" id="header-badge">Caricamento...</div>
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">EL</div>
+      <div class="header-titles">
+        <h1>Giro Visite</h1>
+        <div class="sub">Ellesse Rappresentanze · Lelio Silipigni</div>
+      </div>
+    </div>
+    <div class="header-stats">
+      <span id="h-oggi"></span>
+    </div>
+  </div>
 </header>
 
-<!-- KPI STRIP -->
-<div class="kpi-strip" id="kpi-strip"></div>
+<!-- KPI ROW -->
+<div class="kpi-row" id="kpi-row"></div>
 
-<!-- SEZIONE MAPPA -->
-<section id="sezione-mappa" style="padding:0 14px;max-width:800px;margin:0 auto">
-  <div class="sec-title">🗺 Mappa giro visite <span class="cnt" id="mappa-count"></span></div>
-  <div id="mappa" style="height:380px;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);z-index:1;background:#1a2233"></div>
-  <div style="display:flex;gap:8px;margin-top:8px;overflow-x:auto;white-space:nowrap;padding:2px" id="mappa-filtri"></div>
-</section>
-
-<!-- FILTRI -->
-<section>
-  <div class="filtri" id="filtri"></div>
-  <div style="display:flex;gap:8px;margin-bottom:8px">
-    <input class="search-box" id="search" placeholder="🔍 Cerca cliente, zona, mandante, referente..." oninput="renderClienti()" style="margin-bottom:0;flex:1">
-    <button class="btn btn-add" onclick="apriNuovoCliente()" style="padding:10px 16px;border-radius:12px;font-size:13px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;background:var(--green);color:#000">+ Cliente</button>
+<!-- MAPPA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="sec-title">🗺️ Mappa <span class="count" id="m-count"></span></div>
   </div>
-</section>
+  <div class="map-wrap">
+    <div id="mappa"></div>
+    <div class="map-filtri" id="m-filtri"></div>
+  </div>
+</div>
 
-<!-- LISTA CLIENTI -->
-<section id="lista-clienti"></section>
+<!-- CLIENTI -->
+<div class="section">
+  <div class="sec-header">
+    <div class="sec-title">👥 Clienti <span class="count" id="c-count"></span></div>
+    <div class="sec-actions">
+      <button onclick="apriNuovoCliente()" class="primary">+ Nuovo</button>
+    </div>
+  </div>
+  <div class="filtri-row" id="filtri-row"></div>
+  <div class="search-add">
+    <input id="search" placeholder="🔍 Cerca cliente, zona, mandante, referente..." oninput="renderClienti()">
+  </div>
+  <div id="lista-clienti"></div>
+</div>
 
 <!-- DETTAGLIO CLIENTE -->
 <div id="detail-view">
-  <div class="detail-header">
+  <div class="det-header">
     <button class="back" onclick="chiudiDettaglio()">← Indietro</button>
     <h2 id="d-nome"></h2>
     <div class="info" id="d-info"></div>
   </div>
-  <div class="detail-body">
-    <div class="cliente-metrics" id="d-metrics"></div>
-    <div class="tabs" id="d-tabs">
-      <button class="tab active" onclick="switchTab('incontri')">📜 Incontri</button>
-      <button class="tab" onclick="switchTab('info')">ℹ Info</button>
+  <div class="det-body">
+    <div class="det-metrics" id="d-metrics"></div>
+    <div class="det-tabs" id="d-tabs">
+      <button class="det-tab active" onclick="switchTab('storico')">📜 Storico</button>
+      <button class="det-tab" onclick="switchTab('info')">ℹ️ Scheda</button>
     </div>
-    <div class="tab-content active" id="tab-incontri"></div>
-    <div class="tab-content" id="tab-info"></div>
-    <div style="margin-top:16px">
-      <button class="btn btn-primary" onclick="apriNuovoIncontro(currentCliente)" style="width:100%">+ Registra nuovo incontro</button>
+    <div class="tab-pane active" id="tab-storico"></div>
+    <div class="tab-pane" id="tab-info"></div>
+    <div style="margin-top:14px">
+      <button class="btn-primary" onclick="apriNuovoIncontro(currentCliente)" style="width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer">+ Registra incontro</button>
     </div>
   </div>
 </div>
 
-<!-- MODALE NUOVO INCONTRO -->
+<!-- MODALE INCONTRO -->
 <div class="modal" id="modal-incontro">
   <div class="modal-content">
-    <h3 id="modal-title">Nuovo incontro</h3>
+    <h3 id="mi-titolo">Nuovo incontro</h3>
     <label>Data</label>
     <input type="date" id="f-data">
     <div class="form-row">
       <div><label>Ora inizio</label><input type="time" id="f-ora"></div>
       <div><label>Ora fine</label><input type="time" id="f-ora-fine"></div>
     </div>
-    <label>Argomenti trattati</label>
-    <textarea id="f-argomenti" placeholder="Cosa avete discusso..."></textarea>
-    <label>Decisioni / impegni presi</label>
-    <textarea id="f-decisioni" placeholder="Ordini, accordi, richieste..."></textarea>
+    <label>Argomenti</label>
+    <textarea id="f-arg" placeholder="Cosa avete discusso..."></textarea>
+    <label>Decisioni / impegni</label>
+    <textarea id="f-dec" placeholder="Ordini, accordi, richieste..."></textarea>
     <label>Prossimi passi</label>
-    <textarea id="f-prossimi" placeholder="Da fare, follow-up, prossima visita..."></textarea>
-    <label>Prossima visita programmata</label>
-    <input type="date" id="f-prossima-data">
-    <label>Note / promemoria</label>
-    <textarea id="f-promemoria" placeholder="Extra..."></textarea>
-    <div style="display:flex;gap:8px;margin-top:16px">
-      <button class="btn btn-secondary" onclick="chiudiModale()" style="flex:1">Annulla</button>
-      <button class="btn btn-primary" onclick="salvaIncontro()" style="flex:2">Salva incontro</button>
+    <textarea id="f-next" placeholder="Da fare, follow-up..."></textarea>
+    <label>Prossima visita</label>
+    <input type="date" id="f-prox">
+    <label>Promemoria</label>
+    <textarea id="f-rem" placeholder="Extra..."></textarea>
+    <div class="modal-btns">
+      <button class="ml-annulla" onclick="chiudiModale()">Annulla</button>
+      <button class="ml-conferma" onclick="salvaIncontro()">Salva</button>
     </div>
   </div>
 </div>
 
-<!-- MODALE NUOVO CLIENTE -->
+<!-- MODALE CLIENTE -->
 <div class="modal" id="modal-cliente">
   <div class="modal-content">
     <h3>➕ Nuovo cliente</h3>
-    <label>Nome cliente *</label>
+    <label>Nome *</label>
     <input type="text" id="fc-nome" placeholder="Ragione sociale">
     <div class="form-row">
       <div><label>Categoria</label>
-        <select id="fc-categoria">
-          <option value="rivendita">Rivendita</option>
-          <option value="installatore">Installatore</option>
-          <option value="progettista">Progettista</option>
-          <option value="impresa">Impresa edile</option>
-          <option value="privato">Privato</option>
-          <option value="altro">Altro</option>
+        <select id="fc-cat">
+          <option value="rivendita">Rivendita</option><option value="installatore">Installatore</option>
+          <option value="progettista">Progettista</option><option value="impresa">Impresa</option>
+          <option value="privato">Privato</option><option value="altro">Altro</option>
         </select>
       </div>
       <div><label>Zona</label>
         <select id="fc-zona">
-          <option value="Sicilia Ovest (Palermo)">Sicilia Ovest (PA)</option>
-          <option value="Sicilia Ovest (Trapani)">Sicilia Ovest (TP)</option>
-          <option value="Sicilia Ovest (Agrigento)">Sicilia Ovest (AG)</option>
-          <option value="Sicilia Est (Catania)">Sicilia Est (CT)</option>
-          <option value="Sicilia Est (Messina)">Sicilia Est (ME)</option>
-          <option value="Sicilia Est (Siracusa)">Sicilia Est (SR)</option>
-          <option value="Sicilia Sud (Ragusa)">Sicilia Sud (RG)</option>
-          <option value="Sicilia Sud (Caltanissetta)">Sicilia Sud (CL)</option>
-          <option value="Sicilia (Enna)">Sicilia (EN)</option>
-          <option value="Altre regioni">Altre regioni</option>
+          <option value="Sicilia Ovest (Palermo)">Palermo</option><option value="Sicilia Ovest (Trapani)">Trapani</option>
+          <option value="Sicilia Ovest (Agrigento)">Agrigento</option><option value="Sicilia Est (Catania)">Catania</option>
+          <option value="Sicilia Est (Messina)">Messina</option><option value="Sicilia Est (Siracusa)">Siracusa</option>
+          <option value="Sicilia Est (Ragusa)">Ragusa</option><option value="Sicilia Sud (Caltanissetta)">Caltanissetta</option>
+          <option value="Sicilia (Enna)">Enna</option>
         </select>
       </div>
     </div>
-    <label>Aziende / mandanti</label>
-    <div id="fc-mandanti-checkboxes" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
-    </div>
+    <label>Mandanti</label>
+    <div id="fc-mand" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:2px"></div>
     <label>Referente</label>
-    <input type="text" id="fc-referente" placeholder="Nome e cognome">
+    <input type="text" id="fc-ref" placeholder="Nome e cognome">
     <div class="form-row">
-      <div><label>Telefono</label>
-        <input type="text" id="fc-telefono" placeholder="333 1234567">
-      </div>
-      <div><label>Email</label>
-        <input type="email" id="fc-email" placeholder="nome@email.it">
-      </div>
+      <div><label>Tel.</label><input type="text" id="fc-tel" placeholder="333 1234567"></div>
+      <div><label>Email</label><input type="email" id="fc-email" placeholder="nome@email.it"></div>
     </div>
-    <label>Periodicità visite consigliata</label>
-    <select id="fc-periodicita">
-      <option value="15">Ogni 15 giorni</option>
-      <option value="30" selected>Ogni mese (30gg)</option>
-      <option value="45">Ogni 45 giorni</option>
-      <option value="60">Ogni 2 mesi</option>
-      <option value="90">Ogni 3 mesi</option>
-      <option value="180">Ogni 6 mesi</option>
-      <option value="365">Ogni anno</option>
+    <label>Periodicità</label>
+    <select id="fc-per">
+      <option value="15">15gg</option><option value="30" selected>30gg (mese)</option>
+      <option value="45">45gg</option><option value="60">60gg (2 mesi)</option>
+      <option value="90">90gg (3 mesi)</option><option value="180">180gg (6 mesi)</option>
     </select>
-    <label>Note / appunti iniziali</label>
-    <textarea id="fc-note" placeholder="Informazioni sul cliente..."></textarea>
-    <div style="display:flex;gap:8px;margin-top:16px">
-      <button class="btn btn-secondary" onclick="chiudiModaleCliente()" style="flex:1">Annulla</button>
-      <button class="btn btn-primary" onclick="salvaNuovoCliente()" style="flex:2">Aggiungi cliente</button>
+    <div class="modal-btns">
+      <button class="ml-annulla" onclick="chiudiModaleCliente()">Annulla</button>
+      <button class="ml-success" onclick="salvaNuovoCliente()">Aggiungi</button>
     </div>
   </div>
 </div>
 
 <script>
-// ===== DATI =====
-const AZIENDE_DISPONIBILI = ["Biemme","Internorm","Gerflor","Novoferm","Ditec","Ferrero Legno","Cherubini","Roto","Navello","Altro"];
-
-const AZIENDE_COLORI = {
-  "Biemme":"#4362b9","Internorm":"#cc1e2c","Gerflor":"#00a651","Novoferm":"#f39200",
-  "Ditec":"#005a9e","Ferrero Legno":"#8b4513","Cherubini":"#6a1b9a","Roto":"#e91e63",
-  "Navello":"#0097a7","Altro":"#6b7a8c"
-};
+const AZIENDE = ["Biemme","Internorm","Gerflor","Novoferm","Ditec","Ferrero Legno","Cherubini","Roto","Navello","Altro"];
+const AZ_COL = {"Biemme":"#3b82f6","Internorm":"#ef4444","Gerflor":"#22c55e","Novoferm":"#f97316","Ditec":"#06b6d4","Ferrero Legno":"#8b5cf6","Cherubini":"#a855f7","Roto":"#ec4899","Navello":"#14b8a6","Altro":"#6b7280"};
 
 const FALLBACK = [
-  {nome:"Cascino Angelo & C. Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Rilascio modulo richiesta anticipo Hdemia Design",decisioni:"Modulo compilato e inviato",prossimi_passi:"Seguire risposta Internorm",stato:"aperto"},{data:"2026-09-07",argomenti:"Sollecito conferma ordine (2° e ultimo) — commessa Campioni Termini Imerese",decisioni:"Inviata conferma ordine urgente",prossimi_passi:"Verificare ricezione e inoltro",stato:"aperto"},{data:"2026-08-21",argomenti:"Prima registrazione: partner Internorm.",decisioni:"Registrato come partner Internorm attivo.",prossimi_passi:"Contattare per aggiornamento e follow-up.",stato:"chiuso"}],periodicita:30,prossimaVisita:null},
-  {nome:"Tecno Infissi Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"091 1234567",email:"info@tecnoinfissisrl.com",referente:"Giuseppe Puglisi"},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo alzante LEVANTE 3000x2000 x10 pz, RAL 9010. Preventivo #178",decisioni:"Inviata offerta PABL004I6. Attesa riscontro.",prossimi_passi:"Follow-up a 7 giorni",stato:"aperto"}],periodicita:45,prossimaVisita:"2026-10-23"},
-  {nome:"3Z Serramenti Srls",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"3zserramenti@gmail.com",referente:""},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo INVERSA: 4 finestre (F1,F2,PF1,PF2) RAL 9010. Preventivo #177",decisioni:"Offerta PABL003I6 inviata. Sconto 45+30.",prossimi_passi:"Follow-up a 7 giorni",stato:"aperto"}],periodicita:45,prossimaVisita:"2026-10-23"},
-  {nome:"Hdemia Design Srls",categoria:"rivendita",zona:"Sicilia Est (Ragusa)",mandanti:["Internorm"],contatti:{telefono:"0338 9132222",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Richiesta anticipo consegna sett.41. Conferma ordine 6744075 (KF310, 7 posizioni, €6.103,03).",decisioni:"Modulo richiesta anticipo compilato e inviato a Internorm.",prossimi_passi:"Attendere risposta Internorm sull'anticipo",stato:"aperto"}],periodicita:60,prossimaVisita:"2026-11-08"},
-  {nome:"Di Via SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme","Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €296,261.",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"C.& G. Serramenti",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €469,091 (28% del totale).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"Sirimed SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Gerflor","Novoferm"],contatti:{telefono:"",email:"",referente:"Laura Barbagallo"},incontri:[{data:"2026-09-09",argomenti:"Ordini bloccati per scaduto (fido/rating). Rosita Colombo sollecita.",decisioni:"Da risolvere situazione scaduti per sbloccare ordini.",prossimi_passi:"Contattare Sirimed per sollecito pagamento",stato:"aperto"}],periodicita:30,prossimaVisita:null},
-  {nome:"Lupo' Costruzioni SRL",categoria:"rivendita",zona:"Sicilia Est (Messina)",mandanti:["Gerflor"],contatti:{telefono:"",email:"",referente:"Alberto"},incontri:[{data:"2026-09-09",argomenti:"Nota di credito con ri-fatturazione CIG/CUP.",decisioni:"Davide Daino segue pratica",prossimi_passi:"Comunicare nuovi dati CIG/CUP ad Alberto",stato:"aperto"}],periodicita:45,prossimaVisita:null},
-  {nome:"Arkeb Iblea (Calogero)",categoria:"rivendita",zona:"Sicilia Sud (Ragusa)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Calogero"},incontri:[{data:"2026-09-09",argomenti:"Preventivo porte scorrevoli rif. Occhipinti bloccato: dubbio telaio.",decisioni:"Da chiarire se controtelaio Ermetika o misura diretta",prossimi_passi:"Verifica in loco o contattare impresa fornitrice",stato:"aperto"}],periodicita:30,prossimaVisita:null},
-  {nome:"Fratelli Alessi",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €44,198 (top 10 Biemme).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"Luican Group SRL",categoria:"rivendita",zona:"Sicilia Est (Catania)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Angelo Leone"},incontri:[{data:"2026-09-04",argomenti:"Richiesta preventivo URGENTE posa pavimento PVC scuola infanzia Ramacca.",decisioni:"Da preparare offerta",prossimi_passi:"Preparare preventivo posa",stato:"aperto"}],periodicita:60,prossimaVisita:null},
-  {nome:"Ceca SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €89,944 (top 5 Biemme).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"Casa Clima",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €58,192.",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"Livia Infissi",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €33,725.",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"Gruppo Aerre",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €56,659.",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
+  {nome:"Cascino Angelo & C. Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Richiesta anticipo Hdemia Design",decisioni:"Modulo compilato e inviato",prossimi_passi:"Seguire risposta Internorm"},{data:"2026-09-07",argomenti:"Sollecito conferma ordine Campioni Termini",decisioni:"Inviata conferma urgente",prossimi_passi:"Verificare ricezione"},{data:"2026-08-21",argomenti:"Prima registrazione partner Internorm",decisioni:"Registrato",prossimi_passi:"Follow-up"}],periodicita:30,prossimaVisita:null,lat:38.111,lon:13.352},
+  {nome:"Tecno Infissi Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"091 1234567",email:"info@tecnoinfissisrl.com",referente:"Giuseppe Puglisi"},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo LEVANTE 3000x2000 x10 pz RAL 9010 #178",decisioni:"Offerta PABL004I6 inviata",prossimi_passi:"Follow-up 7gg"}],periodicita:45,prossimaVisita:"2026-10-23",lat:38.09,lon:13.456},
+  {nome:"3Z Serramenti Srls",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"3zserramenti@gmail.com",referente:""},incontri:[{data:"2026-09-08",argomenti:"Preventivo INVERSA 4 finestre RAL 9010 #177",decisioni:"Offerta PABL003I6 inviata sconto 45+30",prossimi_passi:"Follow-up 7gg"}],periodicita:45,prossimaVisita:"2026-10-23",lat:38.112,lon:13.348},
+  {nome:"Hdemia Design Srls",categoria:"rivendita",zona:"Sicilia Est (Ragusa)",mandanti:["Internorm"],contatti:{telefono:"0338 9132222",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Richiesta anticipo sett.41 Conf.6744075 €6.103",decisioni:"Modulo anticipo compilato",prossimi_passi:"Attendere risposta Internorm"}],periodicita:60,prossimaVisita:"2026-11-08",lat:36.926,lon:14.731},
+  {nome:"Di Via SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme","Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €296.261",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
+  {nome:"C.& G. Serramenti",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €469.091 (28% Biemme)",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
+  {nome:"Sirimed SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Gerflor","Novoferm"],contatti:{telefono:"",email:"",referente:"Laura Barbagallo"},incontri:[{data:"2026-09-09",argomenti:"Ordini bloccati per scaduto",decisioni:"Da risolvere scaduti",prossimi_passi:"Sollecito pagamento"}],periodicita:30,lat:38.112,lon:13.348},
+  {nome:"Lupo' Costruzioni SRL",categoria:"rivendita",zona:"Sicilia Est (Messina)",mandanti:["Gerflor"],contatti:{telefono:"",email:"",referente:"Alberto"},incontri:[{data:"2026-09-09",argomenti:"Nota credito CIG/CUP",decisioni:"Daino segue pratica",prossimi_passi:"Comunicare nuovi dati"}],periodicita:45,lat:38.194,lon:15.554},
+  {nome:"Arkeb Iblea (Calogero)",categoria:"rivendita",zona:"Sicilia Sud (Ragusa)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Calogero"},incontri:[{data:"2026-09-09",argomenti:"Preventivo porte scorrevoli bloccato",decisioni:"Chiarire telaio",prossimi_passi:"Verifica in loco"}],periodicita:30,lat:36.926,lon:14.731},
+  {nome:"Fratelli Alessi",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €44.198",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
+  {nome:"Luican Group SRL",categoria:"rivendita",zona:"Sicilia Est (Catania)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Angelo Leone"},incontri:[{data:"2026-09-04",argomenti:"Richiesta preventivo posa PVC scuola Ramacca",decisioni:"Da preparare offerta",prossimi_passi:"Preparare preventivo"}],periodicita:60,lat:37.503,lon:15.087},
+  {nome:"Ceca SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €89.944",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
+  {nome:"Casa Clima",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €58.192",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
+  {nome:"Livia Infissi",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €33.725",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
+  {nome:"Gruppo Aerre",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato €56.659",decisioni:"—",prossimi_passi:"Monitoraggio"}],periodicita:90,lat:38.112,lon:13.348},
 ];
 
 // ===== STATO =====
 let clienti = [];
-let filtroAttivo = 'tutti';
+let filtro = 'tutti';
 let currentCliente = '';
-let mapa = null;
-let mapaMarkers = null;
-let mapaFiltro = 'tutti';
-let clientiConGeo = [];
+let mapa = null, mCluster = null, mFiltro = 'tutti';
 
-function formattaData(d) {
-  if (!d) return '—';
-  const [y,m,dd] = d.split('-');
-  return dd+'/'+m+'/'+y;
-}
-
-function dataOggetto(d) {
-  if (!d) return null;
-  const [y,m,dd] = d.split('-');
-  return new Date(+y, +m-1, +dd);
-}
-
-function diffGiorni(d1, d2) {
-  if (!d1 || !d2) return null;
-  const a = dataOggetto(d1);
-  const b = dataOggetto(d2);
-  return Math.round((a - b) / (1000*60*60*24));
-}
-
-function giorniDaOggi(d) {
-  if (!d) return Infinity;
-  const oggi = new Date();
-  oggi.setHours(0,0,0,0);
-  const data = dataOggetto(d);
-  return Math.round((data - oggi) / (1000*60*60*24));
-}
-
-function giorniAllaProssima(c) {
-  if (c.prossimaVisita) return giorniDaOggi(c.prossimaVisita);
-  if (c.incontri?.length > 0 && c.periodicita) {
-    const ultimo = c.incontri[c.incontri.length-1].data;
-    const ultima = dataOggetto(ultimo);
-    ultima.setDate(ultima.getDate() + c.periodicita);
-    return Math.round((ultima - new Date()) / (1000*60*60*24));
-  }
-  return null;
-}
-
-function statoVisita(c) {
-  const gg = giorniAllaProssima(c);
-  if (gg === null) return 'gray';
-  if (gg < 0) return 'red';
-  if (gg <= 7) return 'green';
-  if (gg <= 30) return 'yellow';
-  return 'gray';
-}
-
-function labelStato(gg) {
-  if (gg === null) return 'Da programmare';
-  if (gg < 0) return `Scaduta da ${Math.abs(gg)}gg`;
-  if (gg === 0) return 'Oggi!';
-  if (gg === 1) return 'Domani!';
-  return `Tra ${gg}gg`;
-}
-
-function calcolaGapMedio(c) {
-  if (!c.incontri || c.incontri.length < 2) return null;
-  const sorted = [...c.incontri].sort((a,b) => a.data.localeCompare(b.data));
-  let tot = 0, n = 0;
-  for (let i = 1; i < sorted.length; i++) {
-    const g = diffGiorni(sorted[i].data, sorted[i-1].data);
-    if (g !== null && g >= 0) { tot += g; n++; }
-  }
-  return n > 0 ? Math.round(tot / n) : null;
-}
+function fData(d){if(!d)return'—';const[y,m,dd]=d.split('-');return dd+'/'+m+'/'+y}
+function dObj(d){if(!d)return null;const[y,m,dd]=d.split('-');return new Date(+y,+m-1,+dd)}
+function diffG(d1,d2){if(!d1||!d2)return null;return Math.round((dObj(d1)-dObj(d2))/(864e5))}
+function daOggi(d){if(!d)return Infinity;const o=new Date();o.setHours(0,0,0,0);return Math.round((dObj(d)-o)/(864e5))}
+function proxG(c){if(c.prossimaVisita)return daOggi(c.prossimaVisita);if(c.incontri?.length&&c.periodicita){const u=dObj(c.incontri[c.incontri.length-1].data);u.setDate(u.getDate()+c.periodicita);return Math.round((u-new Date())/(864e5))}return null}
+function statoVis(c){const g=proxG(c);if(g===null)return'gray';if(g<0)return'red';if(g<=7)return'green';if(g<=30)return'yellow';return'gray'}
+function lblStato(g){if(g===null)return'Da programmare';if(g<0)return`Scaduta da ${Math.abs(g)}gg`;if(g===0)return'Oggi!';if(g===1)return'Domani!';return`Tra ${g}gg`}
+function gapMed(c){if(!c.incontri||c.incontri.length<2)return null;const s=[...c.incontri].sort((a,b)=>a.data.localeCompare(b.data));let t=0,n=0;for(let i=1;i<s.length;i++){const g=diffG(s[i].data,s[i-1].data);if(g!==null&&g>=0){t+=g;n++}}return n>0?Math.round(t/n):null}
 
 // ===== KPI =====
-function calcolaKPI() {
-  const oggi = new Date();
-  const meseCorrente = oggi.getMonth();
-  const annoCorrente = oggi.getFullYear();
-  const visitatiQuestoMese = clienti.filter(c => 
-    c.incontri?.some(i => { const [y,m] = i.data.split('-'); return +y === annoCorrente && +m-1 === meseCorrente; })
-  ).length;
-  let totGap = 0, nGap = 0;
-  clienti.forEach(c => { const g = calcolaGapMedio(c); if (g !== null) { totGap += g; nGap++; } });
-  const gapMedio = nGap > 0 ? Math.round(totGap / nGap) : null;
-  const abbandonati = clienti.filter(c => { if (!c.incontri?.length) return false; return giorniDaOggi(c.incontri[c.incontri.length-1].data) > 60; }).length;
-  const scadenzeCritiche = clienti.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg <= 7; }).length;
-  const scadute = clienti.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg < 0; }).length;
-  return { totali: clienti.length, visitatiMese, copertura: Math.round(visitatiQuestoMese/clienti.length*100)||0, gapMedio, abbandonati, scadenze: scadenzeCritiche, scadute, totIncontri: clienti.reduce((s,c) => s+(c.incontri?.length||0),0) };
+function calcolaKPI(){
+  const oggi=new Date(), mc=oggi.getMonth(), ac=oggi.getFullYear();
+  const vm=clienti.filter(c=>c.incontri?.some(i=>{const[y,m]=i.data.split('-');return +y===ac&&+m-1===mc})).length;
+  let tg=0,ng=0;clienti.forEach(c=>{const g=gapMed(c);if(g!==null){tg+=g;ng++}});
+  const gm=ng>0?Math.round(tg/ng):null;
+  const sc=clienti.filter(c=>{const g=proxG(c);return g!==null&&g<=7}).length;
+  const sd=clienti.filter(c=>{const g=proxG(c);return g!==null&&g<0}).length;
+  return {tot:clienti.length,vm,cop:Math.round(vm/clienti.length*100)||0,gm,sc,sd,ti:clienti.reduce((s,c)=>s+(c.incontri?.length||0),0)};
 }
 
-function renderKPI() {
-  const k = calcolaKPI();
-  document.getElementById('kpi-strip').innerHTML = `
-    <div class="kpi-box"><div class="lbl">Clienti</div><div class="val">${k.totali}</div><div class="note">Registrati</div></div>
-    <div class="kpi-box"><div class="lbl">Visite mese</div><div class="val">${k.visitatiMese}</div><div class="note">${k.copertura}% copertura</div></div>
-    <div class="kpi-box ${k.scadenze > 0 ? 'highlight' : ''}"><div class="lbl">Da visitare</div><div class="val">${k.scadenze}</div><div class="note">Nei prossimi 7gg</div></div>
-    <div class="kpi-box ${k.scadute > 0 ? 'danger' : ''}"><div class="lbl">Scadute</div><div class="val" style="color:${k.scadute > 0 ? 'var(--red)' : 'var(--txt)'}">${k.scadute}</div><div class="note">Da riprogrammare</div></div>
-    <div class="kpi-box"><div class="lbl">Gap medio</div><div class="val">${k.gapMedio !== null ? k.gapMedio + 'gg' : '—'}</div><div class="note">Tra visite · ${k.totIncontri} tot</div></div>
+function renderKPI(){
+  const k=calcolaKPI();
+  document.getElementById('kpi-row').innerHTML=`
+    <div class="kpi-tile emerald"><div class="lbl">Clienti</div><div class="val">${k.tot}<small>attivi</small></div><div class="trend neutral">${k.ti} incontri totali</div></div>
+    <div class="kpi-tile green"><div class="lbl">Visite mese</div><div class="val">${k.vm}<small>su ${k.tot}</small></div><div class="trend up">${k.cop}% copertura</div></div>
+    <div class="kpi-tile ${k.sc>0?'amber':''}"><div class="lbl">Da visitare</div><div class="val">${k.sc}<small>prossimi 7gg</small></div><div class="trend ${k.sc>0?'up':'neutral'}">${k.sc>0?'🔔 Attenzione':'Nessuna urgenza'}</div></div>
+    <div class="kpi-tile ${k.sd>0?'red':''}"><div class="lbl">Scadute</div><div class="val">${k.sd}<small>da riprogrammare</small></div><div class="trend ${k.sd>0?'down':'neutral'}">${k.sd>0?'Da recuperare':'OK'}</div></div>
   `;
+  document.getElementById('h-oggi').textContent=new Date().toLocaleDateString('it-IT',{weekday:'short',day:'numeric',month:'short'});
 }
 
-// ===== FILTRI =====
-function renderFiltri() {
-  const aziende = [...new Set(clienti.flatMap(c => c.mandanti))].sort();
-  let html = `<button class="f-btn ${filtroAttivo === 'tutti' ? 'active' : ''}" onclick="filtroAttivo='tutti';renderClienti();renderFiltri()">📋 Tutti</button>`;
-  html += `<button class="f-btn ${filtroAttivo === 'urgenti' ? 'active' : ''}" onclick="filtroAttivo='urgenti';renderClienti();renderFiltri()">🔴 Urgenti</button>`;
-  html += `<button class="f-btn ${filtroAttivo === 'oggi' ? 'active' : ''}" onclick="filtroAttivo='oggi';renderClienti();renderFiltri()">Oggi</button>`;
-  html += `<button class="f-btn ${filtroAttivo === 'per-azienda' ? 'active' : ''}" onclick="filtroAttivo='per-azienda';renderClienti();renderFiltri()">🏢 Per azienda</button>`;
-  aziende.forEach(az => {
-    html += `<button class="f-btn ${filtroAttivo === az ? 'active' : ''}" onclick="filtroAttivo='${az}';renderClienti();renderFiltri()">${az}</button>`;
-  });
-  document.getElementById('filtri').innerHTML = html;
+// ===== MAPPA =====
+function initMappa(){
+  if(mapa)return;
+  mapa=L.map('mappa',{zoomControl:true,scrollWheelZoom:false}).setView([37.6,14.0],8);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'',maxZoom:18}).addTo(mapa);
+  mCluster=L.markerClusterGroup({maxClusterRadius:35,spiderfyOnMaxZoom:true,showCoverageOnHover:false});
 }
 
-// ===== MAPPA GIRO VISITE =====
-const coloriMandante = {
-  "Biemme": "#4362b9", "Internorm": "#cc1e2c", "Gerflor": "#00a651", "Novoferm": "#f39200",
-  "Ditec": "#005a9e", "Ferrero Legno": "#8b4513", "Cherubini": "#6a1b9a", "Roto": "#e91e63",
-  "Navello": "#0097a7", "Altro": "#6b7a8c"
-};
-
-function avviaMappa() {
-  if (mapa) return;
-  mapa = L.map('mappa', { zoomControl: true, scrollWheelZoom: false }).setView([37.6, 14.0], 8);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors', maxZoom: 18
-  }).addTo(mapa);
-  mapaMarkers = L.markerClusterGroup({ maxClusterRadius: 30 });
-  document.getElementById('sezione-mappa').style.display = '';
+function colMarker(c){
+  const g=proxG(c);
+  if(g===null)return'#6b7280';if(g<0)return'#ef4444';if(g<=7)return'#22c55e';if(g<=30)return'#eab308';
+  return'#6b7280';
 }
 
-function coloreStatoMappa(c) {
-  const gg = giorniAllaProssima(c);
-  if (gg === null) return '#6b7a8c';
-  if (gg < 0) return '#ff6b7a';
-  if (gg <= 7) return '#3ddc97';
-  if (gg <= 30) return '#f6c453';
-  return '#6b7a8c';
-}
-
-function popupMappa(c) {
-  const gg = giorniAllaProssima(c);
-  const stato = statoVisita(c);
-  const label = labelStato(gg);
-  const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
-  return `<div style="font-family:system-ui;min-width:200px">
-    <div style="font-weight:700;font-size:14px;margin-bottom:4px">${c.nome}</div>
-    <div style="font-size:11px;color:#555">📍 ${c.zona}</div>
-    <div style="font-size:11px;color:#555;margin-bottom:4px">🏢 ${c.mandanti.join(', ')}</div>
-    <div style="margin:6px 0">
-      <span style="padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;color:#fff;background:${coloreStatoMappa(c)}">${label}</span>
-      ${c.periodicita ? `<span style="padding:2px 8px;border-radius:10px;font-size:10px;background:#eee;color:#333;margin-left:4px">🔄 ${c.periodicita}gg</span>` : ''}
-    </div>
-    ${ultimo ? `<div style="font-size:11px;color:#666;border-top:1px solid #eee;padding-top:4px">📝 ${formattaData(ultimo.data)}: ${ultimo.argomenti.slice(0,50)}${ultimo.argomenti.length > 50 ? '...' : ''}</div>` : ''}
-    <div style="margin-top:8px;text-align:center">
-      <button onclick="apriDettaglio('${c.nome}')" style="background:#6ea8fe;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%">Apri scheda cliente</button>
-    </div>
+function popupHTML(c){
+  const g=proxG(c),s=statoVis(c),lb=lblStato(g);
+  const u=c.incontri?.length>0?c.incontri[c.incontri.length-1]:null;
+  return `<div style="font-family:system-ui;min-width:180px">
+    <div style="font-weight:700;font-size:14px;margin-bottom:2px">${c.nome}</div>
+    <div style="font-size:11px;color:#666;margin-bottom:4px">📍 ${c.zona} · 🏢 ${c.mandanti.join(', ')}</div>
+    <div style="margin:4px 0"><span style="padding:2px 10px;border-radius:10px;font-size:10px;font-weight:700;color:#fff;background:${colMarker(c)}">${lb}</span></div>
+    ${u?`<div style="font-size:11px;color:#888;border-top:1px solid #eee;padding-top:4px">📝 ${fData(u.data)}: ${u.argomenti.slice(0,45)}${u.argomenti.length>45?'...':''}</div>`:''}
+    <div style="margin-top:6px"><button onclick="apriDettaglio('${c.nome}')" style="background:#3b82f6;color:#fff;border:none;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;width:100%">Apri scheda</button></div>
   </div>`;
 }
 
-function renderMappa() {
-  avviaMappa();
-  mapaMarkers.clearLayers();
-
-  // Filtra clienti per mandante
-  let visibili = clienti.filter(c => c.lat && c.lon);
-  if (mapaFiltro !== 'tutti') {
-    visibili = visibili.filter(c => c.mandanti.includes(mapaFiltro));
-  }
-
-  visibili.forEach(c => {
-    const colore = mapaFiltro === 'tutti' ? coloreStatoMappa(c) : (coloriMandante[c.mandanti.find(m => m === mapaFiltro)] || '#6ea8fe');
-    const icona = L.divIcon({
-      className: '',
-      html: `<div style="width:24px;height:24px;border-radius:50%;background:${colore};border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:800">${c.nome[0]}</div>`,
-      iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -12]
-    });
-    const marker = L.marker([c.lat, c.lon], { icon: icona });
-    marker.bindPopup(popupMappa(c));
-    mapaMarkers.addLayer(marker);
+function renderMappa(){
+  initMappa();
+  mCluster.clearLayers();
+  let v=clienti.filter(c=>c.lat&&c.lon);
+  if(mFiltro!=='tutti')v=v.filter(c=>c.mandanti.includes(mFiltro));
+  v.forEach(c=>{
+    const col=mFiltro==='tutti'?colMarker(c):(AZ_COL[c.mandanti.find(m=>m===mFiltro)]||'#6ea8fe');
+    const ic=L.divIcon({className:'',html:`<div style="width:22px;height:22px;border-radius:50%;background:${col};border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;font-weight:800">${c.nome[0]}</div>`,iconSize:[22,22],iconAnchor:[11,11],popupAnchor:[0,-11]});
+    const mk=L.marker([c.lat,c.lon],{icon:ic}).bindPopup(popupHTML(c));
+    mCluster.addLayer(mk);
   });
-
-  mapa.addLayer(mapaMarkers);
-  document.getElementById('mappa-count').textContent = `${visibili.length} clienti`;
-
-  // Fit bounds se ci sono marker
-  if (visibili.length > 0) {
-    const bounds = L.latLngBounds(visibili.map(c => [c.lat, c.lon]));
-    mapa.fitBounds(bounds, { padding: [30, 30], maxZoom: 10 });
-  }
-
-  // Filtri mandante nella mappa
-  const aziende = [...new Set(clienti.flatMap(c => c.mandanti))].sort();
-  let html = `<button class="f-btn ${mapaFiltro === 'tutti' ? 'active' : ''}" onclick="mapaFiltro='tutti';renderMappa()">Tutti</button>`;
-  aziende.forEach(az => {
-    html += `<button class="f-btn ${mapaFiltro === az ? 'active' : ''}" onclick="mapaFiltro='${az}';renderMappa()">${az}</button>`;
-  });
-  document.getElementById('mappa-filtri').innerHTML = html;
+  mapa.addLayer(mCluster);
+  document.getElementById('m-count').textContent=`${v.length} su ${clienti.length}`;
+  if(v.length){const b=L.latLngBounds(v.map(c=>[c.lat,c.lon]));mapa.fitBounds(b,{padding:[20,20],maxZoom:10})}
+  const az=[...new Set(clienti.flatMap(c=>c.mandanti))].sort();
+  document.getElementById('m-filtri').innerHTML=
+    `<button class="${mFiltro==='tutti'?'active':''}" onclick="mFiltro='tutti';renderMappa()">Tutti</button>`+
+    az.map(a=>`<button class="${mFiltro===a?'active':''}" onclick="mFiltro='${a}';renderMappa()">${a}</button>`).join('');
 }
 
 // ===== LISTA CLIENTI =====
-function renderClienti() {
-  const q = document.getElementById('search').value.toLowerCase();
-  let filtrati = clienti;
-
-  if (filtroAttivo === 'urgenti') {
-    filtrati = filtrati.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg <= 7; });
-  } else if (filtroAttivo === 'oggi') {
-    filtrati = filtrati.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg <= 1; });
-  } else if (filtroAttivo === 'per-azienda') {
-    // Vista raggruppata per azienda
-    renderClientiPerAzienda(q);
-    return;
-  } else if (filtroAttivo !== 'tutti') {
-    filtrati = filtrati.filter(c => c.mandanti.includes(filtroAttivo));
-  }
-
-  if (q) {
-    filtrati = filtrati.filter(c => 
-      c.nome.toLowerCase().includes(q) || c.zona.toLowerCase().includes(q) ||
-      c.mandanti.some(m => m.toLowerCase().includes(q)) ||
-      (c.contatti.referente || '').toLowerCase().includes(q)
-    );
-  }
-
-  filtrati.sort((a,b) => {
-    const ga = giorniAllaProssima(a), gb = giorniAllaProssima(b);
-    if (ga === null && gb === null) return 0;
-    if (ga === null) return 1; if (gb === null) return -1;
-    return ga - gb;
-  });
-
-  const el = document.getElementById('lista-clienti');
-  if (filtrati.length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="emoji">📭</div>Nessun cliente trovato</div>';
-    document.getElementById('header-badge').textContent = '0 clienti';
-    return;
-  }
-
-  el.innerHTML = filtrati.map(c => renderCardCliente(c)).join('');
-  document.getElementById('header-badge').textContent = `${filtrati.length} clienti`;
-}
-
-function renderCardCliente(c) {
-  const gg = giorniAllaProssima(c);
-  const stato = statoVisita(c);
-  const label = labelStato(gg);
-  const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
-  const gapMedio = calcolaGapMedio(c);
-  const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
-  return `<div class="cliente-card" onclick="apriDettaglio('${c.nome}')">
-    <div class="top">
-      <div>
-        <div class="nome">${c.nome}</div>
-        <div class="zona">${c.zona}</div>
-        <div class="mandanti">${c.mandanti.join(' · ')}</div>
-        ${c.contatti.referente ? `<div class="badge-visite">👤 ${c.contatti.referente}</div>` : ''}
+function renderClienti(){
+  const q=document.getElementById('search').value.toLowerCase();
+  let f=clienti;
+  if(filtro==='urgenti')f=f.filter(c=>{const g=proxG(c);return g!==null&&g<=7});
+  else if(filtro==='oggi')f=f.filter(c=>{const g=proxG(c);return g!==null&&g<=1});
+  else if(filtro!=='tutti'&&filtro!=='per-az')f=f.filter(c=>c.mandanti.includes(filtro));
+  if(q)f=f.filter(c=>c.nome.toLowerCase().includes(q)||c.zona.toLowerCase().includes(q)||c.mandanti.some(m=>m.toLowerCase().includes(q))||(c.contatti.referente||'').toLowerCase().includes(q));
+  f.sort((a,b)=>{const ga=proxG(a),gb=proxG(b);if(ga===null&&gb===null)return 0;if(ga===null)return 1;if(gb===null)return -1;return ga-gb});
+  const el=document.getElementById('lista-clienti');
+  if(!f.length){el.innerHTML='<div class="empty-state"><div class="emoji">📭</div><p>Nessun cliente trovato</p></div>';document.getElementById('c-count').textContent='0';return}
+  document.getElementById('c-count').textContent=f.length;
+  el.innerHTML=f.map(c=>{
+    const g=proxG(c),s=statoVis(c),lb=lblStato(g),gm=gapMed(c),u=c.incontri?.length>0?c.incontri[c.incontri.length-1]:null,gg=u?daOggi(u.data):null;
+    const badgeCls={green:'badge-verde',red:'badge-rosso',yellow:'badge-giallo',gray:'badge-grigio'}[s]||'badge-grigio';
+    return `<div class="cliente-card" onclick="apriDettaglio('${c.nome}')">
+      <div class="row1">
+        <div class="info">
+          <div class="nome">${c.nome}</div>
+          <div class="meta">📍 ${c.zona} ${c.mandanti.map(m=>`<span>${m}</span>`).join('')} ${c.contatti.referente?`👤 ${c.contatti.referente}`:''}</div>
+        </div>
+        <span class="badge ${badgeCls}">${lb}</span>
       </div>
-      <span class="pill ${stato}">${label}</span>
-    </div>
-    ${ultimo ? `<div style="font-size:12px;color:var(--txt3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
-      <span>📝 ${formattaData(ultimo.data)} — ${ultimo.argomenti.slice(0,60)}${ultimo.argomenti.length > 60 ? '...' : ''}</span>
-      ${giorniDaUltima !== null ? `<span style="color:${giorniDaUltima > 60 ? 'var(--red)' : giorniDaUltima > 30 ? 'var(--yellow)' : 'var(--green)'}">${giorniDaUltima}gg fa</span>` : ''}
-    </div>` : ''}
-    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px">
-      <span>📊 ${c.incontri?.length || 0} incontri</span>
-      ${gapMedio !== null ? `<span>⏱ gap medio ${gapMedio}gg</span>` : ''}
-      ${c.periodicita ? `<span>🔄 ogni ${c.periodicita}gg</span>` : ''}
-    </div>
-    <div class="azioni">
-      <button class="btn btn-primary" onclick="event.stopPropagation();apriNuovoIncontro('${c.nome}')">+ Incontro</button>
-      <button class="btn btn-secondary" onclick="event.stopPropagation();apriDettaglio('${c.nome}')">Dettaglio</button>
-    </div>
-  </div>`;
-}
-
-// ===== VISTA PER AZIENDA =====
-function renderClientiPerAzienda(q) {
-  // Raggruppa per mandante
-  const gruppi = {};
-  clienti.forEach(c => {
-    if (q && !c.nome.toLowerCase().includes(q) && !c.zona.toLowerCase().includes(q) && !(c.contatti.referente||'').toLowerCase().includes(q)) return;
-    c.mandanti.forEach(m => {
-      if (!gruppi[m]) gruppi[m] = [];
-      gruppi[m].push(c);
-    });
-  });
-
-  const ordine = ["Biemme","Internorm","Gerflor","Novoferm","Ditec","Ferrero Legno","Cherubini","Roto","Navello","Altro"];
-  const chiaviOrdinate = ordine.filter(a => gruppi[a]).concat(Object.keys(gruppi).filter(a => !ordine.includes(a)).sort());
-
-  let html = '';
-  let totClienti = 0;
-  chiaviOrdinate.forEach(az => {
-    const lista = gruppi[az];
-    totClienti += lista.length;
-    // Raggruppa per zona
-    const perZona = {};
-    lista.forEach(c => {
-      if (!perZona[c.zona]) perZona[c.zona] = [];
-      perZona[c.zona].push(c);
-    });
-
-    html += `<div class="azienda-group">
-      <div class="azienda-header">
-        <div class="azienda-icon" style="background:${AZIENDE_COLORI[az] || '#6b7a8c'}">${az[0]}</div>
-        <div class="azienda-nome">${az}</div>
-        <div class="azienda-count">${lista.length} clienti</div>
-      </div>`;
-
-    Object.keys(perZona).sort().forEach(zona => {
-      html += `<div style="margin-bottom:8px">
-        <div style="font-size:11px;color:var(--txt3);font-weight:600;padding:0 0 4px 4px">📍 ${zona}</div>`;
-      perZona[zona].forEach(c => {
-        html += renderCardCliente(c);
-      });
-      html += `</div>`;
-    });
-    html += `</div>`;
-  });
-
-  const el = document.getElementById('lista-clienti');
-  if (!chiaviOrdinate.length) {
-    el.innerHTML = '<div class="empty-state"><div class="emoji">📭</div>Nessun cliente trovato</div>';
-  } else {
-    el.innerHTML = html;
-  }
-  document.getElementById('header-badge').textContent = `${totClienti} clienti`;
-}
-
-// ===== DETTAGLIO CLIENTE =====
-function apriDettaglio(nome) {
-  const c = clienti.find(x => x.nome === nome);
-  if (!c) return;
-  currentCliente = nome;
-  document.getElementById('d-nome').textContent = c.nome;
-  document.getElementById('d-info').textContent = `${c.zona} · ${c.mandanti.join(', ')}${c.contatti.referente ? ' · Rif. ' + c.contatti.referente : ''}`;
-  const gg = giorniAllaProssima(c);
-  const stato = statoVisita(c);
-  const label = labelStato(gg);
-  const gapMedio = calcolaGapMedio(c);
-  const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
-  const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
-  document.getElementById('d-metrics').innerHTML = `
-    <div class="metric-card"><div class="m-val">${c.incontri?.length || 0}</div><div class="m-lbl">Incontri</div><div class="m-note">totali</div></div>
-    <div class="metric-card"><div class="m-val">${gapMedio !== null ? gapMedio + 'gg' : '—'}</div><div class="m-lbl">Gap medio</div><div class="m-note">tra visite</div></div>
-    <div class="metric-card"><div class="m-val">${giorniDaUltima !== null ? giorniDaUltima + 'gg' : '—'}</div><div class="m-lbl">Dall'ultima</div><div class="m-note">visita</div></div>`;
-  if (c.incontri?.length > 0) {
-    const sorted = [...c.incontri].sort((a,b) => b.data.localeCompare(a.data));
-    let html = '';
-    for (let i = 0; i < sorted.length; i++) {
-      const inc = sorted[i], prossimo = i > 0 ? sorted[i-1] : null, gap = prossimo ? diffGiorni(prossimo.data, inc.data) : null;
-      html += `<div class="incontro-card"><div class="data"><span>${formattaData(inc.data)}</span>${gap !== null ? `<span class="gap">${gap}gg dopo</span>` : ''}</div>
-        <div class="arg">${inc.argomenti}</div>${inc.decisioni && inc.decisioni !== '—' ? `<div class="dec">✅ ${inc.decisioni}</div>` : ''}
-        ${inc.prossimi_passi ? `<div class="prossimi">➡ ${inc.prossimi_passi}</div>` : ''}
-        ${inc.promemoria ? `<div style="font-size:11px;color:var(--yellow);margin-top:4px">📌 ${inc.promemoria}</div>` : ''}
-      </div>`;
-    }
-    document.getElementById('tab-incontri').innerHTML = html;
-  } else {
-    document.getElementById('tab-incontri').innerHTML = '<div class="empty-state" style="padding:20px"><div class="emoji">📝</div>Nessun incontro registrato</div>';
-  }
-  document.getElementById('tab-info').innerHTML = `
-    <div class="cliente-card" style="cursor:default">
-      <div class="nome" style="font-size:14px">📋 Scheda cliente</div>
-      <div style="margin-top:12px;display:grid;gap:10px">
-        <div><span style="color:var(--txt3);font-size:12px">Categoria</span><br><span>${c.categoria}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Zona</span><br><span>${c.zona}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Aziende</span><br><span style="display:flex;flex-wrap:wrap;gap:4px;margin-top:2px">${c.mandanti.map(m => `<span class="pill blue">${m}</span>`).join(' ')}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Referente</span><br><span>${c.contatti.referente || '—'}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Telefono</span><br><span>${c.contatti.telefono || '—'}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Email</span><br><span>${c.contatti.email || '—'}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Periodicità visite</span><br><span>${c.periodicita ? 'Ogni ' + c.periodicita + 'gg' : 'Da definire'}</span></div>
-        ${c.prossimaVisita ? `<div><span style="color:var(--txt3);font-size:12px">Prossima visita</span><br><span style="color:var(--green)">${formattaData(c.prossimaVisita)} (${labelStato(giorniDaOggi(c.prossimaVisita))})</span></div>` : ''}
+      ${u?`<div class="row2"><span class="stat">📝 Ultimo: <span class="val">${fData(u.data)}</span></span><span class="stat" style="color:${gg>60?'var(--red)':gg>30?'var(--yellow)':'var(--green)'}">${gg}gg fa</span></div>`:''}
+      <div class="row2" style="border-top:none;padding-top:2px">
+        <span class="stat">📊 <span class="val">${c.incontri?.length||0}</span> incontri</span>
+        ${gm!==null?`<span class="stat">⏱ <span class="val">${gm}gg</span> gap medio</span>`:''}
+        ${c.periodicita?`<span class="stat">🔄 <span class="val">${c.periodicita}gg</span></span>`:''}
+      </div>
+      <div class="row3">
+        <button class="btn-primary" onclick="event.stopPropagation();apriNuovoIncontro('${c.nome}')">+ Incontro</button>
+        <button class="btn-outline" onclick="event.stopPropagation();apriDettaglio('${c.nome}')">Dettaglio</button>
       </div>
     </div>`;
+  }).join('');
+}
+
+// ===== FILTRI =====
+function renderFiltri(){
+  const az=[...new Set(clienti.flatMap(c=>c.mandanti))].sort();
+  document.getElementById('filtri-row').innerHTML=
+    `<button class="f-btn ${filtro==='tutti'?'active':''}" onclick="filtro='tutti';renderFiltri();renderClienti()">Tutti</button>`+
+    `<button class="f-btn ${filtro==='urgenti'?'active':''}" onclick="filtro='urgenti';renderFiltri();renderClienti()">🔴 Urgenti</button>`+
+    `<button class="f-btn ${filtro==='oggi'?'active':''}" onclick="filtro='oggi';renderFiltri();renderClienti()">Oggi</button>`+
+    az.map(a=>`<button class="f-btn ${filtro===a?'active':''}" onclick="filtro='${a}';renderFiltri();renderClienti()">${a}</button>`).join('');
+}
+
+// ===== DETTAGLIO =====
+function apriDettaglio(nome){
+  const c=clienti.find(x=>x.nome===nome);if(!c)return;
+  currentCliente=nome;
+  document.getElementById('d-nome').textContent=c.nome;
+  document.getElementById('d-info').textContent=`${c.zona} · ${c.mandanti.join(', ')}${c.contatti.referente?' · Rif. '+c.contatti.referente:''}`;
+  const g=proxG(c),gm=gapMed(c),u=c.incontri?.length>0?c.incontri[c.incontri.length-1]:null,gg=u?daOggi(u.data):null;
+  document.getElementById('d-metrics').innerHTML=
+    `<div class="det-metric"><div class="mv">${c.incontri?.length||0}</div><div class="ml">Incontri</div></div>`+
+    `<div class="det-metric"><div class="mv">${gm!==null?gm+'gg':'—'}</div><div class="ml">Gap medio</div></div>`+
+    `<div class="det-metric"><div class="mv">${gg!==null?gg+'gg':'—'}</div><div class="ml">Dall'ultima</div></div>`+
+    `<div class="det-metric"><div class="mv" style="color:${g!==null&&g<0?'var(--red)':g!==null&&g<=7?'var(--green)':'var(--txt)'}">${g!==null?lblStato(g):'—'}</div><div class="ml">Stato</div></div>`;
+  if(c.incontri?.length>0){
+    const s=[...c.incontri].sort((a,b)=>b.data.localeCompare(a.data));
+    document.getElementById('tab-storico').innerHTML=s.map((inc,i)=>{
+      const prox=i>0?s[i-1]:null, gp=prox?diffG(prox.data,inc.data):null;
+      return `<div class="incontro-item"><div class="top"><span>${fData(inc.data)}</span>${gp!==null?`<span class="gap">${gp}gg dopo</span>`:''}</div>
+        <div class="arg">${inc.argomenti}</div>${inc.decisioni&&inc.decisioni!=='—'?`<div class="dec">✅ ${inc.decisioni}</div>`:''}
+        ${inc.prossimi_passi?`<div class="next">➡ ${inc.prossimi_passi}</div>`:''}</div>`;
+    }).join('');
+  } else document.getElementById('tab-storico').innerHTML='<div class="empty-state"><div class="emoji">📝</div><p>Nessun incontro</p></div>';
+  document.getElementById('tab-info').innerHTML=`<div class="cliente-card" style="cursor:default"><div class="info" style="display:grid;gap:8px">
+    <div><span style="color:var(--txt3);font-size:11px">Categoria</span><br><span>${c.categoria}</span></div>
+    <div><span style="color:var(--txt3);font-size:11px">Zona</span><br><span>${c.zona}</span></div>
+    <div><span style="color:var(--txt3);font-size:11px">Mandanti</span><br><span style="display:flex;gap:4px;margin-top:2px">${c.mandanti.map(m=>`<span class="badge badge-blu">${m}</span>`).join(' ')}</span></div>
+    <div><span style="color:var(--txt3);font-size:11px">Referente</span><br><span>${c.contatti.referente||'—'}</span></div>
+    <div><span style="color:var(--txt3);font-size:11px">Tel/Email</span><br><span>${c.contatti.telefono||'—'} · ${c.contatti.email||'—'}</span></div>
+    <div><span style="color:var(--txt3);font-size:11px">Periodicità</span><br><span>${c.periodicita?'Ogni '+c.periodicita+'gg':'Da definire'}</span></div>
+    ${c.prossimaVisita?`<div><span style="color:var(--txt3);font-size:11px">Prossima visita</span><br><span style="color:var(--green)">${fData(c.prossimaVisita)}</span></div>`:''}
+  </div></div>`;
   document.getElementById('detail-view').classList.add('show');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
-
-function chiudiDettaglio() {
-  document.getElementById('detail-view').classList.remove('show');
-  document.body.style.overflow = '';
-}
-
-function switchTab(tab) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.tab[onclick*="'${tab}'"]`).classList.add('active');
-  document.getElementById(`tab-${tab}`).classList.add('active');
-}
+function chiudiDettaglio(){document.getElementById('detail-view').classList.remove('show');document.body.style.overflow=''}
+function switchTab(t){document.querySelectorAll('.det-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-pane').forEach(x=>x.classList.remove('active'));document.querySelector(`.det-tab[onclick*="'${t}'"]`).classList.add('active');document.getElementById(`tab-${t}`).classList.add('active')}
 
 // ===== MODALE INCONTRO =====
-function apriNuovoIncontro(nome) {
-  currentCliente = nome;
-  document.getElementById('modal-title').textContent = `📝 Nuovo incontro — ${nome}`;
-  document.getElementById('f-data').value = new Date().toISOString().split('T')[0];
-  document.getElementById('f-ora').value = ''; document.getElementById('f-ora-fine').value = '';
-  document.getElementById('f-argomenti').value = ''; document.getElementById('f-decisioni').value = '';
-  document.getElementById('f-prossimi').value = ''; document.getElementById('f-prossima-data').value = '';
-  document.getElementById('f-promemoria').value = '';
+function apriNuovoIncontro(nome){
+  currentCliente=nome;document.getElementById('mi-titolo').textContent=`📝 Nuovo incontro — ${nome}`;
+  document.getElementById('f-data').value=new Date().toISOString().split('T')[0];
+  ['f-ora','f-ora-fine','f-arg','f-dec','f-next','f-prox','f-rem'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('modal-incontro').classList.add('show');
 }
-
-function chiudiModale() {
-  document.getElementById('modal-incontro').classList.remove('show');
+function chiudiModale(){document.getElementById('modal-incontro').classList.remove('show')}
+function salvaIncontro(){
+  const c=clienti.find(x=>x.nome===currentCliente);if(!c)return;
+  const inc={data:document.getElementById('f-data').value,ora:document.getElementById('f-ora').value,ora_fine:document.getElementById('f-ora-fine').value,argomenti:document.getElementById('f-arg').value,decisioni:document.getElementById('f-dec').value,prossimi_passi:document.getElementById('f-next').value,promemoria:document.getElementById('f-rem').value,stato:'aperto'};
+  if(!c.incontri)c.incontri=[];c.incontri.push(inc);
+  if(document.getElementById('f-prox').value)c.prossimaVisita=document.getElementById('f-prox').value;
+  chiudiModale();renderKPI();renderClienti();renderMappa();
+  if(document.getElementById('detail-view').classList.contains('show'))apriDettaglio(currentCliente);
+  const m=document.createElement('div');m.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--emerald);color:#fff;padding:10px 20px;border-radius:10px;font-weight:700;z-index:999;font-size:13px;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s';m.textContent='✅ Incontro registrato!';document.body.appendChild(m);setTimeout(()=>{m.style.opacity='0';setTimeout(()=>m.remove(),300)},2000);
 }
 
-function salvaIncontro() {
-  const c = clienti.find(x => x.nome === currentCliente);
-  if (!c) return;
-  const incontro = {
-    data: document.getElementById('f-data').value, ora: document.getElementById('f-ora').value,
-    ora_fine: document.getElementById('f-ora-fine').value, argomenti: document.getElementById('f-argomenti').value,
-    decisioni: document.getElementById('f-decisioni').value, prossimi_passi: document.getElementById('f-prossimi').value,
-    promemoria: document.getElementById('f-promemoria').value, stato: 'aperto'
-  };
-  if (!c.incontri) c.incontri = [];
-  c.incontri.push(incontro);
-  if (document.getElementById('f-prossima-data').value) c.prossimaVisita = document.getElementById('f-prossima-data').value;
-  chiudiModale();
-  renderKPI(); renderClienti();
-  if (document.getElementById('detail-view').classList.contains('show')) apriDettaglio(currentCliente);
-  const msg = document.createElement('div');
-  msg.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;z-index:999;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s';
-  msg.textContent = '✅ Incontro registrato!';
-  document.body.appendChild(msg);
-  setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 2000);
-}
-
-// ===== MODALE NUOVO CLIENTE =====
-function apriNuovoCliente() {
-  document.getElementById('fc-nome').value = '';
-  document.getElementById('fc-categoria').value = 'rivendita';
-  document.getElementById('fc-zona').value = 'Sicilia Ovest (Palermo)';
-  document.getElementById('fc-referente').value = '';
-  document.getElementById('fc-telefono').value = '';
-  document.getElementById('fc-email').value = '';
-  document.getElementById('fc-periodicita').value = '30';
-  document.getElementById('fc-note').value = '';
-
-  // Genera checkbox mandanti
-  const container = document.getElementById('fc-mandanti-checkboxes');
-  container.innerHTML = AZIENDE_DISPONIBILI.map(az =>
-    `<label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
-      <input type="checkbox" value="${az}" style="width:16px;height:16px;accent-color:var(--accent)">${az}
-    </label>`
-  ).join('');
-
+// ===== MODALE CLIENTE =====
+function apriNuovoCliente(){
+  ['fc-nome','fc-ref','fc-tel','fc-email','fc-note'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fc-cat').value='rivendita';document.getElementById('fc-zona').value='Sicilia Ovest (Palermo)';document.getElementById('fc-per').value='30';
+  document.getElementById('fc-mand').innerHTML=AZIENDE.map(a=>`<label style="display:flex;align-items:center;gap:4px;font-size:12px;cursor:pointer"><input type="checkbox" value="${a}" style="width:14px;height:14px;accent-color:var(--accent)">${a}</label>`).join('');
   document.getElementById('modal-cliente').classList.add('show');
 }
-
-function chiudiModaleCliente() {
-  document.getElementById('modal-cliente').classList.remove('show');
-}
-
-function salvaNuovoCliente() {
-  const nome = document.getElementById('fc-nome').value.trim();
-  if (!nome) { alert('Inserisci il nome del cliente'); return; }
-
-  const mandanti = [];
-  document.querySelectorAll('#fc-mandanti-checkboxes input:checked').forEach(cb => mandanti.push(cb.value));
-
-  const cliente = {
-    nome,
-    categoria: document.getElementById('fc-categoria').value,
-    zona: document.getElementById('fc-zona').value,
-    mandanti: mandanti.length ? mandanti : ['Altro'],
-    contatti: {
-      telefono: document.getElementById('fc-telefono').value,
-      email: document.getElementById('fc-email').value,
-      referente: document.getElementById('fc-referente').value,
-    },
-    incontri: [],
-    periodicita: parseInt(document.getElementById('fc-periodicita').value) || 90,
-    prossimaVisita: null,
-  };
-
-  clienti.push(cliente);
-  chiudiModaleCliente();
-  renderKPI(); renderFiltri(); renderClienti();
-
-  const msg = document.createElement('div');
-  msg.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;z-index:999;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s';
-  msg.textContent = `✅ Cliente "${nome}" aggiunto!`;
-  document.body.appendChild(msg);
-  setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 2000);
+function chiudiModaleCliente(){document.getElementById('modal-cliente').classList.remove('show')}
+function salvaNuovoCliente(){
+  const n=document.getElementById('fc-nome').value.trim();if(!n){alert('Inserisci il nome');return}
+  const m=[];document.querySelectorAll('#fc-mand input:checked').forEach(cb=>m.push(cb.value));
+  const c={nome:n,categoria:document.getElementById('fc-cat').value,zona:document.getElementById('fc-zona').value,mandanti:m.length?m:['Altro'],contatti:{telefono:document.getElementById('fc-tel').value,email:document.getElementById('fc-email').value,referente:document.getElementById('fc-ref').value},incontri:[],periodicita:parseInt(document.getElementById('fc-per').value)||90,prossimaVisita:null,lat:null,lon:null};
+  clienti.push(c);chiudiModaleCliente();renderKPI();renderFiltri();renderClienti();renderMappa();
+  const msg=document.createElement('div');msg.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--emerald);color:#fff;padding:10px 20px;border-radius:10px;font-weight:700;z-index:999;font-size:13px;box-shadow:0 4px 20px rgba(0,0,0,.5)';msg.textContent=`✅ "${n}" aggiunto!`;document.body.appendChild(msg);setTimeout(()=>msg.remove(),2500);
 }
 
 // ===== INIZIALIZZAZIONE =====
-document.addEventListener('DOMContentLoaded', () => {
-  // Carica dati geolocalizzati (clienti_geo.json) + merge con clienti.json
-  Promise.all([
-    fetch('clienti_geo.json').then(r => r.json()).catch(() => null),
-    fetch('clienti.json').then(r => r.json()).catch(() => null),
-  ]).then(([geo, json]) => {
-    if (geo && geo.length) {
-      clientiConGeo = geo;
-      clienti = geo;
-    } else if (json?.clienti?.length) {
-      clienti = json.clienti.map(c => ({ ...c, periodicita: c.periodicita || 90 }));
-    } else {
-      clienti = FALLBACK;
-    }
-    renderKPI(); renderFiltri(); renderClienti();
-    setTimeout(() => renderMappa(), 300);
-  }).catch(() => {
-    clienti = FALLBACK;
-    renderKPI(); renderFiltri(); renderClienti();
-    setTimeout(() => renderMappa(), 300);
+document.addEventListener('DOMContentLoaded',()=>{
+  fetch('clienti_geo.json').then(r=>r.json()).then(d=>{if(d&&d.length)clienti=d}).catch(()=>{clienti=FALLBACK}).finally(()=>{
+    renderKPI();renderFiltri();renderClienti();setTimeout(()=>renderMappa(),200);
   });
 });
 </script>
