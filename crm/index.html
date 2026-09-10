@@ -13,7 +13,7 @@ header{text-align:center;padding:24px 16px 12px;background:radial-gradient(ellip
 header h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 header .sub{font-size:13px;color:var(--txt2);margin-top:3px}
 header .badge{display:inline-block;margin-top:8px;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(110,168,254,.12);color:var(--accent);border:1px solid rgba(110,168,254,.2)}
-/* KPI strip — 5 cards */
+/* KPI strip */
 .kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:12px 14px;max-width:800px;margin:0 auto}
 .kpi-box{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:var(--radius);padding:12px 6px;text-align:center;box-shadow:var(--shadow)}
 .kpi-box .lbl{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--txt3);font-weight:600;margin-bottom:3px}
@@ -48,6 +48,13 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .btn-secondary{background:var(--card);color:var(--txt2);border:1px solid var(--border)}
 .btn-success{background:var(--green);color:#000}
 .btn-danger{background:var(--red);color:#fff}
+.btn-add{background:var(--green);color:#000;font-weight:700}
+/* Intestazione azienda */
+.azienda-group{margin-bottom:18px}
+.azienda-header{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:2px solid var(--border);margin-bottom:12px}
+.azienda-header .azienda-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.azienda-header .azienda-nome{font-size:16px;font-weight:700}
+.azienda-header .azienda-count{font-size:12px;color:var(--txt3);background:var(--card);padding:2px 10px;border-radius:12px}
 /* Dettaglio cliente */
 #detail-view{display:none;position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto;padding:0 0 100px}
 #detail-view.show{display:block}
@@ -56,7 +63,6 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .detail-header h2{font-size:20px;margin-top:4px}
 .detail-header .info{font-size:13px;color:var(--txt2);margin-top:3px}
 .detail-body{padding:14px}
-/* Metriche cliente */
 .cliente-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .metric-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center}
 .metric-card .m-val{font-size:18px;font-weight:800}
@@ -80,15 +86,15 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 .modal-content .btn{width:100%;margin-top:16px;padding:12px;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer}
 /* Filtri */
 .filtri{display:flex;gap:8px;padding:4px 0 10px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-.filtri .f-btn{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--txt2);cursor:pointer;transition:all .12s}
+.filtri .f-btn{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--txt2);cursor:pointer;transition:all .12s;flex-shrink:0}
 .filtri .f-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
 .search-box{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--txt);font-size:14px;margin-bottom:8px}
 .search-box::placeholder{color:var(--txt3)}
 .empty-state{text-align:center;padding:40px 20px;color:var(--txt3)}
 .empty-state .emoji{font-size:48px;margin-bottom:12px}
 /* Tabs dettaglio */
-.tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:4px}
-.tab{padding:6px 14px;border-radius:8px 8px 0 0;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--txt3);cursor:pointer}
+.tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:4px;overflow-x:auto}
+.tab{padding:6px 14px;border-radius:8px 8px 0 0;font-size:12px;font-weight:600;border:none;background:transparent;color:var(--txt3);cursor:pointer;flex-shrink:0}
 .tab.active{background:var(--card);color:var(--accent);border-bottom:2px solid var(--accent)}
 .tab-content{display:none}
 .tab-content.active{display:block}
@@ -114,7 +120,10 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
 <!-- FILTRI -->
 <section>
   <div class="filtri" id="filtri"></div>
-  <input class="search-box" id="search" placeholder="🔍 Cerca cliente, zona, mandante, referente..." oninput="renderClienti()">
+  <div style="display:flex;gap:8px;margin-bottom:8px">
+    <input class="search-box" id="search" placeholder="🔍 Cerca cliente, zona, mandante, referente..." oninput="renderClienti()" style="margin-bottom:0;flex:1">
+    <button class="btn btn-add" onclick="apriNuovoCliente()" style="padding:10px 16px;border-radius:12px;font-size:13px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;background:var(--green);color:#000">+ Cliente</button>
+  </div>
 </section>
 
 <!-- LISTA CLIENTI -->
@@ -128,9 +137,7 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
     <div class="info" id="d-info"></div>
   </div>
   <div class="detail-body">
-    <!-- Metriche cliente -->
     <div class="cliente-metrics" id="d-metrics"></div>
-    <!-- Tabs -->
     <div class="tabs" id="d-tabs">
       <button class="tab active" onclick="switchTab('incontri')">📜 Incontri</button>
       <button class="tab" onclick="switchTab('info')">ℹ Info</button>
@@ -170,18 +177,90 @@ section{padding:8px 14px 4px;max-width:800px;margin:0 auto}
   </div>
 </div>
 
+<!-- MODALE NUOVO CLIENTE -->
+<div class="modal" id="modal-cliente">
+  <div class="modal-content">
+    <h3>➕ Nuovo cliente</h3>
+    <label>Nome cliente *</label>
+    <input type="text" id="fc-nome" placeholder="Ragione sociale">
+    <div class="form-row">
+      <div><label>Categoria</label>
+        <select id="fc-categoria">
+          <option value="rivendita">Rivendita</option>
+          <option value="installatore">Installatore</option>
+          <option value="progettista">Progettista</option>
+          <option value="impresa">Impresa edile</option>
+          <option value="privato">Privato</option>
+          <option value="altro">Altro</option>
+        </select>
+      </div>
+      <div><label>Zona</label>
+        <select id="fc-zona">
+          <option value="Sicilia Ovest (Palermo)">Sicilia Ovest (PA)</option>
+          <option value="Sicilia Ovest (Trapani)">Sicilia Ovest (TP)</option>
+          <option value="Sicilia Ovest (Agrigento)">Sicilia Ovest (AG)</option>
+          <option value="Sicilia Est (Catania)">Sicilia Est (CT)</option>
+          <option value="Sicilia Est (Messina)">Sicilia Est (ME)</option>
+          <option value="Sicilia Est (Siracusa)">Sicilia Est (SR)</option>
+          <option value="Sicilia Sud (Ragusa)">Sicilia Sud (RG)</option>
+          <option value="Sicilia Sud (Caltanissetta)">Sicilia Sud (CL)</option>
+          <option value="Sicilia (Enna)">Sicilia (EN)</option>
+          <option value="Altre regioni">Altre regioni</option>
+        </select>
+      </div>
+    </div>
+    <label>Aziende / mandanti</label>
+    <div id="fc-mandanti-checkboxes" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+    </div>
+    <label>Referente</label>
+    <input type="text" id="fc-referente" placeholder="Nome e cognome">
+    <div class="form-row">
+      <div><label>Telefono</label>
+        <input type="text" id="fc-telefono" placeholder="333 1234567">
+      </div>
+      <div><label>Email</label>
+        <input type="email" id="fc-email" placeholder="nome@email.it">
+      </div>
+    </div>
+    <label>Periodicità visite consigliata</label>
+    <select id="fc-periodicita">
+      <option value="15">Ogni 15 giorni</option>
+      <option value="30" selected>Ogni mese (30gg)</option>
+      <option value="45">Ogni 45 giorni</option>
+      <option value="60">Ogni 2 mesi</option>
+      <option value="90">Ogni 3 mesi</option>
+      <option value="180">Ogni 6 mesi</option>
+      <option value="365">Ogni anno</option>
+    </select>
+    <label>Note / appunti iniziali</label>
+    <textarea id="fc-note" placeholder="Informazioni sul cliente..."></textarea>
+    <div style="display:flex;gap:8px;margin-top:16px">
+      <button class="btn btn-secondary" onclick="chiudiModaleCliente()" style="flex:1">Annulla</button>
+      <button class="btn btn-primary" onclick="salvaNuovoCliente()" style="flex:2">Aggiungi cliente</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ===== DATI =====
+const AZIENDE_DISPONIBILI = ["Biemme","Internorm","Gerflor","Novoferm","Ditec","Ferrero Legno","Cherubini","Roto","Navello","Altro"];
+
+const AZIENDE_COLORI = {
+  "Biemme":"#4362b9","Internorm":"#cc1e2c","Gerflor":"#00a651","Novoferm":"#f39200",
+  "Ditec":"#005a9e","Ferrero Legno":"#8b4513","Cherubini":"#6a1b9a","Roto":"#e91e63",
+  "Navello":"#0097a7","Altro":"#6b7a8c"
+};
+
 const FALLBACK = [
-  {nome:"Cascino Angelo & C. Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Rilascio modulo richiesta anticipo Hdemia Design",decisioni:"Modulo compilato e inviato",prossimi_passi:"Seguire risposta Internorm",stato:"aperto"},{data:"2026-09-07",argomenti:"Sollecito conferma ordine (2° e ultimo) — commessa Campioni Termini Imerese",decisioni:"Inviata conferma ordine urgente",prossimi_passi:"Verificare ricezione e inoltro",stato:"aperto"},{data:"2026-08-21",argomenti:"Prima registrazione: partner Internorm. Fatturato 2026: €35,403.59 vs 2025: €46,260.51 (▼ €-10,856.92). Dati da report settimana 31.",decisioni:"Registrato come partner Internorm attivo.",prossimi_passi:"Contattare per aggiornamento e follow-up.",stato:"chiuso"}],periodicita:30,prossimaVisita:null},
+  {nome:"Cascino Angelo & C. Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Rilascio modulo richiesta anticipo Hdemia Design",decisioni:"Modulo compilato e inviato",prossimi_passi:"Seguire risposta Internorm",stato:"aperto"},{data:"2026-09-07",argomenti:"Sollecito conferma ordine (2° e ultimo) — commessa Campioni Termini Imerese",decisioni:"Inviata conferma ordine urgente",prossimi_passi:"Verificare ricezione e inoltro",stato:"aperto"},{data:"2026-08-21",argomenti:"Prima registrazione: partner Internorm.",decisioni:"Registrato come partner Internorm attivo.",prossimi_passi:"Contattare per aggiornamento e follow-up.",stato:"chiuso"}],periodicita:30,prossimaVisita:null},
   {nome:"Tecno Infissi Srl",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"091 1234567",email:"info@tecnoinfissisrl.com",referente:"Giuseppe Puglisi"},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo alzante LEVANTE 3000x2000 x10 pz, RAL 9010. Preventivo #178",decisioni:"Inviata offerta PABL004I6. Attesa riscontro.",prossimi_passi:"Follow-up a 7 giorni",stato:"aperto"}],periodicita:45,prossimaVisita:"2026-10-23"},
   {nome:"3Z Serramenti Srls",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"3zserramenti@gmail.com",referente:""},incontri:[{data:"2026-09-08",argomenti:"Consegnato preventivo INVERSA: 4 finestre (F1,F2,PF1,PF2) RAL 9010. Preventivo #177",decisioni:"Offerta PABL003I6 inviata. Sconto 45+30.",prossimi_passi:"Follow-up a 7 giorni",stato:"aperto"}],periodicita:45,prossimaVisita:"2026-10-23"},
   {nome:"Hdemia Design Srls",categoria:"rivendita",zona:"Sicilia Est (Ragusa)",mandanti:["Internorm"],contatti:{telefono:"0338 9132222",email:"",referente:""},incontri:[{data:"2026-09-09",argomenti:"Richiesta anticipo consegna sett.41. Conferma ordine 6744075 (KF310, 7 posizioni, €6.103,03).",decisioni:"Modulo richiesta anticipo compilato e inviato a Internorm.",prossimi_passi:"Attendere risposta Internorm sull'anticipo",stato:"aperto"}],periodicita:60,prossimaVisita:"2026-11-08"},
-  {nome:"Di Via SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme","Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €296,261. Dati da report.",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"C.& G. Serramenti",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €469,091 (28% del totale Biemme).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
-  {nome:"Sirimed SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Gerflor","Novoferm"],contatti:{telefono:"",email:"",referente:"Laura Barbagallo"},incontri:[{data:"2026-09-09",argomenti:"Ordini bloccati per scaduto (fido/rating). Gerflor: vecchi scaduti dal 30/06. Rosita Colombo sollecita.",decisioni:"Da risolvere situazione scaduti per sbloccare ordini.",prossimi_passi:"Contattare Sirimed per sollecito pagamento",stato:"aperto"}],periodicita:30,prossimaVisita:null},
-  {nome:"Lupo' Costruzioni SRL",categoria:"rivendita",zona:"Sicilia Est (Messina)",mandanti:["Gerflor"],contatti:{telefono:"",email:"",referente:"Alberto"},incontri:[{data:"2026-09-09",argomenti:"Nota di credito con ri-fatturazione CIG/CUP. Da comunicare i nuovi dati al cliente.",decisioni:"Davide Daino segue pratica",prossimi_passi:"Comunicare nuovi dati CIG/CUP ad Alberto",stato:"aperto"}],periodicita:45,prossimaVisita:null},
-  {nome:"Arkeb Iblea (Calogero)",categoria:"rivendita",zona:"Sicilia Sud (Ragusa)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Calogero"},incontri:[{data:"2026-09-09",argomenti:"Preventivo porte scorrevoli rif. Occhipinti bloccato: dubbio telaio cabina armadio.",decisioni:"Da chiarire se controtelaio Ermetika o misura diretta",prossimi_passi:"Verifica in loco o contattare impresa fornitrice",stato:"aperto"}],periodicita:30,prossimaVisita:null},
+  {nome:"Di Via SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme","Internorm"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €296,261.",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
+  {nome:"C.& G. Serramenti",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €469,091 (28% del totale).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
+  {nome:"Sirimed SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Gerflor","Novoferm"],contatti:{telefono:"",email:"",referente:"Laura Barbagallo"},incontri:[{data:"2026-09-09",argomenti:"Ordini bloccati per scaduto (fido/rating). Rosita Colombo sollecita.",decisioni:"Da risolvere situazione scaduti per sbloccare ordini.",prossimi_passi:"Contattare Sirimed per sollecito pagamento",stato:"aperto"}],periodicita:30,prossimaVisita:null},
+  {nome:"Lupo' Costruzioni SRL",categoria:"rivendita",zona:"Sicilia Est (Messina)",mandanti:["Gerflor"],contatti:{telefono:"",email:"",referente:"Alberto"},incontri:[{data:"2026-09-09",argomenti:"Nota di credito con ri-fatturazione CIG/CUP.",decisioni:"Davide Daino segue pratica",prossimi_passi:"Comunicare nuovi dati CIG/CUP ad Alberto",stato:"aperto"}],periodicita:45,prossimaVisita:null},
+  {nome:"Arkeb Iblea (Calogero)",categoria:"rivendita",zona:"Sicilia Sud (Ragusa)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Calogero"},incontri:[{data:"2026-09-09",argomenti:"Preventivo porte scorrevoli rif. Occhipinti bloccato: dubbio telaio.",decisioni:"Da chiarire se controtelaio Ermetika o misura diretta",prossimi_passi:"Verifica in loco o contattare impresa fornitrice",stato:"aperto"}],periodicita:30,prossimaVisita:null},
   {nome:"Fratelli Alessi",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €44,198 (top 10 Biemme).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
   {nome:"Luican Group SRL",categoria:"rivendita",zona:"Sicilia Est (Catania)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:"Angelo Leone"},incontri:[{data:"2026-09-04",argomenti:"Richiesta preventivo URGENTE posa pavimento PVC scuola infanzia Ramacca.",decisioni:"Da preparare offerta",prossimi_passi:"Preparare preventivo posa",stato:"aperto"}],periodicita:60,prossimaVisita:null},
   {nome:"Ceca SRL",categoria:"rivendita",zona:"Sicilia Ovest (Palermo)",mandanti:["Biemme"],contatti:{telefono:"",email:"",referente:""},incontri:[{data:"2026-08-21",argomenti:"Fatturato 2026: €89,944 (top 5 Biemme).",decisioni:"—",prossimi_passi:"Monitoraggio periodico",stato:"aperto"}],periodicita:90,prossimaVisita:null},
@@ -194,7 +273,6 @@ const FALLBACK = [
 let clienti = [];
 let filtroAttivo = 'tutti';
 let currentCliente = '';
-let chartGraficoGap = null;
 
 function formattaData(d) {
   if (!d) return '—';
@@ -251,12 +329,10 @@ function labelStato(gg) {
   return `Tra ${gg}gg`;
 }
 
-// Calcola gap medi per cliente
 function calcolaGapMedio(c) {
   if (!c.incontri || c.incontri.length < 2) return null;
   const sorted = [...c.incontri].sort((a,b) => a.data.localeCompare(b.data));
-  let tot = 0;
-  let n = 0;
+  let tot = 0, n = 0;
   for (let i = 1; i < sorted.length; i++) {
     const g = diffGiorni(sorted[i].data, sorted[i-1].data);
     if (g !== null && g >= 0) { tot += g; n++; }
@@ -269,50 +345,16 @@ function calcolaKPI() {
   const oggi = new Date();
   const meseCorrente = oggi.getMonth();
   const annoCorrente = oggi.getFullYear();
-  
   const visitatiQuestoMese = clienti.filter(c => 
-    c.incontri?.some(i => {
-      const [y,m] = i.data.split('-');
-      return +y === annoCorrente && +m-1 === meseCorrente;
-    })
+    c.incontri?.some(i => { const [y,m] = i.data.split('-'); return +y === annoCorrente && +m-1 === meseCorrente; })
   ).length;
-  
-  // Gap medio globale
   let totGap = 0, nGap = 0;
-  clienti.forEach(c => {
-    const g = calcolaGapMedio(c);
-    if (g !== null) { totGap += g; nGap++; }
-  });
+  clienti.forEach(c => { const g = calcolaGapMedio(c); if (g !== null) { totGap += g; nGap++; } });
   const gapMedio = nGap > 0 ? Math.round(totGap / nGap) : null;
-  
-  // Clienti senza visita da >60gg
-  const abbandonati = clienti.filter(c => {
-    if (!c.incontri?.length) return false;
-    const ultimo = c.incontri[c.incontri.length-1].data;
-    const gg = giorniDaOggi(ultimo);
-    return gg > 60;
-  }).length;
-  
-  const scadenzeCritiche = clienti.filter(c => {
-    const gg = giorniAllaProssima(c);
-    return gg !== null && gg <= 7;
-  }).length;
-  
-  const scadute = clienti.filter(c => {
-    const gg = giorniAllaProssima(c);
-    return gg !== null && gg < 0;
-  }).length;
-  
-  return {
-    totali: clienti.length,
-    visitatiMese: visitatiQuestoMese,
-    copertura: Math.round(visitatiQuestoMese / clienti.length * 100),
-    gapMedio,
-    abbandonati,
-    scadenze: scadenzeCritiche,
-    scadute,
-    totIncontri: clienti.reduce((s,c) => s + (c.incontri?.length || 0), 0),
-  };
+  const abbandonati = clienti.filter(c => { if (!c.incontri?.length) return false; return giorniDaOggi(c.incontri[c.incontri.length-1].data) > 60; }).length;
+  const scadenzeCritiche = clienti.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg <= 7; }).length;
+  const scadute = clienti.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg < 0; }).length;
+  return { totali: clienti.length, visitatiMese, copertura: Math.round(visitatiQuestoMese/clienti.length*100)||0, gapMedio, abbandonati, scadenze: scadenzeCritiche, scadute, totIncontri: clienti.reduce((s,c) => s+(c.incontri?.length||0),0) };
 }
 
 function renderKPI() {
@@ -328,94 +370,145 @@ function renderKPI() {
 
 // ===== FILTRI =====
 function renderFiltri() {
-  const categorie = [...new Set(clienti.map(c => c.categoria))];
-  const html = [`<button class="f-btn ${filtroAttivo === 'tutti' ? 'active' : ''}" onclick="filtroAttivo='tutti';renderClienti();renderFiltri()">Tutti</button>`];
-  html.push(`<button class="f-btn ${filtroAttivo === 'urgenti' ? 'active' : ''}" onclick="filtroAttivo='urgenti';renderClienti();renderFiltri()">🔴 Urgenti</button>`);
-  html.push(`<button class="f-btn ${filtroAttivo === 'oggi' ? 'active' : ''}" onclick="filtroAttivo='oggi';renderClienti();renderFiltri()">Oggi</button>`);
-  categorie.forEach(cat => {
-    html.push(`<button class="f-btn ${filtroAttivo === cat ? 'active' : ''}" onclick="filtroAttivo='${cat}';renderClienti();renderFiltri()">${cat}</button>`);
+  const aziende = [...new Set(clienti.flatMap(c => c.mandanti))].sort();
+  let html = `<button class="f-btn ${filtroAttivo === 'tutti' ? 'active' : ''}" onclick="filtroAttivo='tutti';renderClienti();renderFiltri()">📋 Tutti</button>`;
+  html += `<button class="f-btn ${filtroAttivo === 'urgenti' ? 'active' : ''}" onclick="filtroAttivo='urgenti';renderClienti();renderFiltri()">🔴 Urgenti</button>`;
+  html += `<button class="f-btn ${filtroAttivo === 'oggi' ? 'active' : ''}" onclick="filtroAttivo='oggi';renderClienti();renderFiltri()">Oggi</button>`;
+  html += `<button class="f-btn ${filtroAttivo === 'per-azienda' ? 'active' : ''}" onclick="filtroAttivo='per-azienda';renderClienti();renderFiltri()">🏢 Per azienda</button>`;
+  aziende.forEach(az => {
+    html += `<button class="f-btn ${filtroAttivo === az ? 'active' : ''}" onclick="filtroAttivo='${az}';renderClienti();renderFiltri()">${az}</button>`;
   });
-  document.getElementById('filtri').innerHTML = html.join('');
+  document.getElementById('filtri').innerHTML = html;
 }
 
 // ===== LISTA CLIENTI =====
 function renderClienti() {
   const q = document.getElementById('search').value.toLowerCase();
   let filtrati = clienti;
-  
+
   if (filtroAttivo === 'urgenti') {
-    filtrati = filtrati.filter(c => {
-      const gg = giorniAllaProssima(c);
-      return gg !== null && gg <= 7;
-    });
+    filtrati = filtrati.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg <= 7; });
   } else if (filtroAttivo === 'oggi') {
-    filtrati = filtrati.filter(c => {
-      const gg = giorniAllaProssima(c);
-      return gg !== null && gg <= 1;
-    });
+    filtrati = filtrati.filter(c => { const gg = giorniAllaProssima(c); return gg !== null && gg <= 1; });
+  } else if (filtroAttivo === 'per-azienda') {
+    // Vista raggruppata per azienda
+    renderClientiPerAzienda(q);
+    return;
   } else if (filtroAttivo !== 'tutti') {
-    filtrati = filtrati.filter(c => c.categoria === filtroAttivo);
+    filtrati = filtrati.filter(c => c.mandanti.includes(filtroAttivo));
   }
-  
+
   if (q) {
     filtrati = filtrati.filter(c => 
-      c.nome.toLowerCase().includes(q) ||
-      c.zona.toLowerCase().includes(q) ||
+      c.nome.toLowerCase().includes(q) || c.zona.toLowerCase().includes(q) ||
       c.mandanti.some(m => m.toLowerCase().includes(q)) ||
       (c.contatti.referente || '').toLowerCase().includes(q)
     );
   }
-  
-  // Ordina per urgenza (più vicini prima)
+
   filtrati.sort((a,b) => {
-    const ga = giorniAllaProssima(a);
-    const gb = giorniAllaProssima(b);
+    const ga = giorniAllaProssima(a), gb = giorniAllaProssima(b);
     if (ga === null && gb === null) return 0;
-    if (ga === null) return 1;
-    if (gb === null) return -1;
+    if (ga === null) return 1; if (gb === null) return -1;
     return ga - gb;
   });
-  
+
   const el = document.getElementById('lista-clienti');
   if (filtrati.length === 0) {
     el.innerHTML = '<div class="empty-state"><div class="emoji">📭</div>Nessun cliente trovato</div>';
+    document.getElementById('header-badge').textContent = '0 clienti';
     return;
   }
-  
-  el.innerHTML = filtrati.map(c => {
-    const gg = giorniAllaProssima(c);
-    const stato = statoVisita(c);
-    const label = labelStato(gg);
-    const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
-    const gapMedio = calcolaGapMedio(c);
-    const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
-    return `<div class="cliente-card" onclick="apriDettaglio('${c.nome}')">
-      <div class="top">
-        <div>
-          <div class="nome">${c.nome}</div>
-          <div class="zona">${c.zona}</div>
-          <div class="mandanti">${c.mandanti.join(' · ')}</div>
-          ${c.contatti.referente ? `<div class="badge-visite">👤 ${c.contatti.referente}</div>` : ''}
-        </div>
-        <span class="pill ${stato}">${label}</span>
-      </div>
-      ${ultimo ? `<div style="font-size:12px;color:var(--txt3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
-        <span>📝 ${formattaData(ultimo.data)} — ${ultimo.argomenti.slice(0,60)}${ultimo.argomenti.length > 60 ? '...' : ''}</span>
-        ${giorniDaUltima !== null ? `<span style="color:${giorniDaUltima > 60 ? 'var(--red)' : giorniDaUltima > 30 ? 'var(--yellow)' : 'var(--green)'}">${giorniDaUltima}gg fa</span>` : ''}
-      </div>` : ''}
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px">
-        <span>📊 ${c.incontri?.length || 0} incontri</span>
-        ${gapMedio !== null ? `<span>⏱ gap medio ${gapMedio}gg</span>` : ''}
-        ${c.periodicita ? `<span>🔄 ogni ${c.periodicita}gg</span>` : ''}
-      </div>
-      <div class="azioni">
-        <button class="btn btn-primary" onclick="event.stopPropagation();apriNuovoIncontro('${c.nome}')">+ Incontro</button>
-        <button class="btn btn-secondary" onclick="event.stopPropagation();apriDettaglio('${c.nome}')">Dettaglio</button>
-      </div>
-    </div>`;
-  }).join('');
-  
+
+  el.innerHTML = filtrati.map(c => renderCardCliente(c)).join('');
   document.getElementById('header-badge').textContent = `${filtrati.length} clienti`;
+}
+
+function renderCardCliente(c) {
+  const gg = giorniAllaProssima(c);
+  const stato = statoVisita(c);
+  const label = labelStato(gg);
+  const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
+  const gapMedio = calcolaGapMedio(c);
+  const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
+  return `<div class="cliente-card" onclick="apriDettaglio('${c.nome}')">
+    <div class="top">
+      <div>
+        <div class="nome">${c.nome}</div>
+        <div class="zona">${c.zona}</div>
+        <div class="mandanti">${c.mandanti.join(' · ')}</div>
+        ${c.contatti.referente ? `<div class="badge-visite">👤 ${c.contatti.referente}</div>` : ''}
+      </div>
+      <span class="pill ${stato}">${label}</span>
+    </div>
+    ${ultimo ? `<div style="font-size:12px;color:var(--txt3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
+      <span>📝 ${formattaData(ultimo.data)} — ${ultimo.argomenti.slice(0,60)}${ultimo.argomenti.length > 60 ? '...' : ''}</span>
+      ${giorniDaUltima !== null ? `<span style="color:${giorniDaUltima > 60 ? 'var(--red)' : giorniDaUltima > 30 ? 'var(--yellow)' : 'var(--green)'}">${giorniDaUltima}gg fa</span>` : ''}
+    </div>` : ''}
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txt3);margin-top:6px">
+      <span>📊 ${c.incontri?.length || 0} incontri</span>
+      ${gapMedio !== null ? `<span>⏱ gap medio ${gapMedio}gg</span>` : ''}
+      ${c.periodicita ? `<span>🔄 ogni ${c.periodicita}gg</span>` : ''}
+    </div>
+    <div class="azioni">
+      <button class="btn btn-primary" onclick="event.stopPropagation();apriNuovoIncontro('${c.nome}')">+ Incontro</button>
+      <button class="btn btn-secondary" onclick="event.stopPropagation();apriDettaglio('${c.nome}')">Dettaglio</button>
+    </div>
+  </div>`;
+}
+
+// ===== VISTA PER AZIENDA =====
+function renderClientiPerAzienda(q) {
+  // Raggruppa per mandante
+  const gruppi = {};
+  clienti.forEach(c => {
+    if (q && !c.nome.toLowerCase().includes(q) && !c.zona.toLowerCase().includes(q) && !(c.contatti.referente||'').toLowerCase().includes(q)) return;
+    c.mandanti.forEach(m => {
+      if (!gruppi[m]) gruppi[m] = [];
+      gruppi[m].push(c);
+    });
+  });
+
+  const ordine = ["Biemme","Internorm","Gerflor","Novoferm","Ditec","Ferrero Legno","Cherubini","Roto","Navello","Altro"];
+  const chiaviOrdinate = ordine.filter(a => gruppi[a]).concat(Object.keys(gruppi).filter(a => !ordine.includes(a)).sort());
+
+  let html = '';
+  let totClienti = 0;
+  chiaviOrdinate.forEach(az => {
+    const lista = gruppi[az];
+    totClienti += lista.length;
+    // Raggruppa per zona
+    const perZona = {};
+    lista.forEach(c => {
+      if (!perZona[c.zona]) perZona[c.zona] = [];
+      perZona[c.zona].push(c);
+    });
+
+    html += `<div class="azienda-group">
+      <div class="azienda-header">
+        <div class="azienda-icon" style="background:${AZIENDE_COLORI[az] || '#6b7a8c'}">${az[0]}</div>
+        <div class="azienda-nome">${az}</div>
+        <div class="azienda-count">${lista.length} clienti</div>
+      </div>`;
+
+    Object.keys(perZona).sort().forEach(zona => {
+      html += `<div style="margin-bottom:8px">
+        <div style="font-size:11px;color:var(--txt3);font-weight:600;padding:0 0 4px 4px">📍 ${zona}</div>`;
+      perZona[zona].forEach(c => {
+        html += renderCardCliente(c);
+      });
+      html += `</div>`;
+    });
+    html += `</div>`;
+  });
+
+  const el = document.getElementById('lista-clienti');
+  if (!chiaviOrdinate.length) {
+    el.innerHTML = '<div class="empty-state"><div class="emoji">📭</div>Nessun cliente trovato</div>';
+  } else {
+    el.innerHTML = html;
+  }
+  document.getElementById('header-badge').textContent = `${totClienti} clienti`;
 }
 
 // ===== DETTAGLIO CLIENTE =====
@@ -423,39 +516,25 @@ function apriDettaglio(nome) {
   const c = clienti.find(x => x.nome === nome);
   if (!c) return;
   currentCliente = nome;
-  
   document.getElementById('d-nome').textContent = c.nome;
   document.getElementById('d-info').textContent = `${c.zona} · ${c.mandanti.join(', ')}${c.contatti.referente ? ' · Rif. ' + c.contatti.referente : ''}`;
-  
   const gg = giorniAllaProssima(c);
   const stato = statoVisita(c);
   const label = labelStato(gg);
   const gapMedio = calcolaGapMedio(c);
   const ultimo = c.incontri?.length > 0 ? c.incontri[c.incontri.length-1] : null;
   const giorniDaUltima = ultimo ? giorniDaOggi(ultimo.data) : null;
-  
-  // Metriche
   document.getElementById('d-metrics').innerHTML = `
     <div class="metric-card"><div class="m-val">${c.incontri?.length || 0}</div><div class="m-lbl">Incontri</div><div class="m-note">totali</div></div>
     <div class="metric-card"><div class="m-val">${gapMedio !== null ? gapMedio + 'gg' : '—'}</div><div class="m-lbl">Gap medio</div><div class="m-note">tra visite</div></div>
-    <div class="metric-card"><div class="m-val">${giorniDaUltima !== null ? giorniDaUltima + 'gg' : '—'}</div><div class="m-lbl">Dall'ultima</div><div class="m-note">visita</div></div>
-  `;
-  
-  // Tab incontri
+    <div class="metric-card"><div class="m-val">${giorniDaUltima !== null ? giorniDaUltima + 'gg' : '—'}</div><div class="m-lbl">Dall'ultima</div><div class="m-note">visita</div></div>`;
   if (c.incontri?.length > 0) {
     const sorted = [...c.incontri].sort((a,b) => b.data.localeCompare(a.data));
     let html = '';
     for (let i = 0; i < sorted.length; i++) {
-      const inc = sorted[i];
-      const prossimo = i > 0 ? sorted[i-1] : null;
-      const gap = prossimo ? diffGiorni(prossimo.data, inc.data) : null;
-      html += `<div class="incontro-card">
-        <div class="data">
-          <span>${formattaData(inc.data)}</span>
-          ${gap !== null ? `<span class="gap">${gap}gg dopo</span>` : ''}
-        </div>
-        <div class="arg">${inc.argomenti}</div>
-        ${inc.decisioni && inc.decisioni !== '—' ? `<div class="dec">✅ ${inc.decisioni}</div>` : ''}
+      const inc = sorted[i], prossimo = i > 0 ? sorted[i-1] : null, gap = prossimo ? diffGiorni(prossimo.data, inc.data) : null;
+      html += `<div class="incontro-card"><div class="data"><span>${formattaData(inc.data)}</span>${gap !== null ? `<span class="gap">${gap}gg dopo</span>` : ''}</div>
+        <div class="arg">${inc.argomenti}</div>${inc.decisioni && inc.decisioni !== '—' ? `<div class="dec">✅ ${inc.decisioni}</div>` : ''}
         ${inc.prossimi_passi ? `<div class="prossimi">➡ ${inc.prossimi_passi}</div>` : ''}
         ${inc.promemoria ? `<div style="font-size:11px;color:var(--yellow);margin-top:4px">📌 ${inc.promemoria}</div>` : ''}
       </div>`;
@@ -464,24 +543,20 @@ function apriDettaglio(nome) {
   } else {
     document.getElementById('tab-incontri').innerHTML = '<div class="empty-state" style="padding:20px"><div class="emoji">📝</div>Nessun incontro registrato</div>';
   }
-  
-  // Tab info
   document.getElementById('tab-info').innerHTML = `
     <div class="cliente-card" style="cursor:default">
       <div class="nome" style="font-size:14px">📋 Scheda cliente</div>
       <div style="margin-top:12px;display:grid;gap:10px">
         <div><span style="color:var(--txt3);font-size:12px">Categoria</span><br><span>${c.categoria}</span></div>
         <div><span style="color:var(--txt3);font-size:12px">Zona</span><br><span>${c.zona}</span></div>
-        <div><span style="color:var(--txt3);font-size:12px">Mandanti</span><br><span>${c.mandanti.join(', ')}</span></div>
+        <div><span style="color:var(--txt3);font-size:12px">Aziende</span><br><span style="display:flex;flex-wrap:wrap;gap:4px;margin-top:2px">${c.mandanti.map(m => `<span class="pill blue">${m}</span>`).join(' ')}</span></div>
         <div><span style="color:var(--txt3);font-size:12px">Referente</span><br><span>${c.contatti.referente || '—'}</span></div>
         <div><span style="color:var(--txt3);font-size:12px">Telefono</span><br><span>${c.contatti.telefono || '—'}</span></div>
         <div><span style="color:var(--txt3);font-size:12px">Email</span><br><span>${c.contatti.email || '—'}</span></div>
         <div><span style="color:var(--txt3);font-size:12px">Periodicità visite</span><br><span>${c.periodicita ? 'Ogni ' + c.periodicita + 'gg' : 'Da definire'}</span></div>
         ${c.prossimaVisita ? `<div><span style="color:var(--txt3);font-size:12px">Prossima visita</span><br><span style="color:var(--green)">${formattaData(c.prossimaVisita)} (${labelStato(giorniDaOggi(c.prossimaVisita))})</span></div>` : ''}
       </div>
-    </div>
-  `;
-  
+    </div>`;
   document.getElementById('detail-view').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -503,12 +578,9 @@ function apriNuovoIncontro(nome) {
   currentCliente = nome;
   document.getElementById('modal-title').textContent = `📝 Nuovo incontro — ${nome}`;
   document.getElementById('f-data').value = new Date().toISOString().split('T')[0];
-  document.getElementById('f-ora').value = '';
-  document.getElementById('f-ora-fine').value = '';
-  document.getElementById('f-argomenti').value = '';
-  document.getElementById('f-decisioni').value = '';
-  document.getElementById('f-prossimi').value = '';
-  document.getElementById('f-prossima-data').value = '';
+  document.getElementById('f-ora').value = ''; document.getElementById('f-ora-fine').value = '';
+  document.getElementById('f-argomenti').value = ''; document.getElementById('f-decisioni').value = '';
+  document.getElementById('f-prossimi').value = ''; document.getElementById('f-prossima-data').value = '';
   document.getElementById('f-promemoria').value = '';
   document.getElementById('modal-incontro').classList.add('show');
 }
@@ -520,38 +592,80 @@ function chiudiModale() {
 function salvaIncontro() {
   const c = clienti.find(x => x.nome === currentCliente);
   if (!c) return;
-  
   const incontro = {
-    data: document.getElementById('f-data').value,
-    ora: document.getElementById('f-ora').value,
-    ora_fine: document.getElementById('f-ora-fine').value,
-    argomenti: document.getElementById('f-argomenti').value,
-    decisioni: document.getElementById('f-decisioni').value,
-    prossimi_passi: document.getElementById('f-prossimi').value,
-    promemoria: document.getElementById('f-promemoria').value,
-    stato: 'aperto'
+    data: document.getElementById('f-data').value, ora: document.getElementById('f-ora').value,
+    ora_fine: document.getElementById('f-ora-fine').value, argomenti: document.getElementById('f-argomenti').value,
+    decisioni: document.getElementById('f-decisioni').value, prossimi_passi: document.getElementById('f-prossimi').value,
+    promemoria: document.getElementById('f-promemoria').value, stato: 'aperto'
   };
-  
   if (!c.incontri) c.incontri = [];
   c.incontri.push(incontro);
-  
-  if (document.getElementById('f-prossima-data').value) {
-    c.prossimaVisita = document.getElementById('f-prossima-data').value;
-  }
-  
+  if (document.getElementById('f-prossima-data').value) c.prossimaVisita = document.getElementById('f-prossima-data').value;
   chiudiModale();
-  renderKPI();
-  renderClienti();
-  
-  if (document.getElementById('detail-view').classList.contains('show')) {
-    apriDettaglio(currentCliente);
-  }
-  
-  // Feedback
-  const el = document.getElementById('lista-clienti');
+  renderKPI(); renderClienti();
+  if (document.getElementById('detail-view').classList.contains('show')) apriDettaglio(currentCliente);
   const msg = document.createElement('div');
   msg.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;z-index:999;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s';
   msg.textContent = '✅ Incontro registrato!';
+  document.body.appendChild(msg);
+  setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 2000);
+}
+
+// ===== MODALE NUOVO CLIENTE =====
+function apriNuovoCliente() {
+  document.getElementById('fc-nome').value = '';
+  document.getElementById('fc-categoria').value = 'rivendita';
+  document.getElementById('fc-zona').value = 'Sicilia Ovest (Palermo)';
+  document.getElementById('fc-referente').value = '';
+  document.getElementById('fc-telefono').value = '';
+  document.getElementById('fc-email').value = '';
+  document.getElementById('fc-periodicita').value = '30';
+  document.getElementById('fc-note').value = '';
+
+  // Genera checkbox mandanti
+  const container = document.getElementById('fc-mandanti-checkboxes');
+  container.innerHTML = AZIENDE_DISPONIBILI.map(az =>
+    `<label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
+      <input type="checkbox" value="${az}" style="width:16px;height:16px;accent-color:var(--accent)">${az}
+    </label>`
+  ).join('');
+
+  document.getElementById('modal-cliente').classList.add('show');
+}
+
+function chiudiModaleCliente() {
+  document.getElementById('modal-cliente').classList.remove('show');
+}
+
+function salvaNuovoCliente() {
+  const nome = document.getElementById('fc-nome').value.trim();
+  if (!nome) { alert('Inserisci il nome del cliente'); return; }
+
+  const mandanti = [];
+  document.querySelectorAll('#fc-mandanti-checkboxes input:checked').forEach(cb => mandanti.push(cb.value));
+
+  const cliente = {
+    nome,
+    categoria: document.getElementById('fc-categoria').value,
+    zona: document.getElementById('fc-zona').value,
+    mandanti: mandanti.length ? mandanti : ['Altro'],
+    contatti: {
+      telefono: document.getElementById('fc-telefono').value,
+      email: document.getElementById('fc-email').value,
+      referente: document.getElementById('fc-referente').value,
+    },
+    incontri: [],
+    periodicita: parseInt(document.getElementById('fc-periodicita').value) || 90,
+    prossimaVisita: null,
+  };
+
+  clienti.push(cliente);
+  chiudiModaleCliente();
+  renderKPI(); renderFiltri(); renderClienti();
+
+  const msg = document.createElement('div');
+  msg.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:12px 24px;border-radius:12px;font-weight:700;z-index:999;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.5);transition:opacity .3s';
+  msg.textContent = `✅ Cliente "${nome}" aggiunto!`;
   document.body.appendChild(msg);
   setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 2000);
 }
@@ -562,22 +676,11 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(data => {
       if (data.clienti?.length) {
-        clienti = data.clienti.map(c => ({
-          ...c,
-          periodicita: c.periodicita || 90,
-          prossimaVisita: c.prossimaVisita || null,
-          ultimaVisita: c.incontri?.length > 0 ? c.incontri[c.incontri.length-1].data : null,
-        }));
+        clienti = data.clienti.map(c => ({ ...c, periodicita: c.periodicita || 90, prossimaVisita: c.prossimaVisita || null, ultimaVisita: c.incontri?.length > 0 ? c.incontri[c.incontri.length-1].data : null }));
       }
     })
-    .catch(() => {
-      clienti = FALLBACK;
-    })
-    .finally(() => {
-      renderKPI();
-      renderFiltri();
-      renderClienti();
-    });
+    .catch(() => { clienti = FALLBACK; })
+    .finally(() => { renderKPI(); renderFiltri(); renderClienti(); });
 });
 </script>
 </body>
